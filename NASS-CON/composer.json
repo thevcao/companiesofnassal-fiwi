@@ -1,0 +1,317 @@
+{
+    "name": "OldFashioned",
+    "version": "2.0",
+    "description": "Bootstrap 4/Gulp/PostCSS Based Wordpress Starter Kit",
+    "config": {
+        "vendor-dir": "lib/vendor",
+        "bitbucket-oauth": {
+        "bitbucket.org": {"consumer-key": "A9w4PnDydmTnCdwUFm", "consumer-secret": "6qCAS3M7rJQNwrgsn363DbTuNMyZ2q5V"}
+        }
+    },
+    "require": {
+        "jjgrainger/wp-custom-post-type-class": "dev-master",
+        "findsomewinmore/admin-columns-pro": "*",
+        "findsomewinmore/advanced-custom-fields-pro": "*",
+        "findsomewinmore/searchwp": "*",
+        "findsomewinmore/wp-all-export-pro": "*",
+        "findsomewinmore/wp-all-import-pro": "*",
+        "findsomewinmore/wpai-acf-add-on": "*",
+        "findsomewinmore/all-in-one-seo-pack": "*",
+        "findsomewinmore/worker": "*",
+        "findsomewinmore/regenerate-thumbnails": "*",
+        "findsomewinmore/invisible-recaptcha": "*",
+        "findsomewinmore/wordfence": "*",
+        "findsomewinmore/google-analytics-dashboard-for-wp": "*",
+        "findsomewinmore/eps-301-redirects": "*",
+        "findsomewinmore/ewww-image-optimizer": "*",
+        "findsomewinmore/query-monitor": "*",
+        "findsomewinmore/fiwi-ga-util": "*"
+
+
+    },
+    "extra": {
+        "installer-paths": {
+            "lib/vendor{$name}": ["vendor/package"],
+            "../../plugins/{$name}/": ["type:wordpress-plugin"]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "OldFashioned\\": "lib/classes"
+        }
+    },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "findsomewinmore/fiwi-ga-util",
+                "type": "wordpress-plugin",
+                "version": "1.3",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://bitbucket.org/findsomewinmore/fiwi-ga-util/get/7d03571e3bdf.zip"
+                },
+                "require": {
+                    "composer/installers": "v1.0.7"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "findsomewinmore/admin-columns-pro",
+                "type": "wordpress-plugin",
+                "version": "4.1",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://bitbucket.org/findsomewinmore/admin-columns-pro/get/002378d8ec1d.zip"
+                },
+                "require": {
+                    "composer/installers": "v1.0.7"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "findsomewinmore/advanced-custom-fields-pro",
+                "type": "wordpress-plugin",
+                "version": "5.6.7",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://bitbucket.org/findsomewinmore/advanced-custom-fields-pro/get/f777cebea1f8.zip"
+                },
+                "require": {
+                    "composer/installers": "v1.0.7"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "findsomewinmore/searchwp",
+                "type": "wordpress-plugin",
+                "version": "2.8.17",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://bitbucket.org/findsomewinmore/searchwp/get/c11949c9def9.zip"
+                },
+                "require": {
+                    "composer/installers": "v1.0.7"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "findsomewinmore/wp-all-export-pro",
+                "type": "wordpress-plugin",
+                "version": "1.4.7",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://bitbucket.org/findsomewinmore/wp-all-export-pro/get/ed361bcf1838.zip"
+                },
+                "require": {
+                    "composer/installers": "v1.0.7"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "findsomewinmore/wp-all-import-pro",
+                "type": "wordpress-plugin",
+                "version": "4.5.0",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://bitbucket.org/findsomewinmore/wp-all-import-pro/get/070aeaff00e3.zip"
+                },
+                "require": {
+                    "composer/installers": "v1.0.7"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "findsomewinmore/wpai-acf-add-on",
+                "type": "wordpress-plugin",
+                "version": "3.1.4",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://bitbucket.org/findsomewinmore/wpai-acf-add-on/get/4e0b2b0f8cc4.zip"
+                },
+                "require": {
+                    "composer/installers": "v1.0.7"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "findsomewinmore/all-in-one-seo-pack",
+                "type": "wordpress-plugin",
+                "version": "2.4.3",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://downloads.wordpress.org/plugin/all-in-one-seo-pack.2.4.3.zip"
+                },
+                "require": {
+                    "composer/installers": "v1.0.7"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "findsomewinmore/query-monitor",
+                "type": "wordpress-plugin",
+                "version": "3.0.1",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://downloads.wordpress.org/plugin/query-monitor.3.0.1.zip"
+                },
+                "require": {
+                    "composer/installers": "v1.0.7"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "findsomewinmore/worker",
+                "type": "wordpress-plugin",
+                "version": "4.2.25",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://downloads.wordpress.org/plugin/worker.zip"
+                },
+                "require": {
+                    "composer/installers": "v1.0.7"
+                }
+            }
+
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "findsomewinmore/regenerate-thumbnails",
+                "type": "wordpress-plugin",
+                "version": "2.3.1",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.zip"
+                },
+                "require": {
+                    "composer/installers": "v1.0.7"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "findsomewinmore/invisible-recaptcha",
+                "type": "wordpress-plugin",
+                "version": "1.1",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://downloads.wordpress.org/plugin/invisible-recaptcha.zip"
+                },
+                "require": {
+                    "composer/installers": "v1.0.7"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "findsomewinmore/wordfence",
+                "type": "wordpress-plugin",
+                "version": "6.3.22",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://downloads.wordpress.org/plugin/wordfence.6.3.22.zip"
+                },
+                "require": {
+                    "composer/installers": "v1.0.7"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "findsomewinmore/gravityforms",
+                "type": "wordpress-plugin",
+                "version": "2.2.5",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://bitbucket.org/findsomewinmore/gravityforms/get/2a4046719a3e.zip"
+                },
+                "require": {
+                    "composer/installers": "v1.0.7"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "findsomewinmore/searchwp",
+                "type": "wordpress-plugin",
+                "version": "2.8.17",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://bitbucket.org/findsomewinmore/searchwp/get/c11949c9def9.zip"
+                },
+                "require": {
+                    "composer/installers": "v1.0.7"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "findsomewinmore/google-analytics-dashboard-for-wp",
+                "type": "wordpress-plugin",
+                "version": "5.1.2.3",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://downloads.wordpress.org/plugin/google-analytics-dashboard-for-wp.5.1.2.3.zip"
+                },
+                "require": {
+                    "composer/installers": "v1.0.7"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "findsomewinmore/eps-301-redirects",
+                "type": "wordpress-plugin",
+                "version": "2.3.0",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://downloads.wordpress.org/plugin/eps-301-redirects.zip"
+                },
+                "require": {
+                    "composer/installers": "v1.0.7"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "findsomewinmore/ewww-image-optimizer",
+                "type": "wordpress-plugin",
+                "version": "4.0.4",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://downloads.wordpress.org/plugin/ewww-image-optimizer.4.0.4.zip"
+                },
+                "require": {
+                    "composer/installers": "v1.0.7"
+                }
+            }
+        }
+
+    ]
+}

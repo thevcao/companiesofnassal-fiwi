@@ -1,0 +1,649 @@
+:root {
+  --wordmarkColor: #000000;
+}
+.companies-of-nassal {
+  --logoGradient: url(#con_gradient);
+  &.case-study,
+  &.error404,
+  &.hover {
+//      --logoGradient: white;
+//      --wordmarkColor: white;
+//      --brand: white;
+
+    .logo {
+      --logoGradient: white;
+      --wordmarkColor: white;
+      --brand: white;
+    }
+
+
+    &.modal-open,
+    &.menu-open {
+      --logoGradient: url(#con_gradient);
+    }
+  }
+}
+.nassal {
+  --logoGradient: url(#nassal_gradient);
+  &.case-study,
+  &.error404,
+  &.hover {
+//
+//      --logoGradient: white;
+//      --wordmarkColor: white;
+//      --brand: white;
+
+    .logo {
+      --logoGradient: white;
+      --wordmarkColor: white;
+      --brand: white;
+    }
+    header #logo .chisel {
+      fill: white;
+    }
+    &.modal-open,
+    &.menu-open {
+      .logo {
+        --wordmarkColor: #000000;
+      }
+      header #logo .chisel {
+        fill: url(#logo_gradient);
+      }
+    }
+  }
+}
+.lexington {
+  --logoGradient: url(#logo_gradient);
+  &.case-study,
+  &.error404,
+  &.hover {
+//      --logoGradient: white;
+//      --wordmarkColor: white;
+//      --brand: white;
+
+    .logo {
+      --brand: white;
+      --logoGradient: white;
+      --wordmarkColor: white;
+    }
+    header #logo .chisel {
+      fill: white;
+    }
+    &.modal-open,
+    &.menu-open {
+      .logo {
+        --wordmarkColor: #000000;
+      }
+      header #logo .chisel {
+        fill: url(#logo_gradient);
+      }
+    }
+  }
+}
+.nfusion {
+  --logoGradient: url(#logo_gradient);
+  &.case-study,
+  &.error404,
+  &.hover,
+  &.page-template-archive-services {
+//      --logoGradient: white;
+//      --wordmarkColor: white;
+//      --brand: white;
+
+    .logo {
+      --brand: white;
+      --logoGradient: white;
+      --wordmarkColor: white;
+    }
+    header #logo .chisel {
+      fill: white;
+    }
+    &.modal-open,
+    &.menu-open {
+      .logo {
+        --wordmarkColor: #000000;
+      }
+      header #logo .chisel {
+        fill: url(#logo_gradient);
+      }
+    }
+  }
+}
+.menu-open,
+.modal-open {
+  //  &.case-study .logo,
+  //  &.error404 .logo,
+  //  &.hover .logo,
+  //  &.page-template-archive-services .logo {
+  --wordmarkColor: #000000;
+  //  }
+  &.companies-of-nassal {
+    header .logo {
+      svg polygon,
+      svg g {
+        --brand-secondary: $con-brand;
+        //                  fill: var(--brand-secondary);
+        --brand: $con-secondary;
+      }
+    }
+  }
+  &.nassal {
+    header .logo {
+      svg polygon,
+      svg g {
+        --brand-secondary: $nassal-brand;
+        //                  fill: var(--brand-secondary);
+        --brand: $nassal-secondary;
+      }
+    }
+  }
+  &.lexington {
+    header .logo {
+      svg polygon,
+      svg g {
+        --brand-secondary: $lex-brand;
+        //                  fill: var(--brand-secondary);
+        --brand: $lex-secondary;
+      }
+    }
+  }
+  &.nfusion {
+    header .logo {
+      svg polygon,
+      svg g {
+        .st4 {
+          fill: #9d9fa2;
+        }
+        --brand-secondary: $fusion-brand;
+        //                  fill: var(--brand-secondary);
+        --brand: $fusion-secondary;
+      }
+    }
+  }
+}
+.nfusion {
+  header {
+    .logo {
+      .svg {
+        .st4 {
+          fill: #9d9fa2;
+        }
+      }
+    }
+  }
+}
+.scrolled,
+body.home.scrolled,
+body.case-study.scrolled,
+body.error404,
+body.page-template-archive-services {
+  header.floater {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    //      transition: .3s ease;
+    &:before {
+      transform: scaleX(1);
+    }
+  }
+}
+header.floater {
+  position: fixed;
+  background: white;
+  display: block;
+  @include media-breakpoint-down(md) {
+
+    @media (orientation: landscape) {
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+  }
+
+  body:not(.home, .case-study, .error404) & {
+    display: block;
+  }
+  .case-study &,
+  .page-template-archive-services & {
+    //    background: var(--brand);
+    background: var(--brand-gradient);
+    background-position: 0%;
+    background-attachment: fixed;
+  }
+  // (768px)
+  @include media-breakpoint-down(md) {
+    .case-study &,
+    .error404 &,
+    .page-template-archive-services & {
+      background: var(--brand-gradient);
+    }
+  }
+  //    padding: 1rem 2rem;
+  body.home &,
+  body.case-study &,
+  body.error404 & {
+    @include media-breakpoint-up(lg) {
+      transform: translate3d(0, -100%, 0);
+      transition: .3s ease;
+      opacity: 0;
+    }
+  }
+  // (768px)
+  @include media-breakpoint-down(md) {
+    @include shadow-1;
+  }
+  .menu-open &,
+  .modal-open & {
+    //    background: rgba(255, 255, 255, 0);
+    background: white;
+    box-shadow: none;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    right: 0;
+    background: var(--brand-gradient);
+    //    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 50%);
+    top: 0;
+    transform: scaleX(0);
+    transform-origin: 0% 50% 0;
+    transition: 1s ease;
+  }
+  .logo {
+    svg {
+      width: 100%;
+      height: auto;
+      path,
+      polygon,
+      g {
+        transition: fill .3s ease;
+      }
+      @include media-breakpoint-down(md) {
+        body:not(.companies-of-nassal) & {
+          height: 3.5rem;
+          width: 17rem;
+          margin-top: .25rem;
+        }
+        body.companies-of-nassal & {
+          height: 2.75rem;
+          width: 8rem;
+          margin-top: -.25rem;
+        }
+        use,
+        #wordmark {
+          display: none;
+        }
+      }
+    }
+  }
+}
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 2rem 3rem;
+  .companies-of-nassal & {
+    // @media (max-width: 1439px)
+    @include media-breakpoint-up(lg) {
+      padding: 2rem;
+    }
+  }
+  // (768px)
+  body:not(.home, .case-study, .error404) & {
+    display: none;
+  }
+  .case-study &,
+  .error404 & {
+    background: none;
+  }
+  .page-template-archive-services & {
+    display: none;
+    //    background: var(--brand-gradient);
+    //    background-position: 0%;
+    //    background-attachment: fixed;
+  }
+  @include media-breakpoint-down(md) {
+    display: none;
+    padding: 7px 0 0;
+    .container-fluid > .row {
+      margin-bottom: 5px;
+    }
+
+
+    @media (orientation: landscape) {
+
+      padding: 1rem .5rem .5rem;
+    }
+
+  }
+  .logo {
+    --wordmarkColor: #000000;
+    width: 100%;
+    max-width: 15rem;
+    height: auto;
+    transition: opacity .5s ease;
+    .playing & {
+      opacity: .25;
+    }
+    svg {
+      width: 100%;
+      height: auto;
+    }
+    .hover &,
+    .case-study &,
+    .error404 &,
+    .page-template-archive-services & {
+      //      --wordmarkColor: #ffffff;
+      svg polygon,
+      svg g:not([fill="var(--logoGradient)"]) {
+        //        --brand: white;
+        //        fill: var(--brand-primary);
+      }
+    }
+  }
+  .toggle {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 1);
+    display: block;
+    color: black;
+    text-align: center;
+    width: 3.25rem;
+    height: 3.25rem;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    transition: .3s ease;
+    font-size: 1.5rem;
+    appearance: none;
+    border: none;
+    outline: none;
+
+    &:focus {
+
+      outline: auto;
+      color: var(--brand);
+    }
+    .playing & {
+      opacity: 0;
+    }
+    .hover &,
+    .case-study &,
+    .error404 &,
+    .page-template-archive-services & {
+      background: rgba(255, 255, 255, 0);
+      color: white;
+    }
+    .menu-open &,
+    .modal-open & {
+      background: rgba(255, 255, 255, 0);
+      color: black;
+    }
+    &:hover:not(:focus) {
+      text-decoration: none;
+      color: var(--brand);
+      svg path {
+        fill: var(--brand);
+      }
+    }
+    i {
+      width: 100%;
+      text-align: center;
+    }
+    svg {
+      width: 2rem;
+      display: block;
+      margin: 0 auto;
+      transition: fill .3s ease;
+      height: 1rem;
+      path {
+        transition: inherit;
+        .hover &,
+        .case-study &,
+        .error404 &,
+        .page-template-archive-services & {
+          fill: white;
+        }
+        .menu-open &,
+        .modal-open & {
+          fill: black;
+        }
+      }
+    }
+    &.contact {}
+    &.search {}
+    &.menu-toggle {
+      width: auto;
+      font-size: .75rem;
+      padding-left: 4.5rem;
+      font-weight: bold;
+      text-decoration: none;
+
+      .label {
+
+        text-decoration: none;
+      }
+      .playing & {
+        opacity: 1;
+      }
+      span:not(.label) {
+        background: var(--wordmarkColor);
+        position: absolute;
+        height: 2px;
+        width: 2rem;
+        left: 1.5rem;
+        top: 50%;
+        transform: translate3d(0%, -50%, 0);
+        transition: .3s ease;
+        .hover &,
+        .case-study &,
+        .error404 &,
+        .page-template-archive-services & {
+          background: white;
+        }
+        .menu-open &,
+        .modal-open &,
+        .playing & {
+          background: var(--wordmarkColor);
+        }
+        &:before {
+          content: '';
+          background: var(--wordmarkColor);
+          position: absolute;
+          height: 2px;
+          width: 1.5rem;
+          left: 0;
+          transform: translate3d(0%, -.5rem, 0) rotate(0);
+          //          top: -.5rem;
+          transition: .3s ease;
+          .hover &,
+          .case-study &,
+          .error404 &,
+          .page-template-archive-services & {
+            background: white;
+          }
+          .menu-open &,
+          .modal-open &,
+          .playing & {
+            background: var(--wordmarkColor);
+          }
+        }
+        &:after {
+          content: '';
+          background: var(--wordmarkColor);
+          position: absolute;
+          height: 2px;
+          width: 2rem;
+          left: 0;
+          transform: translate3d(0%, .5rem, 0) rotate(0);
+          //          top: .5rem;
+          transition: .3s ease;
+          .hover &,
+          .case-study &,
+          .error404 &,
+          .page-template-archive-services & {
+            background: white;
+          }
+          .menu-open &,
+          .modal-open &,
+          .playing & {
+            background: var(--wordmarkColor);
+          }
+        }
+      }
+      // (768px)
+      @include media-breakpoint-up(md) {
+        &:hover:not(:focus) {
+          span:not(.label) {
+            background: rgba(0, 0, 0, 0);
+            &:before,
+            &:after {
+              //            top: 50%;
+              width: 2rem;
+              transform: translate3d(0%, 0%, 0) rotate(0);
+              background: var(--brand);
+            }
+          }
+          span {
+            color: var(--brand);
+          }
+        }
+      }
+      @include media-breakpoint-up(md) {
+
+//        &:focus,
+//        &:active {
+//          span:not(.label) {
+//            background: var(--brand);
+//            &:before {
+//              background: var(--brand);
+//              //              width: 1.5rem;
+//              //              transform: translate3d(0%, -.5rem, 0) rotate(0);
+//              //          top: -.5rem;
+//            }
+//            &:after {
+//              background: var(--brand);
+//              //              width: 2rem;
+//              //              transform: translate3d(0%, .5rem, 0) rotate(0);
+//              //          top: .5rem;
+//            }
+//          }
+//          span {
+//            color: var(--brand);
+//          }
+//        }
+        &:visited {
+          span:not(.label) {
+            background: var(--wordmarkColor);
+            &:before {
+              background: var(--wordmarkColor);
+              //              width: 1.5rem;
+              //              transform: translate3d(0%, -.5rem, 0) rotate(0);
+              //          top: -.5rem;
+            }
+            &:after {
+              background: var(--wordmarkColor);
+              //              width: 2rem;
+              //              transform: translate3d(0%, .5rem, 0) rotate(0);
+              //          top: .5rem;
+            }
+          }
+          span {
+            color: var(--wordmarkColor);
+          }
+        }
+      }
+      &.menu-open,
+      &.playing {
+        span:not(.label) {
+          background: rgba(0, 0, 0, 0);
+          &:before {
+            //            top: 50%;
+            width: 2rem;
+            transform: translate3d(0%, 0%, 0) rotate(-135deg);
+            background: var(--brand);
+          }
+          &:after {
+            //            top: 50%;
+            width: 2rem;
+            transform: translate3d(0%, 0%, 0) rotate(135deg);
+            background: var(--brand);
+          }
+        }
+      }
+    }
+  }
+}
+.hover:not(.menu-open),
+.case-study:not(.menu-open),
+.error404:not(.menu-open),
+.page-template-archive-services:not(.menu-open) {
+  header .toggle.menu-toggle:hover .label {
+    color: white
+  }
+  header .toggle.menu-toggle:visited span:not(.label),
+  header .toggle.menu-toggle:focus span:not(.label),
+  header .toggle.menu-toggle:active span:not(.label) {
+    background: white;
+  }
+  header .toggle.menu-toggle:hover span:not(.label):before,
+  header .toggle.menu-toggle:hover span:not(.label):after {
+    background: white;
+  }
+  header .toggle.menu-toggle:visited span:not(.label):before,
+  header .toggle.menu-toggle:visited span:not(.label):after {
+    background: white;
+  }
+}
+.search-input-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  transition: .5s ease;
+  //  padding: .5rem;
+  background: white;
+  transform: scaleX(0);
+  transform-origin: 100% 50% 0;
+  visibility: hidden;
+  .search-open & {
+    //    left: 0;
+    visibility: visible;
+    transform: scaleX(1);
+  }
+
+  .search-field .field-wrapper {
+
+    &:after {
+      content: none;
+    }
+  }
+  .search-field .field-wrapper input {
+    font-size: .75rem;
+    padding: 0 10px;
+    border: none;
+    line-height: 3.5;
+
+    font-weight: 700;
+
+
+    +label {
+      padding: 0 15px;
+      font-size: .75rem;
+      transform-origin: 0% 0% 0;
+      line-height: 3.5;
+      bottom: 0;
+      font-weight: 700;
+
+    }
+    &:focus+label {
+      transform: translateX(0%) translateY(-25%) scale(0.75, 0.75);
+    }
+  }
+}

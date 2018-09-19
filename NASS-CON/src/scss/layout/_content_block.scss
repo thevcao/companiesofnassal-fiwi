@@ -1,0 +1,19 @@
+.content-block {
+  margin: 5rem auto;
+
+  // (768px)
+  @include media-breakpoint-down(md) {
+
+    margin: 2rem auto;
+  }
+
+  .editor {
+    ul,
+    ol {
+      // @media (max-width: 1439px)
+      @include media-breakpoint-up(lg) {
+        column-count: 2;
+      }
+    }
+  }
+}

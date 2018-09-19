@@ -1,0 +1,78 @@
+.page-template-default {
+  .about-cta {
+    padding: 2rem 0 1rem;
+    @include cardContent;
+    // (768px)
+    @include media-breakpoint-down(sm) {
+      padding: 0;
+    }
+    h2 {
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 2rem;
+    }
+    .card {
+      margin: 1rem auto 1rem;
+      padding: 2rem 2rem 5rem;
+      background: $lt-grey;
+      height: 100%;
+      // (768px)
+      @include media-breakpoint-down(sm) {
+        height: auto;
+        padding: 2rem;
+      }
+      img {
+        margin-bottom: 0;
+        max-width: none;
+        //        max-height: 50px;
+        width: 100%;
+        height: auto;
+        //        object-fit: contain;
+        //        object-position: 0% 100%;
+      }
+      h6 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      .services {
+        li {
+          line-height: 1.25;
+          margin-bottom: .75rem;
+          font-size: .85rem;
+
+          @include media-breakpoint-up(lg) {
+            a {
+            }
+          }
+        }
+      }
+      &:before {
+        content: none;
+      }
+      @include shadow-1-w-hover;
+      box-shadow: none;
+      &:hover {
+        @include shadow-3;
+      }
+      .button-wrapper {
+        position: absolute;
+        bottom: 1rem;
+        left: 2rem;
+        @include media-breakpoint-down(sm) {
+          left: 0;
+          bottom: 0;
+          position: relative;
+        }
+      }
+    }
+    // (768px)
+    @include media-breakpoint-down(sm) {
+      .card-sm {
+        padding: 1rem 1rem;
+        background: white;
+        position: relative;
+      }
+    }
+  }
+}

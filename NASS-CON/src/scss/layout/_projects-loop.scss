@@ -1,0 +1,197 @@
+.projects-loop {
+  margin: 3rem auto;
+  .all-projects {
+    //    font-size: 1rem;
+    line-height: 1.25;
+    span {
+      color: var(--brand);
+      text-transform: capitalize;
+    }
+  }
+  .featured-post {
+    h6 {
+      font-size: 1rem;
+      color: var(--brand);
+    }
+    .card {
+      @include shadow-1-w-hover;
+      padding-right: 0;
+      &:before {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 100%;
+        right: 0;
+        //        background: linear-gradient(to bottom, var(--brand) 0%, var(--brand-dark) 50%);
+        background: var(--brand-gradient);
+        @include media-breakpoint-down(sm) {
+          //          background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 50%);
+          background: var(--brand-gradient);
+          height: 4px;
+          width: 100%;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: auto;
+          transform: scaleX(0);
+          transform-origin: 0% 100% 0;
+        }
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        max-height: 25rem;
+      }
+    }
+  }
+  #projects-load {
+    @keyframes placeHolderShimmer {
+      0% {
+        background-position: -468px 0
+      }
+      100% {
+        background-position: 468px 0
+      }
+    }
+    &.loading {
+      .card {
+        h4,
+        h6,
+        p {
+          color: transparent;
+          background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+          background-size: 800px 104px;
+          height: 1em;
+          animation-duration: 1s;
+          animation-fill-mode: forwards;
+          animation-iteration-count: infinite;
+          animation-name: placeHolderShimmer;
+          animation-timing-function: linear;
+        }
+        .btn,
+        img {
+          opacity: 0;
+        }
+      }
+    }
+  }
+  .projects {
+    --loop: 9;
+    .single-card {
+      margin-bottom: 2rem;
+      .card {
+        position: relative;
+        overflow: hidden;
+        padding: 2rem 2rem 2rem;
+        background: $lt-grey;
+        height: 100%;
+        // @media (max-width: 1439px)
+        //      height: 100%;
+        &:after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          right: 0;
+          top: 0;
+          background: var(--brand-gradient);
+          background: var(--brand-secondary);
+          z-index: 0;
+          opacity: 0.5;
+          @include media-breakpoint-up(md) {
+            opacity: 0;
+          }
+          transition: .3s ease;
+        }
+        h4 {
+          font-size: rem(22);
+          line-height: 1.25;
+          //            white-space: nowrap;
+          //            text-overflow: ellipsis;
+          //            overflow: hidden;
+          width: 100%;
+        }
+        h6 {
+          font-size: 1rem;
+          color: var(--brand);
+        }
+
+        p {
+          transition: .3s ease;
+          position: relative;
+          z-index: 1;
+        }
+        .btn {
+          position: relative;
+          z-index: 1;
+        }
+        &:hover {
+          img {
+            opacity: 1;
+          }
+          h4,
+          h6,
+          p {
+            color: white;
+
+            a {
+
+              color: inherit;
+            }
+            position: relative;
+            z-index: 1;
+          }
+        }
+        img {
+          margin-bottom: 0;
+          max-width: none;
+          //        max-height: 50px;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          object-fit: cover;
+          filter: contrast(1) grayscale(1);
+          opacity: .25;
+          transition: .3s ease;
+          left: 0;
+          top: 0;
+          margin: 0;
+          z-index: 0;
+          //        object-fit: contain;
+          //        object-position: 0% 100%;
+        }
+        // (768px)
+        @include media-breakpoint-down(md) {
+          img {
+            opacity: 1;
+          }
+          h4,
+          h6,
+          p {
+            color: white;
+            position: relative;
+            z-index: 1;
+          }
+        }
+        &:before {
+          content: none;
+        }
+        @include shadow-1-w-hover;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0),
+        0 1px 2px rgba(0, 0, 0, 0);
+        &:hover {
+          //            @include shadow-3;
+          h4,
+          h6,
+          p {
+            color: white;
+          }
+          &:after {
+            opacity: .5;
+          }
+        }
+      }
+    }
+  }
+}

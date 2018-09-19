@@ -1,0 +1,113 @@
+.card-content {
+  @include cardContent;
+  .home & {
+    //    padding: 5rem 0;
+    .card {
+      padding: 5rem 7rem 5rem 1rem;
+      @include media-breakpoint-down(sm) {
+        padding: 2rem 3rem 2rem 1rem;
+
+      @media(orientation: landscape){
+
+            padding: 2rem 3rem 2rem 3rem;
+
+      }
+
+      }
+
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 100%;
+        right: 0;
+        background: linear-gradient(to bottom, var(--brand) 0%, var(--brand-secondary) 50%);
+        top: 0;
+        transform: none;
+        opacity: 1;
+        @include media-breakpoint-down(sm) {
+          background: linear-gradient(135deg, var(--brand) 0%, var(--brand-secondary) 50%);
+          height: 4px;
+          width: 100%;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: auto;
+          //          transform: scaleX(0);
+          //          transform-origin: 0% 100% 0;
+        }
+      }
+    }
+  }
+  +.card-gallery {
+    margin-top: -3rem;
+    margin-bottom: 1rem;
+  }
+}
+.card-gallery {
+  // (768px)
+  @include media-breakpoint-down(sm) {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    margin: 0;
+    .mobile-edge {
+      padding: 0;
+      margin: 0;
+    }
+    .row {
+      flex-wrap: nowrap;
+      width: auto;
+      width: 100%;
+    }
+  }
+  //    flex-wrap: nowrap;
+  a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    outline: none;
+    margin-bottom: 2rem;
+    background: var(--brand);
+    // (768px)
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 0;
+      pointer-events: none;
+    }
+    &:before {
+      content: 'View Image';
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      transform: translate3d(0%, -50%, 0);
+      z-index: 0;
+      color: white;
+      font-size: 1rem;
+      font-weight: 700;
+      width: 100%;
+      text-align: center;
+      pointer-events: none;
+    }
+    img {
+      width: 100%;
+      height: 5rem;
+      object-fit: cover;
+      transition: .5s ease;
+      position: relative;
+      z-index: 1;
+      pointer-events: none;
+      // (768px)
+      @include media-breakpoint-down(sm) {
+        height: 64vw;
+      }
+      //      // (768px)
+      //      @include media-breakpoint-down(md) {
+      //        margin-bottom: 2rem;
+      //      }
+    }
+    &:hover img {
+      opacity: .25;
+    }
+  }
+  img {}
+}

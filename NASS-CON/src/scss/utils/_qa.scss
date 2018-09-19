@@ -1,0 +1,40 @@
+  #wpadminbar {
+    background: #23282d;
+    * {
+      font-family: 'Gotham', 'Avenir Next', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+      font-weight: normal;
+      letter-spacing: -.025em;
+    }
+  }
+  .edge {
+    .btn svg .line {
+      transform-origin: 100% 50% 0;
+    }
+    .nassal {
+      header {
+        #logo {
+          [fill="var(--logoGradient)"] {
+            fill: url(#nassal_gradient) !important;
+          }
+        }
+      }
+    }
+    .lexington {
+      header {
+        #logo {
+          [fill="var(--logoGradient)"] {
+            fill: url(#nassal_gradient) !important;
+          }
+        }
+      }
+    }
+    .nfusion {
+      header {
+        #logo {
+          [fill="var(--logoGradient)"] {
+            fill: url(#nassal_gradient) !important;
+          }
+        }
+      }
+    }
+  }

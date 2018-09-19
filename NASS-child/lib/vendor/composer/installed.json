@@ -1,0 +1,374 @@
+[
+    {
+        "name": "composer/installers",
+        "version": "v1.0.7",
+        "version_normalized": "1.0.7.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/composer/installers.git",
+            "reference": "d792632d27e1980d921cbbba12eab7b888338d4c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/composer/installers/zipball/d792632d27e1980d921cbbba12eab7b888338d4c",
+            "reference": "d792632d27e1980d921cbbba12eab7b888338d4c",
+            "shasum": ""
+        },
+        "replace": {
+            "shama/baton": "*"
+        },
+        "require-dev": {
+            "composer/composer": "1.0.*@dev",
+            "phpunit/phpunit": "3.7.*"
+        },
+        "time": "2013-10-24T16:13:49+00:00",
+        "type": "composer-installer",
+        "extra": {
+            "class": "Composer\\Installers\\Installer",
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Composer\\Installers\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Kyle Robinson Young",
+                "email": "kyle@dontkry.com",
+                "homepage": "https://github.com/shama",
+                "role": "Developer"
+            }
+        ],
+        "description": "A multi-framework Composer library installer",
+        "homepage": "http://composer.github.com/installers/",
+        "keywords": [
+            "TYPO3 CMS",
+            "TYPO3 Flow",
+            "TYPO3 Neos",
+            "agl",
+            "cakephp",
+            "codeigniter",
+            "concrete5",
+            "drupal",
+            "fuelphp",
+            "installer",
+            "joomla",
+            "kohana",
+            "laravel",
+            "li3",
+            "lithium",
+            "mako",
+            "modulework",
+            "phpbb",
+            "ppi",
+            "silverstripe",
+            "symfony",
+            "wordpress",
+            "zend"
+        ]
+    },
+    {
+        "name": "jjgrainger/wp-custom-post-type-class",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jjgrainger/wp-custom-post-type-class.git",
+            "reference": "f866c3a35ec8041f8ccded863d064778e2080edb"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/jjgrainger/wp-custom-post-type-class/zipball/f866c3a35ec8041f8ccded863d064778e2080edb",
+            "reference": "f866c3a35ec8041f8ccded863d064778e2080edb",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2017-05-19T12:59:18+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "CPT": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Joe Grainger",
+                "email": "hello@joegrainger.co.uk",
+                "homepage": "http://jjgrainger.co.uk"
+            }
+        ],
+        "description": "A single class to help you build more advanced custom post types quickly.",
+        "homepage": "https://github.com/jjgrainger/wp-custom-post-type-class"
+    },
+    {
+        "name": "findsomewinmore/admin-columns-pro",
+        "version": "4.1",
+        "version_normalized": "4.1.0.0",
+        "dist": {
+            "type": "zip",
+            "url": "https://bitbucket.org/findsomewinmore/admin-columns-pro/get/002378d8ec1d.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "composer/installers": "v1.0.7"
+        },
+        "type": "wordpress-plugin",
+        "installation-source": "dist"
+    },
+    {
+        "name": "findsomewinmore/advanced-custom-fields-pro",
+        "version": "5.6.7",
+        "version_normalized": "5.6.7.0",
+        "dist": {
+            "type": "zip",
+            "url": "https://bitbucket.org/findsomewinmore/advanced-custom-fields-pro/get/f777cebea1f8.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "composer/installers": "v1.0.7"
+        },
+        "type": "wordpress-plugin",
+        "installation-source": "dist"
+    },
+    {
+        "name": "findsomewinmore/wp-all-export-pro",
+        "version": "1.4.7",
+        "version_normalized": "1.4.7.0",
+        "dist": {
+            "type": "zip",
+            "url": "https://bitbucket.org/findsomewinmore/wp-all-export-pro/get/ed361bcf1838.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "composer/installers": "v1.0.7"
+        },
+        "type": "wordpress-plugin",
+        "installation-source": "dist"
+    },
+    {
+        "name": "findsomewinmore/wp-all-import-pro",
+        "version": "4.5.0",
+        "version_normalized": "4.5.0.0",
+        "dist": {
+            "type": "zip",
+            "url": "https://bitbucket.org/findsomewinmore/wp-all-import-pro/get/070aeaff00e3.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "composer/installers": "v1.0.7"
+        },
+        "type": "wordpress-plugin",
+        "installation-source": "dist"
+    },
+    {
+        "name": "findsomewinmore/wpai-acf-add-on",
+        "version": "3.1.4",
+        "version_normalized": "3.1.4.0",
+        "dist": {
+            "type": "zip",
+            "url": "https://bitbucket.org/findsomewinmore/wpai-acf-add-on/get/4e0b2b0f8cc4.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "composer/installers": "v1.0.7"
+        },
+        "type": "wordpress-plugin",
+        "installation-source": "dist"
+    },
+    {
+        "name": "findsomewinmore/all-in-one-seo-pack",
+        "version": "2.4.3",
+        "version_normalized": "2.4.3.0",
+        "dist": {
+            "type": "zip",
+            "url": "https://downloads.wordpress.org/plugin/all-in-one-seo-pack.2.4.3.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "composer/installers": "v1.0.7"
+        },
+        "type": "wordpress-plugin",
+        "installation-source": "dist"
+    },
+    {
+        "name": "findsomewinmore/worker",
+        "version": "4.2.25",
+        "version_normalized": "4.2.25.0",
+        "dist": {
+            "type": "zip",
+            "url": "https://downloads.wordpress.org/plugin/worker.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "composer/installers": "v1.0.7"
+        },
+        "type": "wordpress-plugin",
+        "installation-source": "dist"
+    },
+    {
+        "name": "findsomewinmore/regenerate-thumbnails",
+        "version": "2.3.1",
+        "version_normalized": "2.3.1.0",
+        "dist": {
+            "type": "zip",
+            "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "composer/installers": "v1.0.7"
+        },
+        "type": "wordpress-plugin",
+        "installation-source": "dist"
+    },
+    {
+        "name": "findsomewinmore/invisible-recaptcha",
+        "version": "1.1",
+        "version_normalized": "1.1.0.0",
+        "dist": {
+            "type": "zip",
+            "url": "https://downloads.wordpress.org/plugin/invisible-recaptcha.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "composer/installers": "v1.0.7"
+        },
+        "type": "wordpress-plugin",
+        "installation-source": "dist"
+    },
+    {
+        "name": "findsomewinmore/wordfence",
+        "version": "6.3.22",
+        "version_normalized": "6.3.22.0",
+        "dist": {
+            "type": "zip",
+            "url": "https://downloads.wordpress.org/plugin/wordfence.6.3.22.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "composer/installers": "v1.0.7"
+        },
+        "type": "wordpress-plugin",
+        "installation-source": "dist"
+    },
+    {
+        "name": "findsomewinmore/google-analytics-dashboard-for-wp",
+        "version": "5.1.2.3",
+        "version_normalized": "5.1.2.3",
+        "dist": {
+            "type": "zip",
+            "url": "https://downloads.wordpress.org/plugin/google-analytics-dashboard-for-wp.5.1.2.3.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "composer/installers": "v1.0.7"
+        },
+        "type": "wordpress-plugin",
+        "installation-source": "dist"
+    },
+    {
+        "name": "findsomewinmore/eps-301-redirects",
+        "version": "2.3.0",
+        "version_normalized": "2.3.0.0",
+        "dist": {
+            "type": "zip",
+            "url": "https://downloads.wordpress.org/plugin/eps-301-redirects.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "composer/installers": "v1.0.7"
+        },
+        "type": "wordpress-plugin",
+        "installation-source": "dist"
+    },
+    {
+        "name": "findsomewinmore/ewww-image-optimizer",
+        "version": "4.0.4",
+        "version_normalized": "4.0.4.0",
+        "dist": {
+            "type": "zip",
+            "url": "https://downloads.wordpress.org/plugin/ewww-image-optimizer.4.0.4.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "composer/installers": "v1.0.7"
+        },
+        "type": "wordpress-plugin",
+        "installation-source": "dist"
+    },
+    {
+        "name": "findsomewinmore/query-monitor",
+        "version": "3.0.1",
+        "version_normalized": "3.0.1.0",
+        "dist": {
+            "type": "zip",
+            "url": "https://downloads.wordpress.org/plugin/query-monitor.3.0.1.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "composer/installers": "v1.0.7"
+        },
+        "type": "wordpress-plugin",
+        "installation-source": "dist"
+    },
+    {
+        "name": "findsomewinmore/fiwi-ga-util",
+        "version": "1.3",
+        "version_normalized": "1.3.0.0",
+        "dist": {
+            "type": "zip",
+            "url": "https://bitbucket.org/findsomewinmore/fiwi-ga-util/get/7d03571e3bdf.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "composer/installers": "v1.0.7"
+        },
+        "type": "wordpress-plugin",
+        "installation-source": "dist"
+    },
+    {
+        "name": "findsomewinmore/searchwp",
+        "version": "2.8.17",
+        "version_normalized": "2.8.17.0",
+        "dist": {
+            "type": "zip",
+            "url": "https://bitbucket.org/findsomewinmore/searchwp/get/c11949c9def9.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "composer/installers": "v1.0.7"
+        },
+        "type": "wordpress-plugin",
+        "installation-source": "dist"
+    }
+]

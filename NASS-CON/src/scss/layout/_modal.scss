@@ -1,0 +1,217 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  background: rgba(white, .99);
+//  background-size: 100%;
+//  background-position: 100% 100%;
+  visibility: hidden;
+  opacity: 0;
+  //  transform: scale(1.1);
+  transform: translate3d(0, 0, 0);
+  transition: .5s ease;
+  .modal-open &, &.playing {
+    visibility: visible;
+    opacity: 1;
+//    transform: translate3d(0, 0, 0);
+//    background-position: 0% 100%;
+//    background-size: 2000%;
+    //    transform: scale(1);
+  }
+  .single-contact-co {
+    transform: translate3d(0, 0, 0) scale(1.05);
+    transform-origin: 50% 50% 0;
+    transition: .5s ease;
+    opacity: 0;
+    .modal-open & {
+      transform: translate3d(0, 0, 0) scale(1);
+      opacity: 1;
+    }
+    @for $i from 1 to 10 {
+      &:nth-child(#{$i}) {
+        .modal-open & {
+          transition-delay: $i * 0.1s;
+        }
+      }
+    }
+  }
+  .inner {
+    padding: 2rem;
+    // (768px)
+    @include media-breakpoint-down(sm) {
+      padding: 2rem 0rem;
+    }
+    h6 {
+      //      text-align: center;
+      // (768px)
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+    #logo, img {
+      //      width: 100%;
+      max-width: 80%;
+      //      height: 43%;
+      //      max-height: rem(56);
+      display: block;
+      object-fit: contain;
+      object-position: 100% 50%;
+      margin: 1rem 0 0;
+      height: auto;
+      // (768px)
+      @include media-breakpoint-down(sm) {
+        max-width: 200px;
+//        margin: 1rem 0 .5rem;
+      }
+      @include media-breakpoint-down(xs) {
+        max-width: 50%;
+//        margin: 1rem 0 .5rem;
+      }
+    }
+
+    img {
+      @include media-breakpoint-down(xs) {
+        max-width: 35%;
+//        margin: 1rem 0 .5rem;
+      }
+
+    }
+
+    .office-name {
+      text-transform: uppercase;
+      letter-spacing: .1em;
+//      color: black;
+      margin-bottom: 0;
+
+      // (768px)
+      @include media-breakpoint-down(xs) {
+        .companies-of-nassal & {
+
+        margin-bottom: 1rem;
+        }
+        font-size: .8rem;
+      }
+
+    }
+    .contact-link {
+      color: var(--brand);
+      //      text-align: center;
+      display: block;
+      font-weight: 700;
+      //      font-size: 1.15rem;
+      transition: .3s ease;
+      line-height: 1;
+      padding: .5rem 0;
+      display: block;
+      // (768px)
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 1rem;
+        padding: 0;
+//        font-size: .75rem;
+
+        &.email {
+
+          display: none;
+        }
+      }
+      @include media-breakpoint-down(xs) {
+        margin-bottom: 1rem;
+        padding: 0;
+        font-size: .75rem;
+
+        &.email {
+
+          display: none;
+        }
+      }
+      svg {
+        height: 1rem;
+        width: 1rem;
+        vertical-align: text-top;
+      }
+      svg path {
+        fill: var(--brand);
+        transition: .3s ease;
+      }
+      &:hover {
+        color: var(--brand-dark);
+        text-decoration: none;
+        svg path {
+          fill: var(--brand-dark);
+        }
+      }
+    }
+    .address {
+      margin: .5rem 0;
+      font-weight: normal;
+//      color: black;
+      //      text-align: center;
+      // (768px)
+      a {
+        display: block;
+        font-weight: 700;
+        &:hover {
+          color: var(--brand-dark);
+          text-decoration: none;
+        }
+
+
+
+      }
+      @include media-breakpoint-down(md) {
+//        display: inline-block;
+//        max-width: 45%;
+//        margin-right: 1%;
+//        width: 45%;
+      }
+      @include media-breakpoint-down(sm) {
+        //        display: block;
+//        max-width: 100%;
+//        width: 100%;
+        //        margin-right: 0;
+//        font-size: .65rem;
+////        display: none;
+//
+//        br {
+//
+//          display: none;
+//        }
+      }
+      @include media-breakpoint-down(xs) {
+        //        display: block;
+//        max-width: 100%;
+//        width: 100%;
+        //        margin-right: 0;
+        font-size: .65rem;
+//        display: none;
+
+        br {
+
+          display: none;
+        }
+
+        .companies-of-nassal & {
+
+          display: none
+        }
+      }
+    }
+    .close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      color: black;
+      // (768px)
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+      &:hover {
+        text-decoration: none;
+        color: var(--brand);
+      }
+    }
+  }
+}

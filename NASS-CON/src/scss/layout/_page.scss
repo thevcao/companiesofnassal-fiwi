@@ -1,0 +1,29 @@
+main {
+
+  margin-top: var(--headerHeight);
+
+  // @media (max-width: 1439px)
+  @include media-breakpoint-up(md) {
+
+
+    .home &, .error404 & {
+
+      margin-top: 0;
+
+    }
+
+  }
+
+  // (768px)
+  @include media-breakpoint-down(md) {
+
+
+    .home &, .error404 &, .page-template-archive-services & {
+
+
+//      margin-top: 0;
+
+    }
+  }
+
+}

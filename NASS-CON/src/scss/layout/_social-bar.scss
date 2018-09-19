@@ -1,0 +1,52 @@
+.social-bar {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  z-index: 100;
+  transform: translateY(-50%);
+
+
+  // (768px)
+  @include media-breakpoint-down(md) {
+
+    display: none;
+
+  }
+
+//  transition: opacity .3s ease;
+  .hover & {
+    opacity: 0;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 105vh;
+    background: #DEDEDE;
+    left: 1.5rem;
+    transform: translateX(-50%) rotate(-90deg);
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    transform: rotate(-90deg);
+    transform-origin: 1.5rem 50% 0;
+    background: white;
+
+    li {
+      display: inline-block;
+      a {
+        text-transform: capitalize;
+        color: #DEDEDE;
+        font-weight: 100;
+        padding: 0 .5rem;
+        transition: color .3s ease;
+        &:hover {
+          color: var(--brand);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,114 @@
+// Making an Oldfashioned
+// findsomewinmore
+// Licensed under MIT Open Source
+
+// Make sure the charset is set appropriately
+@charset 'UTF-8';
+
+// This is based on the 7-1 Pattern. For more info:
+// http://sass-guidelin.es/#the-7-1-pattern
+
+//// Framework - Foundation
+//@import 'vendor/foundation/settings',
+//		'node_modules/foundation-sites/scss/foundation';
+
+//// Framework - Bootstrap 4
+//@import 'vendor/bootstrap4/custom',
+//		'node_modules/bootstrap/scss/bootstrap';
+
+// Framework - Bootstrap 4 - Type/Grid/Ultility Helpers
+@at-root {
+  @-ms-viewport { width: device-width; }
+}
+
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+@import 'vendor/bootstrap4/custom';
+
+
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+@import "node_modules/bootstrap/scss/print";
+@import "node_modules/bootstrap/scss/reboot";
+
+
+@import "node_modules/bootstrap/scss/type";
+//
+// Grid mixins
+//
+
+@import "node_modules/bootstrap/scss/mixins/breakpoints";
+@import "node_modules/bootstrap/scss/mixins/grid-framework";
+@import "node_modules/bootstrap/scss/mixins/grid";
+
+@import "node_modules/bootstrap/scss/grid";
+@import "node_modules/bootstrap/scss/utilities/flex";
+@import "node_modules/bootstrap/scss/utilities/spacing";
+@import "node_modules/bootstrap/scss/utilities/position";
+@import "node_modules/bootstrap/scss/utilities/visibility";
+@import "node_modules/bootstrap/scss/utilities/display";
+
+////Or shit mix your own!
+@import 'node_modules/outdated-browser/outdatedbrowser/outdatedbrowser.scss';
+@import 'node_modules/font-awesome/scss/font-awesome';
+@import 'node_modules/poly-fluid-sizing/poly-fluid-sizing';
+@import 'node_modules/magnific-popup/src/css/main.scss';
+@import 'node_modules/video.js/src/css/video-js';
+
+//@import 'node_modules/poly-fluid-sizing/poly-fluid-sizing';
+
+@import
+  'utils/functions',
+  'utils/mixins';
+@import
+  'vendor/swiper';
+
+
+
+@media (min-width: 1440px) {
+
+
+  .container {
+
+    max-width: 80%;
+  }
+}
+
+// Style Base
+@import
+  'base/variables',
+  'base/fonts',
+  'base/typography';
+
+
+@import 'layout/*.scss';
+
+//Pages
+@import 'pages/*.scss';
+
+// Components
+@import 'components/**/*.scss';
+
+// Utils
+@import
+  'utils/mixins',
+  'utils/qa';
+
+@import
+  'vendor/videojs';
+@import
+  'vendor/tooltip';
+
+@import
+  'shame';
+

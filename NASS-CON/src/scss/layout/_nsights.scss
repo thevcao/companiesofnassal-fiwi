@@ -1,0 +1,192 @@
+.single-format-standard.nfusion {
+  .post-header {
+
+
+    // (768px)
+    @include media-breakpoint-down(md) {
+
+      padding: 3rem 0 0;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+      font-size: 3.25rem;
+    }
+    .breadcrumbs {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 .5rem;
+      li {
+        display: inline-block;
+        //      margin-right: 1rem;
+        &:not(:last-child) {
+          &:after {
+            content: '/';
+            position: relative;
+            margin: 0 .25rem 0 .5rem;
+            //          color: white;
+            font-weight: 700;
+          }
+        }
+        a {
+          //        color: white;
+          font-weight: 700;
+        }
+      }
+    }
+    .socials {
+      list-style: none;
+      padding: 0;
+      margin: 0 0;
+      text-align: left;
+      // (768px)
+      @include media-breakpoint-down(md) {
+        //          text-align: left;
+        margin-bottom: 1rem;
+      }
+      li {
+        display: inline-block;
+        margin-right: .5rem;
+        a {
+          --font-size: 1.5rem;
+          font-size: calc(var(--font-size) * 1);
+          color: black;
+          width: calc(2.15 * var(--font-size));
+          height: calc(2 * var(--font-size));
+          display: flex;
+          align-content: center;
+          align-items: center;
+          border: 1px solid black;
+          border-radius: 100%;
+          i {
+            width: 100%;
+            text-align: center;
+          }
+          &:hover {
+            text-decoration: none;
+            color: var(--brand);
+            border-color: var(--brand);
+          }
+        }
+      }
+    }
+    margin-bottom: 3rem;
+  }
+  .nsights-banner-image {
+    position: relative;
+    overflow: hidden;
+    @supports (mix-blend-mode: multiply) {
+      background: var(--brand-gradient);
+      mix-blend-mode: multiply;
+      //      background-size: cover;
+      //      background-position: 50%;
+      //      padding: 15rem 0;
+      //      img {
+      //        display: none;
+      //      }
+    }
+    @supports not (mix-blend-mode: multiply) {
+      &:after {
+        background: var(--brand-gradient);
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        opacity: .75;
+      }
+    }
+    img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      @supports not (mix-blend-mode: multiply) {
+        filter: grayscale(1);
+      }
+      @supports (mix-blend-mode: multiply) {
+        mix-blend-mode: multiply;
+      }
+    }
+  }
+  .nsights-content-block {
+    padding: 3rem 0;
+    @include media-breakpoint-down(md) {
+      padding: 2rem 0 1rem;
+    }
+  }
+  .nsights-featured-media {
+    padding: 3rem 0;
+    @include media-breakpoint-down(md) {
+      padding: 1rem 0 0;
+    }
+    img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    .videojs-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      //          padding-top: 35px;
+      height: 0;
+      overflow: hidden;
+      .vjs-youtube,
+      .vjs-using-native-controls {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .vjs-using-native-controls {
+        .vjs-poster {
+          display: block;
+        }
+        &.vjs-has-started {
+          .vjs-poster {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .nsights-quote {
+    blockquote {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #231F20;
+      p {
+        font-size: 1.5rem;
+        color: $grey;
+        margin-top: .5rem;
+        margin-bottom: 0;
+        font-weight: normal;
+      }
+    }
+  }
+  .nsights-50-image {
+    margin: 3rem 0;
+    // (768px)
+    @include media-breakpoint-down(md) {
+      margin: 1rem 0 0;
+    }
+    img {
+      width: 100%;
+      height: 20rem;
+      object-fit: cover;
+      // (768px)
+      @include media-breakpoint-down(md) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+// Write Theme Specific Admin Styles Here
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $headline !important;
+  text-transform: $text-transform;
+  line-height: 1 !important;
+  font-weight: $headline-weight !important;
+  padding-top: .5em!important;
+  margin-bottom: .25em !important;
+  letter-spacing: $spacing;
+}
+body:not(.mce-content-body) #titlediv #title {
+  font-family: $headline !important;
+}
+h1 {
+  font-size: ($multiplier * 2.5) + rem !important;
+}
+h2 {
+  font-size: ($multiplier * 2) + rem !important;
+}
+h3 {
+  font-size: ($multiplier * 1.75) + rem !important;
+}
+h4 {
+  font-size: ($multiplier * 1.5) + rem !important;
+}
+h5 {
+  font-size: ($multiplier * 1.25) + rem !important;
+}
+h6 {
+  font-size: ($multiplier * 1) + rem !important;
+}
+a#add_gform {
+  padding: .5em 2em;
+}
+.gform_media_icon {
+  height: 1em;
+  padding: 0;
+}
+.nfusion {
+  #acf-group_5b92a5fe858ce {
+    display: none !important;
+  }
+}

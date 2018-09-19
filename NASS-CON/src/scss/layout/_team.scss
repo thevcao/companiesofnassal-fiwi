@@ -1,0 +1,123 @@
+.single-team {
+  .bio {
+    margin: 5rem auto;
+    // (768px)
+    @include media-breakpoint-down(sm) {
+      margin: 2rem auto 2rem;
+    }
+    @include media-breakpoint-down(xs) {
+      margin: 0 auto 2rem;
+    }
+    div:empty {
+      display: none !important;
+    }
+    .contacts {
+      a {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        &:hover {
+          color: var(--brand-dark);
+          text-decoration: none;
+          svg {
+            path {
+              fill: var(--brand-dark);
+            }
+          }
+        }
+        svg,
+        i {
+          margin-right: .5rem;
+          //          transition: inherit;
+          path {
+            fill: var(--brand);
+            transition: .3s ease;
+          }
+        }
+        i {
+          font-size: calc(1em * 1.5);
+          transition: inherit;
+          position: relative;
+          top: -.15em;
+        }
+      }
+    }
+    .bio-lists {
+      ul {
+        &:not(.single-col) {
+          @include media-breakpoint-up(lg) {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+              max-width: 50%;
+              flex: 0 0 50%;
+              padding-right: 5%;
+            }
+          }
+        }
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        // @media (max-width: 1439px)
+        li {
+          margin-bottom: 1rem;
+          line-height: 1.35;
+        }
+      }
+      margin-bottom: 2rem;
+      p {
+        line-height: 1.35;
+      }
+      br {
+        margin-bottom: .75rem;
+        content: "A";
+        display: block;
+      }
+    }
+    .headshot {
+      position: relative;
+//      overflow: hidden;
+      .team-back {
+        position: absolute;
+        left: -2rem;
+        bottom: 2rem;
+        // (768px)
+        @include media-breakpoint-down(sm) {
+          display: none;
+        }
+      }
+      // (768px)
+      @include media-breakpoint-down(md) {
+        margin-bottom: 3rem;
+        padding: 0;
+      }
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 2rem;
+        padding: 0;
+      }
+      &.sticky {
+        //        left: var(--headshot-left) !important;
+        //        margin-left: 0;
+        //        margin-left: calc(8.33333% - 16px);
+        //        top: calc(1rem + var(--headerHeight)) !important;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 100%;
+        right: 0;
+        background: linear-gradient(to bottom, var(--brand) 0%, var(--brand-dark) 50%);
+        background: var(--brand-gradient);
+        top: 0;
+      }
+      img {
+        width: 100%;
+        height: 30rem;
+        object-fit: cover;
+        // (768px)
+        @include media-breakpoint-down(sm) {}
+      }
+    }
+  }
+}

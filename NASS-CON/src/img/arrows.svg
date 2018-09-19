@@ -1,0 +1,13 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   width="1600px" height="750px" viewBox="0 0 1600 750" style="enable-background:new 0 0 1600 750;" xml:space="preserve">
+<style type="text/css">
+  .arrow{fill:#FFFFFF;}
+</style>
+<g id="arrows">
+  <polygon class="arrow" points="418.1,127.4 421.5,120.7 420.7,120.3 414.7,131.9 425.8,125 425.2,124.2 418.8,128.2 459.7,83.5
+    549.2,83.5 549.2,82.5 459.3,82.5 	"/>
+  <polygon class="arrow" points="773.3,568.5 732.1,613.4 735.5,606.7 734.7,606.3 728.7,617.9 739.8,611 739.2,610.2 732.8,614.2
+    773.7,569.5 863.2,569.5 863.2,568.5 	"/>
+  <path class="arrow" d="M265,109.8c-0.4,7.7-3.4,14.8-8.7,20.4l0.7,0.7c5.4-5.8,8.5-13,8.9-21v-0.6h-1V109.8z"/>
+</g>
+</svg>
