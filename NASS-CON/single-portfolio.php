@@ -32,7 +32,7 @@
 
 
           <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); $url = $thumb['0']; ?>
-            <?php if( has_post_thumbnail()): echo '<div class="swiper-slide"><img class="hero-img" src="' . $url . '"></div>'; endif;?>
+            <?php if( has_post_thumbnail()): echo '<div class="swiper-slide"><img class="hero-img" src="' . $url . '" alt="' . get_the_title() . '"></div>'; endif;?>
 
                 <?php if(get_field('gallery_2')):?>
                 <?php $images = get_field('gallery_2');
@@ -159,7 +159,7 @@
     <main>
       <section class="project-hero">
         <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); $url = $thumb['0']; ?>
-          <?php if( has_post_thumbnail()): echo '<img class="hero-img" src="' . $url . '">'; endif;?>
+          <?php if( has_post_thumbnail()): echo '<img class="hero-img" src="' . $url . '" alt="' . get_the_title() . '">'; endif;?>
       </section>
 
       <section class="project-details">
@@ -388,7 +388,7 @@
             while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
               <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id(), 'banner' ); $url = $thumb['0']; ?>
-                <?php if( has_post_thumbnail()): echo '<img class="next-img" src="' . $url . '">'; endif;?>
+                <?php if( has_post_thumbnail()): echo '<img class="next-img" src="' . $url . '" alt="' . get_the_title() . '">'; endif;?>
 
             <div class="over">
               <a href="<?php the_permalink();?>"><span>Next Project</span> <?php echo get_the_title();?></a>

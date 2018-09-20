@@ -180,13 +180,13 @@ $body-color:    #737373 !default;
 //// Define the minimum dimensions at which your layout will change,
 //// adapting to different screen sizes, for use in media queries.
 //
-//$grid-breakpoints: (
-//  xs: 0,
-//  sm: 576px,
-//  md: 768px,
-//  lg: 992px,
-//  xl: 1200px
-//) !default;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 622px,
+  lg: 992px,
+  xl: 1200px
+) !default;
 //@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
 //@include _assert-starts-at-zero($grid-breakpoints);
 //
@@ -195,12 +195,12 @@ $body-color:    #737373 !default;
 ////
 //// Define the maximum width of `.container` for different screen sizes.
 //
-//$container-max-widths: (
-//  sm: 540px,
-//  md: 720px,
-//  lg: 960px,
-//  xl: 1140px
-//) !default;
+$container-max-widths: (
+  sm: 540px,
+  md: 724px,
+  lg: 933px,
+  xl: 1140px
+) !default;
 //@include _assert-ascending($container-max-widths, "$container-max-widths");
 //
 //
@@ -239,7 +239,7 @@ $body-color:    #737373 !default;
 ////
 //// Font, line-height, and color for body text, headings, and more.
 //
-$font-family-sans-serif: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-family-sans-serif: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "FontAwesome", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 //$font-family-monospace:  "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 //$font-family-base:       $font-family-sans-serif !default;
 //

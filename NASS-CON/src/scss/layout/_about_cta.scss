@@ -1,7 +1,13 @@
 .page-template-default {
   .about-cta {
-    padding: 2rem 0 1rem;
+
     @include cardContent;
+    padding: 7rem 0 6rem;
+    margin: 0 auto;
+    z-index: 10;
+    background: white;
+
+
     // (768px)
     @include media-breakpoint-down(sm) {
       padding: 0;
@@ -28,6 +34,13 @@
         //        max-height: 50px;
         width: 100%;
         height: auto;
+
+        // @media (max-width: 1439px)
+        @include media-breakpoint-down(lg) {
+
+          max-width: 50vw;
+        }
+
         //        object-fit: contain;
         //        object-position: 0% 100%;
       }
@@ -37,9 +50,12 @@
       }
       .services {
         li {
+          @include media-breakpoint-up(lg) {
+
           line-height: 1.25;
-          margin-bottom: .75rem;
+//          margin-bottom: .75rem;
           font-size: .85rem;
+          }
 
           @include media-breakpoint-up(lg) {
             a {

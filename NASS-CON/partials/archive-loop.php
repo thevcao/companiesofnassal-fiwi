@@ -94,7 +94,7 @@ $type = get_sub_field('post_type'); ?>
                                   <div class="card">
 
                                         <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' ); $url = $thumb['0']; ?>
-                                         <?php if( has_post_thumbnail()): echo '<img src="' . $url . '">'; endif;?>
+                                         <?php if( has_post_thumbnail()): echo '<img src="' . $url . '" alt="' . get_the_title() . '">'; endif;?>
 
                                   </div>
                                 </div>
@@ -198,7 +198,7 @@ $type = get_sub_field('post_type'); ?>
                               <div class="card">
 
                                 <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' ); $url = $thumb['0']; ?>
-                                 <?php if( has_post_thumbnail()): echo '<img src="' . $url . '">'; endif;?>
+                                 <?php if( has_post_thumbnail()): echo '<img src="' . $url . '" alt="' . get_the_title() . '">'; endif;?>
 
                                   <h4 class="gradient" title="<?php echo get_the_title();?>"><?php echo get_the_title();?></h4>
                                 <?php if($type == 'portfolio'):

@@ -10,7 +10,7 @@
 
     @include media-breakpoint-down(md) {
 
-    @media (orientation: landscape) {
+                  @media screen and (orientation:landscape) and (min-aspect-ratio: 16/9) {
 
       position: absolute;
     }
@@ -33,7 +33,7 @@
       }
   }
       @include media-breakpoint-down(md) {
-        @media (orientation: landscape) {
+                      @media screen and (orientation:landscape) and (min-aspect-ratio: 16/9) {
           display: none;
         }
       }
@@ -117,7 +117,7 @@
   pointer-events: none;
   @include media-breakpoint-down(md) {
 
-  @media (orientation: landscape) {
+                @media screen and (orientation:landscape) and (min-aspect-ratio: 16/9) {
 
     padding: var(--headerHeight) 1.5rem 0;
 
@@ -163,7 +163,7 @@
     }
 
       @include media-breakpoint-down(md) {
-        @media (orientation: landscape) {
+                      @media screen and (orientation:landscape) and (min-aspect-ratio: 16/9) {
           column-count: 2;
           column-fill: balance;
         }

@@ -109,7 +109,7 @@
     <section class="banner service-header">
       <div class="bg-img">
         <?php if(get_field('bg_image')):?>
-        <img src="<?php echo get_field('bg_image')['sizes']['banner'];?>">
+        <img src="<?php echo get_field('bg_image')['sizes']['banner'];?>" alt="<?php echo get_sub_field('bg_image')['title'];?>">
         <?php endif;?>
       </div>
       <div class="container">

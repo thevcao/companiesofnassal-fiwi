@@ -22,7 +22,7 @@ get_template_part('templates/header'); ?>
 <section class="home-slider">
 
   <!-- Slider main container -->
-  <div class="swiper-container hero-slider">
+  <div class="swiper-container hero-slider tcon">
     <div class="swiper-wrapper">
       <!-- Slides -->
       <?php if(get_current_blog_id() == 1):?>
@@ -35,7 +35,7 @@ get_template_part('templates/header'); ?>
         <div class="row align-items-end fill-height">
 
           <div class="col-md-6 left order-md-1 order-2">
-            <div class="col-lg-12 col-sm-9 col-12 mx-auto content has-btn">
+            <div class="col-lg-12 col-sm-11 col-12 mx-auto content has-btn">
             <h1 class="gradient"><?php the_field('hero_title');?></h1>
             <p class="lead"><?php the_field('hero_content');?></p>
               <?php if(get_field('video_loop')):?>
@@ -90,7 +90,7 @@ get_template_part('templates/header'); ?>
         <div class="row align-items-end fill-height">
 
           <div class="col-md-6 left order-md-1 order-2">
-            <div class="col-lg-12 col-sm-9 col-12 mx-auto content has-btn">
+            <div class="col-lg-12 col-sm-11 col-12 mx-auto mx-auto content <?php if(get_sub_field('slide_link')): echo 'has-btn'; endif;?>">
               <h1 class="gradient"><?php the_sub_field('title');?></h1>
               <div class="lead"><?php the_sub_field('slide_content');?></div>
               <a href="<?php echo get_site_url(); ?>" class="btn">Discover <?php echo get_bloginfo( 'name');?></a>
@@ -116,7 +116,7 @@ get_template_part('templates/header'); ?>
 
                     <?php else:?>
 
-                    <img src="<?php echo get_sub_field('image')['sizes']['banner'];?>">
+                    <img src="<?php echo get_sub_field('image')['sizes']['banner'];?>" alt="<?php echo get_sub_field('image')['title'];?>">
                     <div class="img-attr"><p><?php echo mb_strimwidth(get_sub_field('image')['caption'], 0, 250, '...');?></p></div>
 
                     <?php endif;?>
@@ -183,7 +183,7 @@ get_template_part('templates/header'); ?>
 
                                     <?php else:?>
 
-                                    <img src="<?php echo get_sub_field('image')['sizes']['large'];?>">
+                                    <img src="<?php echo get_sub_field('image')['sizes']['large'];?>" alt="<?php echo get_sub_field('image')['title'];?>">
                                     <div class="img-attr"><p><?php echo mb_strimwidth(get_sub_field('image')['caption'], 0, 250, '...');?></p></div>
 
                                     <?php endif;?>
@@ -252,34 +252,7 @@ get_template_part('templates/header'); ?>
 
 
 
-<section class="logos">
-
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-11 mr-md-0 mx-md-0 mx-auto">
-
-        <h3><?php the_field('title');?></h3>
-            <?php the_field('content');?>
-      </div>
-      </div>
-    <div class="row">
-      <div class="col-md-9 mx-auto">
-        <div class="row">
-          <?php if(get_field('clients')): $logos = get_field('clients');
-
-                foreach($logos as $logo):
-                echo '<div class="col-sm-3 col-4 logo-wrapper"><img class="logo" src="' . $logo['sizes']['medium'] . '"></div>';
-                endforeach; endif;
-        ?>
-
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-</section>
+<?php get_template_part('partials/logos'); ?>
 
 
 

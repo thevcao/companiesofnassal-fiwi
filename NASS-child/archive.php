@@ -47,18 +47,18 @@
             <div class="row featured-post mt-5 filterable" data-src="<?php $var = sanitize_title_for_query( get_the_title(get_field('project_type')->ID) ); echo esc_attr( $var);?>">
               <div class="col-lg-11 mx-auto">
                 <div class="row align-items-center">
-                <div class="col-lg-8 pr-lg-0">
+                <div class="col-md-8 pr-md-0">
                   <a href="<?php the_permalink();?>" class=""><div class="card">
 
                         <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' ); $url = $thumb['0']; ?>
-                         <?php if( has_post_thumbnail()): echo '<img src="' . $url . '">';
+                         <?php if( has_post_thumbnail()): echo '<img src="' . $url . '" alt="' . get_the_title() . '">';
                                 else:
                                 echo '<img src="' . get_template_directory_uri() . '/dist/img/default-blog-' . sanitize_title_for_query(get_bloginfo( 'name')) . '.jpg">';
                                   endif;?>
 
                     </div></a>
                 </div>
-                <div class="col-lg-4 pl-lg-5 col-11 mx-auto mt-lg-0 mt-2 mb-lg-0 mb-3">
+                <div class="col-md-4 pl-md-5 col-11 mx-auto mt-md-0 mt-2 mb-md-0 mb-3">
 
                           <h5><a href="<?php the_permalink();?>" class=""><?php echo mb_strimwidth(get_the_title(), 0, 80, '...');?></a></h5>
                           <h6><a href="<?php echo get_site_url();?>/category/<?php

@@ -37,10 +37,6 @@
         endif;
 
     ?>
-
-<style id="injected">
-
-</style>
 </head>
 
 <body <?php body_class($site_name . ' ' . $case) ?>>

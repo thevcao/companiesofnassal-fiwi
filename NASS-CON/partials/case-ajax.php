@@ -92,7 +92,7 @@ $activeFilter = $post_slug=$post->post_name;
                   <a href="<?php the_permalink();?>"><div class="card">
 
                         <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' ); $url = $thumb['0']; ?>
-                         <?php if( has_post_thumbnail()): echo '<img src="' . $url . '">'; endif;?>
+                         <?php if( has_post_thumbnail()): echo '<img src="' . $url . '" alt="' . get_the_title() . '">'; endif;?>
 
                   </div></a>
                 </div>

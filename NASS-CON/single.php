@@ -14,11 +14,7 @@
 ?>
 
   <?php get_template_part('templates/header');
-  $headshot = get_field('headshot');
-
-
-
-?>
+  $headshot = get_field('headshot');?>
 
     <main>
 

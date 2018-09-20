@@ -140,3 +140,23 @@ add_action( 'init', 'register_menu' );
 
 
 add_image_size( 'banner', 1800, 999999 );
+add_image_size( 'logo', 180, 999999 );
+
+
+function nass_tinymce_body_class( $mce ) {
+//    // you could do things here to detect whatever you need
+//    // and use those for the additional classes.
+//    // be safe and use sanitize_html_class or similar if generated.
+//
+//    // example: use the post ID when editing a post
+//    if ( $post = get_post() ) {
+//        $mce['body_class'] .= ' ' . sanitize_html_class( $post->ID );
+//    }
+    $name = sanitize_title_for_query(get_bloginfo( 'name'));
+    $site_name = esc_attr( $name );
+
+    $mce['body_class'] .= ' ' . $site_name;
+
+    return $mce;
+}
+add_filter( 'tiny_mce_before_init', 'nass_tinymce_body_class' );

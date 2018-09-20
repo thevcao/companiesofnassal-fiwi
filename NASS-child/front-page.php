@@ -40,7 +40,7 @@ get_template_part('templates/header'); ?>
 
   </div>
   <!-- Slider main container -->
-  <div class="swiper-container hero-slider">
+  <div class="swiper-container hero-slider subsites">
 
 
 
@@ -74,8 +74,8 @@ get_template_part('templates/header'); ?>
           <video class="masked" src="<?php echo get_sub_field('video');?>" autoplay muted loop playsinline></video>
 
           <?php else:?>
-          <img class="clone" src="<?php echo get_sub_field('image')['sizes']['banner'];?>">
-          <img class="masked" src="<?php echo get_sub_field('image')['sizes']['banner'];?>">
+          <img class="clone" src="<?php echo get_sub_field('image')['sizes']['banner'];?>" alt="<?php echo get_sub_field('image')['title'];?>">
+          <img class="masked" src="<?php echo get_sub_field('image')['sizes']['banner'];?>" alt="<?php echo get_sub_field('image')['title'];?>">
           <div class="img-attr"><p title="<?php
             echo mb_strimwidth(get_sub_field('image')['caption'], 0, 250, '...');
             ?>"><?php echo $attr;?></p></div>
@@ -87,7 +87,7 @@ get_template_part('templates/header'); ?>
         <div class="row align-items-end fill-height no-touch">
 
           <div class="col-md-6 left order-md-1 order-2 fill-height touch">
-            <div class="col-lg-12 col-sm-9 col-12 mx-auto content <?php if(get_sub_field('slide_link')): echo 'has-btn'; endif;?>">
+            <div class="col-lg-12 col-sm-11 col-12 mx-auto mx-auto content <?php if(get_sub_field('slide_link')): echo 'has-btn'; endif;?>">
               <h1 class="gradient"><?php the_sub_field('title');?></h1>
               <div class="lead"><?php the_sub_field('slide_content');?></div>
 
@@ -146,41 +146,9 @@ get_template_part('templates/header'); ?>
 
   ?>
 
-<?php if(get_field('clients')):?>
-
-<section class="logos">
+<?php get_template_part('partials/logos'); ?>
 
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-12 mr-md-0 mx-md-0 mx-auto">
-
-        <h3><?php the_field('title');?></h3>
-            <?php the_field('content');?>
-      </div>
-      </div>
-    <div class="row">
-      <div class="col-md-9 mx-auto">
-        <div class="row">
-          <?php
-
-                $logos = get_field('clients');
-
-                foreach($logos as $logo):
-                echo '<div class="col-sm-3 col-4 logo-wrapper"><img class="logo" src="' . $logo['sizes']['medium'] . '"></div>';
-                endforeach;
-
-                ?>
-
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-</section>
-
-<?php endif;?>
 </main>
 
 

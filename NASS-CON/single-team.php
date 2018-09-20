@@ -33,7 +33,7 @@
                   <div class="col-lg-5 headshot pr-lg-0 pl-lg-0 mx-lg-0 col-md-6 col-sm-8 mx-auto">
 
                     <?php if(get_field('headshot')):?>
-                    <img src="<?php echo $headshot['sizes']['large'];?>">
+                    <img src="<?php echo $headshot['sizes']['large'];?>" alt="<?php echo get_the_title();?> - <?php the_field('title');?>">
                     <?php else:?>
                     <img src="https://via.placeholder.com/350x600">
 
@@ -155,7 +155,7 @@
             while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
               <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id(), 'banner' ); $url = $thumb['0']; ?>
-                <?php if( has_post_thumbnail()): echo '<img class="next-img" src="' . $url . '">'; endif;?>
+                <?php if( has_post_thumbnail()): echo '<img class="next-img" src="' . $url . '" alt="' . get_the_title() . '">'; endif;?>
 
             <div class="over">
               <a href="<?php the_permalink();?>"><span>Next Project</span> <?php echo get_the_title();?></a>

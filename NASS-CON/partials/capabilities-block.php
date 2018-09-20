@@ -19,7 +19,7 @@
 
                   <?php else:?>
 
-                  <img src="<?php echo get_sub_field('image')['sizes']['large'];?>">
+                  <img src="<?php echo get_sub_field('image')['sizes']['large'];?>" alt="<?php echo get_sub_field('image')['title'];?>">
                   <div class="img-attr"><p><?php echo get_sub_field('image')['caption'];?></p></div>
 
                   <?php endif;?>

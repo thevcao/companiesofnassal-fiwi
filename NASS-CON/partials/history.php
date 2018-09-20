@@ -26,7 +26,7 @@
                           $excerpt = mb_strimwidth($event['description'], 0, 50, '...');
                           $full = $event['description'];
 
-                          echo '<li id="event-' . $event['title'] . '" data-attr="' . $i++ . '"><img src="' . $event['sizes']['large'] .'"><div class="card"><h5>' . $event['title'] . '</h5><p>' .  $excerpt . '</p><p class="more">' .  $full . '</p></div></li>';
+                          echo '<li id="event-' . $event['title'] . '" data-attr="' . $i++ . '"><img src="' . $event['sizes']['large'] .' alt="' . $event['title'] . ' - ' $excerpt . '"><div class="card"><h5>' . $event['title'] . '</h5><p>' .  $excerpt . '</p><p class="more">' .  $full . '</p></div></li>';
                           endforeach;
 
                     ?>

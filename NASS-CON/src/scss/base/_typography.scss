@@ -3,43 +3,19 @@ $baseFontSize: 16;
   @return $pixels / $context * 1rem;
 }
 html {
-  @include poly-fluid-sizing('font-size', (300px: 13px, 325px: 13px, 375px: 14px, 640px: 16px, 768px: 12px, 1024px: 14px, 1440px: 16px, 1600px: 18px, 1920px: 20px, 2560px: 26px, 3360px: 28px, 3840px: 32px));
-
-
-  @media only screen
-  and (min-device-width : 768px)
-  and (max-device-width : 1024px)  {
-
-
+  @include poly-fluid-sizing('font-size', (300px: 13px, 325px: 13px, 375px: 14px, 576px: 16px, 622px: 12px, 992px: 14px, 1440px: 16px, 1600px: 18px, 1920px: 20px, 2560px: 26px, 3360px: 28px, 3840px: 32px));
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {}
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {}
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    font-size: 10px;
   }
-
-  @media only screen
-  and (min-device-width : 768px)
-  and (max-device-width : 1024px)
-  and (orientation : landscape) {
-
-
-  }
-
-  @media only screen
-  and (min-device-width : 768px)
-  and (max-device-width : 1024px)
-  and (orientation : portrait) {
-
-
-  font-size: 10px;
-  }
-
   @media(min-aspect-ratio: 4/3) {
-
-  @include poly-fluid-sizing('font-size', (768px: 12px, 1024px: 14px, 1440px: 16px, 1600px: 17px, 1920px: 18px, 2560px: 24px, 3360px: 28px, 3840px: 30px));
-
+    @include poly-fluid-sizing('font-size', (300px: 13px, 325px: 13px, 375px: 14px, 576px: 12px, 622px: 13px, 992px: 14px, 1440px: 16px, 1600px: 17px, 1920px: 18px, 2560px: 24px, 3360px: 28px, 3840px: 30px));
   }
-
-  @media(min-aspect-ratio: 19/10) and (max-height: 826px) {
-    @include poly-fluid-sizing('font-size', (1440px: 14px, 1600px: 14px, 1920px: 14px));
+  @media(min-aspect-ratio: 19/11) and (max-height: 800px) {
+    @include poly-fluid-sizing('font-size', (1440px: 12px, 1600px: 14px, 1920px: 14px));
     @media (max-height: 720px) {
-      @include poly-fluid-sizing('font-size', (768px: 10px, 1024px: 12px, 1440px: 14px, 1600px: 13px, 1920px: 17px, 2560px: 21px, 3360px: 32px, 3840px: 38px));
+      @include poly-fluid-sizing('font-size', (1024px: 10px, 1440px: 12px, 1600px: 13px, 1920px: 17px, 2560px: 21px, 3360px: 32px, 3840px: 38px));
       .editor p {
         //        max-width: 25vw;
       }
@@ -113,7 +89,6 @@ a {
   &:focus {
     color: var(--brand);
     outline: auto;
-
   }
 }
 p {}
@@ -248,6 +223,7 @@ h5 {
 }
 h6 {
   font-size: rem(24);
+  line-height: 1.25;
 }
 .btn-standard,
 .nav-previous a,
@@ -621,4 +597,25 @@ h6 {
 }
 .editor {
   @include list;
+}
+.editor-lightbox {
+  display: block;
+  border: var(--brand-dark) 4px solid;
+  padding: 1rem 1rem;
+  border-radius: 8px;
+  position: relative;
+  margin-bottom: 2.5rem;
+  &:after {
+    content: ' Click to View Full Image';
+    font-family: inherit, FontAwesome Free;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: -2.5em;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--brand);
+    opacity: .75;
+    left: 1rem;
+  }
 }

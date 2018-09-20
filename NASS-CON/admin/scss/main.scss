@@ -1,193 +1,268 @@
-// Making an Oldfashioned
-// findsomewinmore
-// Licensed under MIT Open Source
-// Make sure the charset is set appropriately
-@charset 'UTF-8';
-//FIWI Base Colors
-//$basecolor: #23282d;
-//$primaryaccent: #ea5340;
-//
-////FIWI Base Styles
-//$headline: 'Champion';
-//$bodyfont: 'Caslon';
-//$text-transform: uppercase;
-//$border-radius: 3px;
-//$multiplier: 1.5;
-//$button-line-height: 1.25;
-//$headline-weight: normal;
-//$spacing: -.025em;
-//Client Specifc Overrides
-$basecolor: #23282d;
-$primaryaccent: #FDDA24;
-$con-brand: #FDDA24;
-$con-dark: #635939;
-$con-secondary: #9A8700;
-$nassal-brand: #00B5E2;
-$nassal-dark: #250E62;
-$nassal-secondary: #005EB8;
-$lex-brand: #C5299B;
-$lex-dark: #612141;
-$lex-secondary: #5C068C;
-$fusion-brand: #FF8F1C;
-$fusion-dark: #A6192E;
-$fusion-secondary: #D50032;
-$grey: #737373;
-$lt-grey: #FAFAFA;
-$button-text-color: #fff;
-:root {
-  --brand: $con-brand;
-  --brand-dark: $con-dark;
-  --brand-secondary: $con-secondary;
-  --brand-gradient: linear-gradient(135deg, var(--brand) 0%, var(--brand-secondary) 30%, var(--brand-dark) 100%);
-  .companies-of-nassal {
+  // Making an Oldfashioned
+  // findsomewinmore
+  // Licensed under MIT Open Source
+  // Make sure the charset is set appropriately
+  @charset 'UTF-8';
+  //FIWI Base Colors
+  //$basecolor: #23282d;
+  //$primaryaccent: #ea5340;
+  //
+  ////FIWI Base Styles
+  //$headline: 'Champion';
+  //$bodyfont: 'Caslon';
+  //$text-transform: uppercase;
+  //$border-radius: 3px;
+  //$multiplier: 1.5;
+  //$button-line-height: 1.25;
+  //$headline-weight: normal;
+  //$spacing: -.025em;
+  //Client Specifc Overrides
+  $basecolor: #23282d;
+  $primaryaccent: #FDDA24;
+  $con-brand: #FDDA24;
+  $con-dark: #635939;
+  $con-secondary: #9A8700;
+  $nassal-brand: #00B5E2;
+  $nassal-dark: #250E62;
+  $nassal-secondary: #005EB8;
+  $lex-brand: #C5299B;
+  $lex-dark: #612141;
+  $lex-secondary: #5C068C;
+  $fusion-brand: #D50032;
+  $fusion-dark: #FF8F1C;
+  $fusion-secondary: #A6192E;
+  $grey: #737373;
+  $lt-grey: #FAFAFA;
+  $button-text-color: #fff;
+  :root {
     --brand: $con-brand;
     --brand-dark: $con-dark;
     --brand-secondary: $con-secondary;
     --brand-gradient: linear-gradient(135deg, var(--brand) 0%, var(--brand-secondary) 30%, var(--brand-dark) 100%);
-  }
-  .nassal {
-    --brand: $nassal-brand;
-    --brand-dark: $nassal-dark;
-    --brand-secondary: $nassal-secondary;
-    --brand-gradient: linear-gradient(135deg, var(--brand) 0%, var(--brand-secondary) 30%, var(--brand-dark) 100%);
-  }
-  .lexington {
-    --brand: $lex-brand;
-    --brand-dark: $lex-dark;
-    --brand-secondary: $lex-secondary;
-    --brand-gradient: linear-gradient(135deg, var(--brand) 0%, var(--brand-secondary) 30%, var(--brand-dark) 100%);
-  }
-  .nfusion {
-    --brand: $fusion-brand;
-    --brand-dark: $fusion-dark;
-    --brand-secondary: $fusion-secondary;
-    --brand-gradient: linear-gradient(135deg, var(--brand) 0%, var(--brand-secondary) 30%, var(--brand-dark) 100%);
-  }
-}
-@mixin background {
-  transition: .3s ease;
-  background: var(--brand-gradient) !important;
-  background-size: 100% !important;
-  &:hover {
-    //  background: var(--brand-gradient) !important;
-    background-size: 300% !important;
-  }
-}
-@mixin headlineGradient {
-  @supports (-webkit-background-clip: text) {
-    background: var(--brand-gradient);
-    background-size: 300%;
-    background-position: 100% 100%;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-  }
-}
-//Client Specifc Overrides
-$headline: 'Helvetica Neue';
-$bodyfont: 'Helvetica Neue';
-$text-transform: none;
-$border-radius: 100px;
-$multiplier: .8;
-$button-line-height: 1.25;
-$headline-weight: bold;
-$spacing: -.025em;
-@import '../../src/scss/base/fonts';
-//@import 'admin';
-@import 'wpbase';
-@import 'fiwi-ui';
-@import 'base';
-html > body {
-  div[style^="position: fixed; overflow: hidden; z-index: 11002;"] {
-    background: url(/wp-content/themes/NASS-CON/admin/img/nass-headshot.png);
-    background-position: 50% 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-  &.wpallimport-plugin .wpallimport-wrapper {
-    width: 100%;
-  }
-  &.wpallimport-plugin .wpallimport-upload-resource-step-one {
-    padding-top: 40px;
-  }
-  #content_ifr,
-  .acf-editor-wrap iframe {
-    //  min-height: 50rem !important;
-  }
-  .save-text {
-    left: 0 !important;
-    position: relative !important;
-  }
-  div.mce-edit-area {
-    padding: 1rem 0;
-  }
-}
-html[style="overflow-y: hidden;"] {
-  @import 'node_modules/poly-fluid-sizing/poly-fluid-sizing';
-  @include poly-fluid-sizing('font-size', (300px: 13px, 325px: 13px, 375px: 14px, 640px: 16px, 768px: 12px, 1024px: 14px, 1440px: 16px, 1600px: 18px, 1920px: 22px, 2560px: 26px, 3360px: 38px, 3840px: 44px));
-  @media(min-aspect-ratio: 19/10) {
-    @include poly-fluid-sizing('font-size', (300px: 13px, 325px: 13px, 375px: 14px, 640px: 16px, 768px: 12px, 1024px: 14px, 1440px: 14px, 1600px: 16px, 1920px: 20px, 2560px: 24px, 3360px: 35px, 3840px: 41px));
-  }
-}
-body.wp-autoresize#tinymce,
-#tinymce {
-  font-family: $bodyfont, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  padding: 0 1rem !important;
-  background: white;
-  font-size: 1rem;
-  p,
-  li {
-    font-size: 1rem;
-  }
-  @import 'node_modules/poly-fluid-sizing/poly-fluid-sizing';
-  //// Framework - Foundation
-  //@import 'vendor/foundation/settings',
-  //		'node_modules/foundation-sites/scss/foundation';
-  //// Framework - Bootstrap 4
-  //@import 'vendor/bootstrap4/custom',
-  //		'node_modules/bootstrap/scss/bootstrap';
-  // Framework - Bootstrap 4 - Type/Grid/Ultility Helpers
-  @at-root {
-    @-ms-viewport {
-      width: device-width;
+    .companies-of-nassal {
+      --brand: $con-brand;
+      --brand-dark: $con-dark;
+      --brand-secondary: $con-secondary;
+      --brand-gradient: linear-gradient(135deg, var(--brand) 0%, var(--brand-secondary) 30%, var(--brand-dark) 100%);
+    }
+    .nassal {
+      --brand: $nassal-brand;
+      --brand-dark: $nassal-dark;
+      --brand-secondary: $nassal-secondary;
+      --brand-gradient: linear-gradient(135deg, var(--brand) 0%, var(--brand-secondary) 30%, var(--brand-dark) 100%);
+    }
+    .lexington {
+      --brand: $lex-brand;
+      --brand-dark: $lex-dark;
+      --brand-secondary: $lex-secondary;
+      --brand-gradient: linear-gradient(135deg, var(--brand) 0%, var(--brand-secondary) 30%, var(--brand-dark) 100%);
+    }
+    .nfusion {
+      --brand: $fusion-brand;
+      --brand-dark: $fusion-dark;
+      --brand-secondary: $fusion-secondary;
+      --brand-gradient: linear-gradient(135deg, var(--brand) 0%, var(--brand-secondary) 30%, var(--brand-dark) 100%);
     }
   }
-  html {
-    box-sizing: border-box;
-    -ms-overflow-style: scrollbar;
+  @mixin background {
+    transition: .3s ease;
+    background: var(--brand-gradient) !important;
+    background-size: 100% !important;
+    &:hover {
+      //  background: var(--brand-gradient) !important;
+      background-size: 300% !important;
+    }
   }
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
+  @mixin headlineGradient {
+    @supports (-webkit-background-clip: text) {
+      background: var(--brand-gradient);
+      background-size: 300%;
+      background-position: 100% 100%;
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+    }
   }
-  @import "node_modules/bootstrap/scss/functions";
-  @import "node_modules/bootstrap/scss/variables";
-  @import "node_modules/bootstrap/scss/mixins";
-  @import "node_modules/bootstrap/scss/print";
-  @import "node_modules/bootstrap/scss/reboot";
-  @import "node_modules/bootstrap/scss/type";
-  @import '../../src/scss/vendor/bootstrap4/custom';
+  //Client Specifc Overrides
+  $headline: 'Helvetica Neue';
+  $bodyfont: 'Helvetica Neue';
+  $text-transform: none;
+  $border-radius: 100px;
+  $multiplier: .8;
+  $button-line-height: 1.25;
+  $headline-weight: bold;
+  $spacing: -.025em;
+  @import '../../src/scss/base/fonts';
+  //@import 'admin';
+  @import 'wpbase';
+  @import 'fiwi-ui';
+  @import 'base';
+  html > body {
+    div[style^="position: fixed; overflow: hidden; z-index: 11002;"] {
+      background: url(/wp-content/themes/NASS-CON/admin/img/nass-headshot.png);
+      background-position: 50% 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    &.wpallimport-plugin .wpallimport-wrapper {
+      width: 100%;
+    }
+    &.wpallimport-plugin .wpallimport-upload-resource-step-one {
+      padding-top: 40px;
+    }
+    #content_ifr,
+    .acf-editor-wrap iframe {
+      //  min-height: 50rem !important;
+    }
+    .save-text {
+      left: 0 !important;
+      position: relative !important;
+    }
+    div.mce-edit-area {
+      padding: 1rem 1rem;
+//      padding-top: 90px !important;
+    }
+    .gform_media_icon {
+
+      height: .5em !important;
+    }
+  }
+  html[style="overflow-y: hidden;"] {
+    @import 'node_modules/poly-fluid-sizing/poly-fluid-sizing';
+    @include poly-fluid-sizing('font-size', (300px: 13px, 325px: 13px, 375px: 14px, 640px: 16px, 768px: 12px, 1024px: 14px, 1440px: 16px, 1600px: 18px, 1920px: 22px, 2560px: 26px, 3360px: 38px, 3840px: 44px));
+    @media(min-aspect-ratio: 19/10) {
+      @include poly-fluid-sizing('font-size', (300px: 13px, 325px: 13px, 375px: 14px, 640px: 16px, 768px: 12px, 1024px: 14px, 1440px: 14px, 1600px: 16px, 1920px: 20px, 2560px: 24px, 3360px: 35px, 3840px: 41px));
+    }
+  }
+  body.wp-autoresize#tinymce,
+  #tinymce {
+    --brand: $con-brand;
+    --brand-dark: $con-dark;
+    --brand-secondary: $con-secondary;
+    --brand-gradient: linear-gradient(135deg, var(--brand) 0%, var(--brand-secondary) 30%, var(--brand-dark) 100%);
+    &.companies-of-nassal {
+      --brand: $con-secondary;
+      --brand-dark: $con-brand;
+      --brand-secondary: $con-dark;
+      --brand-gradient: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand) 75%);
+      --brand-text-gradient: linear-gradient(135deg, white 0%, var(--brand-dark) 60%, var(--brand) 100%);
+    }
+    &.nassal {
+      --brand: $nassal-secondary;
+      --brand-dark: $nassal-brand;
+      --brand-secondary: $nassal-dark;
+      --brand-gradient: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand) 75%);
+      --brand-text-gradient: linear-gradient(135deg, white 0%, var(--brand-dark) 60%, var(--brand) 100%);
+    }
+    &.lexington {
+      --brand: $lex-secondary;
+      --brand-dark: $lex-brand;
+      --brand-secondary: $lex-dark;
+      --brand-gradient: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand) 75%);
+      --brand-text-gradient: linear-gradient(135deg, white 0%, var(--brand-dark) 60%, var(--brand) 100%);
+    }
+    &.nfusion {
+      --brand: $fusion-brand;
+      --brand-dark: $fusion-dark;
+      --brand-secondary: $fusion-secondary;
+      --brand-gradient: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand) 30%, var(--brand-secondary) 100%);
+      --brand-text-gradient: linear-gradient(135deg, white 0%, var(--brand-dark) 60%, var(--brand) 75%, var(--brand-secondary) 100%);
+    }
+    font-family: $bodyfont,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    "Helvetica Neue",
+    sans-serif;
+
+    padding-top: 1rem !important;
+  //    top: 1rem;
+//    position: relative;
+    background: white;
+    font-size: 1rem;
+    height: auto;
+
+
+    p,
+    li {
+      font-size: 1rem;
+    }
+    @import 'node_modules/poly-fluid-sizing/poly-fluid-sizing';
+    //// Framework - Foundation
+    //@import 'vendor/foundation/settings',
+    //		'node_modules/foundation-sites/scss/foundation';
+    //// Framework - Bootstrap 4
+    //@import 'vendor/bootstrap4/custom',
+    //		'node_modules/bootstrap/scss/bootstrap';
+    // Framework - Bootstrap 4 - Type/Grid/Ultility Helpers
+    @at-root {
+      @-ms-viewport {
+        width: device-width;
+      }
+    }
+    html {
+      box-sizing: border-box;
+      -ms-overflow-style: scrollbar;
+    }
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+    @import "node_modules/bootstrap/scss/functions";
+    @import "node_modules/bootstrap/scss/variables";
+    @import "node_modules/bootstrap/scss/mixins";
+    @import "node_modules/bootstrap/scss/print";
+    @import "node_modules/bootstrap/scss/reboot";
+    @import "node_modules/bootstrap/scss/type";
+    @import '../../src/scss/vendor/bootstrap4/custom';
+    //
+    // Grid mixins
+    //
+    @import "node_modules/bootstrap/scss/mixins/breakpoints";
+    @import "node_modules/bootstrap/scss/mixins/grid-framework";
+    @import "node_modules/bootstrap/scss/mixins/grid";
+    @import "node_modules/bootstrap/scss/grid";
+    @import "node_modules/bootstrap/scss/utilities/flex";
+    @import '../../src/scss/base/variables',
+    '../../src/scss/base/fonts',
+    '../../src/scss/base/typography';
+    @include list;
+    .btn {
+      color: var(--brand);
+    }
+    .btn:after {
+      content: '';
+      display: inline-block;
+      height: 2em;
+      position: relative;
+      width: 4em;
+      background-size: contain;
+      background-position: 50% 100%;
+      background-repeat: no-repeat;
+      top: .5em;
+    }
+    &.nassal .btn:after {
+      background-image: url(../../dist/img/button-nass.png);
+    }
+    &.lexington .btn:after {
+      background-image: url(../../dist/img/button-lexington.png);
+    }
+    &.nfusion .btn:after {
+      background-image: url(../../dist/img/button-nfusion.png);
+    }
+    &.companies-of-nassal .btn:after {
+      background-image: url(../../dist/img/button-tcon.png);
+    }
+  }
+  //.wp-login, .wp-admin {
   //
-  // Grid mixins
-  //
-  @import "node_modules/bootstrap/scss/mixins/breakpoints";
-  @import "node_modules/bootstrap/scss/mixins/grid-framework";
-  @import "node_modules/bootstrap/scss/mixins/grid";
-  @import "node_modules/bootstrap/scss/grid";
-  @import "node_modules/bootstrap/scss/utilities/flex";
-  @import '../../src/scss/base/variables',
-  '../../src/scss/base/fonts',
-  '../../src/scss/base/typography';
-  @include list;
-}
-.something {
-  color: black;
-}
-//.wp-login, .wp-admin {
-//
-//    // Style Base
-//@import
-//  '../../src/scss/base/variables',
-//  '../../src/scss/base/fonts',
-//  '../../src/scss/base/typography';
-//}
+  //    // Style Base
+  //@import
+  //  '../../src/scss/base/variables',
+  //  '../../src/scss/base/fonts',
+  //  '../../src/scss/base/typography';
+  //}

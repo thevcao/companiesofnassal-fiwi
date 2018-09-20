@@ -101,7 +101,7 @@
             <div class="card">
 
               <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' ); $url = $thumb['0']; ?>
-               <?php if( has_post_thumbnail()): echo '<a href="' . get_the_permalink() . '"><img src="' . $url . '"></a>';
+               <?php if( has_post_thumbnail()): echo '<a href="' . get_the_permalink() . '"><img src="' . $url . '" alt="' . get_the_title() . '"></a>';
                 else:
                 echo '<img src="' . get_template_directory_uri() . '/dist/img/default-blog-' . sanitize_title_for_query(get_bloginfo( 'name')) . '.jpg">';
                 endif;?>

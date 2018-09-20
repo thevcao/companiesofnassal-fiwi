@@ -2,6 +2,12 @@
   .sub-sites {
     //    overflow: visible;
     @include cardContent;
+    .card ul li {
+      font-size: 1.25rem;
+      @include media-breakpoint-down(md) {
+        font-size: 1rem;
+      }
+    }
   }
   .logos {
     margin: 2rem 0;
@@ -11,18 +17,12 @@
         max-width: 75%;
       }
     }
-
     .col-md-8 {
-
       p {
-
         // @media (max-width: 1439px)
         @include media-breakpoint-up(lg) {
-
-//          max-width: 38vw
-
+          //          max-width: 38vw
         }
-
       }
     }
     .logo-wrapper {
@@ -57,24 +57,24 @@
         background: #515151;
         position: absolute;
       }
-//      &:nth-last-child(4),
-//      &:nth-last-child(3),
-//      &:nth-last-child(2),
-//      &:nth-last-child(1) {
-//        &:before {
-//
-//          // @media (max-width: 1439px)
-//          @include media-breakpoint-up(lg) {
-//          content: none;
-//
-//          }
-//
-//        }
-//      }
+      //      &:nth-last-child(4),
+      //      &:nth-last-child(3),
+      //      &:nth-last-child(2),
+      //      &:nth-last-child(1) {
+      //        &:before {
+      //
+      //          // @media (max-width: 1439px)
+      //          @include media-breakpoint-up(lg) {
+      //          content: none;
+      //
+      //          }
+      //
+      //        }
+      //      }
       &:nth-child(4n) {
         &:after {
-           @include media-breakpoint-up(lg) {
-          content: none;
+          @include media-breakpoint-up(lg) {
+            content: none;
           }
         }
       }

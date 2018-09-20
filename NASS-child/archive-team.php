@@ -109,7 +109,7 @@
             <!--<div class="col-lg-3 col-md-4 col-sm-6 col-12 mx-md-0 mx-auto single-team-box <?php //echo $department_slug;?>">-->
               <div class="card">
 
-                 <?php if( get_field('headshot')): echo '<img src="' . get_field('headshot')['sizes']['large'] . '">'; else: echo '<img src="https://via.placeholder.com/350x600">'; endif;?>
+                 <?php if( get_field('headshot')): echo '<img src="' . get_field('headshot')['sizes']['large'] . '" alt="' . get_the_title() . '">'; else: echo '<img src="https://via.placeholder.com/350x600">'; endif;?>
 
                   <a href="<?php the_permalink();?>" class="">
                   <div class="over">

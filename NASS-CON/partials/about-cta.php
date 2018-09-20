@@ -6,7 +6,7 @@
 
     <div class="row">
         <div class="col-md-8 offset-md-1 pl-md-0 mb-2">
-          <div class="card-sm">
+          <div class="">
 
             <h3 class=""><?php the_sub_field('title');?></h3>
             <?php the_sub_field('content');?>

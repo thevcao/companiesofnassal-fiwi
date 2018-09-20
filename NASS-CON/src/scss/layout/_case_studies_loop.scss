@@ -217,9 +217,9 @@
             //        object-position: 0% 100%;
           }
           // (768px)
-          @include media-breakpoint-down(md) {
+          @include media-breakpoint-down(sm) {
 
-            @media(orientation: portrait) {
+//            @media(orientation: portrait) {
 
             img {
               opacity: 1;
@@ -231,7 +231,7 @@
               z-index: 1;
             }
 
-            }
+//            }
 
           &:hover {
             //            @include shadow-3;

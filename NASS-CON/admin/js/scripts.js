@@ -31,7 +31,6 @@
     var company = company.split('.');
 
     $('body').addClass('' + company[0] + '');
-
   });
 
 })(jQuery);

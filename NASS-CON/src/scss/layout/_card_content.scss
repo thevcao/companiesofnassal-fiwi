@@ -3,19 +3,19 @@
   .home & {
     //    padding: 5rem 0;
     .card {
-      padding: 5rem 7rem 5rem 1rem;
+            padding: 5rem 7rem 5rem 1rem;
+      @include media-breakpoint-down(md) {
+        padding: 2rem 3rem 2rem 1rem;
+        @media(orientation: landscape) {
+          padding: 5rem 3rem 5rem 3rem;
+        }
+      }
       @include media-breakpoint-down(sm) {
         padding: 2rem 3rem 2rem 1rem;
-
-      @media(orientation: landscape){
-
-            padding: 2rem 3rem 2rem 3rem;
-
+        @media(orientation: landscape) {
+        padding: 2rem 3rem 2rem 1rem;
+        }
       }
-
-      }
-
-
       &:before {
         content: '';
         position: absolute;

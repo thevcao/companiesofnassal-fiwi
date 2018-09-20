@@ -1,3 +1,13 @@
+.hero-slider.tcon {
+  .progress.started {
+    transition: transform 20000ms ease, opacity .3s ease;
+  }
+}
+.hero-slider.subsites {
+  .progress.started {
+    transition: transform 10000ms ease, opacity .3s ease;
+  }
+}
 .home-slider {
   position: relative;
   overflow: hidden;
@@ -22,7 +32,6 @@
     right: -15px;
     z-index: 1;
     &.started {
-      transition: transform 20000ms ease, opacity .3s ease;
       transform: scaleX(1);
       opacity: 1;
     }
@@ -33,12 +42,17 @@
       height: 100vh;
     }
     @include media-breakpoint-down(md) {
-      @media(orientation: landscape) {
+
+        height: 100vw;
+
+      @media screen and (orientation:landscape) and (min-aspect-ratio: 16/9) {
         height: calc(100vh - var(--headerHeight));
       }
     }
     @include media-breakpoint-down(sm) {
-      @media(orientation: landscape) {
+      height: auto;
+
+      @media screen and (orientation:landscape) and (min-aspect-ratio: 16/9) {
         height: auto;
       }
     }
@@ -75,14 +89,14 @@
           @include media-breakpoint-down(lg) {
             @media (orientation: portrait) {
               width: 100%;
-              max-width: 90%;
+//              max-width: 90%;
             }
           }
           @include media-breakpoint-down(md) {
-            padding: 0 0 2rem;
+            padding: 0 3rem 1rem 1rem;
             body.home & {
               padding-top: 2rem;
-              @media (orientation: landscape) {
+              @media screen and (orientation:landscape) and (min-aspect-ratio: 16/9) {
                 width: 100%;
                 max-width: 90%;
               }
@@ -101,7 +115,9 @@
             }
             // (768px)
             @include media-breakpoint-down(md) {
-              @media (orientation: landscape) {
+              font-size: 4rem;
+
+              @media screen and (orientation:landscape) and (min-aspect-ratio: 16/9) {
                 font-size: 3rem;
               }
             }
@@ -116,6 +132,15 @@
             @include media-breakpoint-up(lg) {
               max-width: 38vw;
             }
+
+            // (768px)
+            @include media-breakpoint-down(md) {
+              @media screen and (orientation:landscape) and (min-aspect-ratio: 16/9) {
+                display: none;
+
+              }
+            }
+
           }
         }
         .bottom-nav {
@@ -146,20 +171,48 @@
           object-position: 50%;
           @include media-breakpoint-down(md) {
             height: 100vw;
-            @media (orientation: landscape) {
-        height: calc(100vh - var(--headerHeight));
+
+
+
+            @media screen and (orientation:landscape) and (min-aspect-ratio: 16/9) {
+              height: calc(100vh - var(--headerHeight));
             }
           }
+
+            @media only screen
+            and (min-device-width : 768px)
+            and (max-device-width : 1024px)  {
+
+
+            }
+
+            @media only screen
+            and (min-device-width : 768px)
+            and (max-device-width : 1024px)
+            and (orientation : landscape) {
+
+
+            }
+
+            @media only screen
+            and (min-device-width : 768px)
+            and (max-device-width : 1024px)
+            and (orientation : portrait) {
+
+            height: 64vw;
+
+            }
+
           @include media-breakpoint-down(sm) {
             height: 64vw;
-            @media (orientation: landscape) {
-        height: calc(100vh - var(--headerHeight));
+            @media screen and (orientation:landscape) and (min-aspect-ratio: 16/9) {
+              height: calc(100vh - var(--headerHeight));
             }
           }
           @include media-breakpoint-down(xs) {
             height: 100vw;
-            @media (orientation: landscape) {
-        height: calc(100vh - var(--headerHeight));
+            @media screen and (orientation:landscape) and (min-aspect-ratio: 16/9) {
+              height: calc(100vh - var(--headerHeight));
             }
           }
           @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {}
@@ -201,16 +254,19 @@
   width: 100%;
   height: 100vw;
   // (768px)
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     position: absolute;
     height: 100%;
   }
-  @include media-breakpoint-down(sm) {
-//    position: absolute;
+  @include media-breakpoint-down(md) {
+    //    position: absolute;
     height: 100%;
+    @media screen and (orientation:landscape) and (min-aspect-ratio: 16/9) {
+      height: 64vh;
+    }
   }
-  @include media-breakpoint-up(sm) {
-    @media (orientation: landscape) {
+  @include media-breakpoint-up(md) {
+    @media screen and (orientation:landscape) and (min-aspect-ratio: 16/9) {
       position: absolute;
       height: 100%;
     }
@@ -249,19 +305,19 @@
     }
     @include media-breakpoint-down(md) {
       height: 100vw;
-      @media (orientation: landscape) {
+      @media screen and (orientation:landscape) and (min-aspect-ratio: 16/9) {
         height: calc(100vh - var(--headerHeight));
       }
     }
     @include media-breakpoint-down(sm) {
       height: 64vw;
-      @media (orientation: landscape) {
+      @media screen and (orientation:landscape) and (min-aspect-ratio: 16/9) {
         height: calc(100vh - var(--headerHeight));
       }
     }
     @include media-breakpoint-down(xs) {
       height: 100vw;
-      @media (orientation: landscape) {
+      @media screen and (orientation:landscape) and (min-aspect-ratio: 16/9) {
         height: calc(100vh - var(--headerHeight));
       }
     }
@@ -345,13 +401,13 @@
         font-weight: 700;
         // (768px)
         @include media-breakpoint-down(md) {
-          bottom: 1rem;
-          right: 15%;
-          left: 35%;
-          font-size: .75rem;
-          opacity: .9;
-          color: white;
-          font-weight: 700;
+//          bottom: 1rem;
+          right: 1rem;
+          left: 50%;
+//          font-size: .75rem;
+//          opacity: .9;
+//          color: white;
+//          font-weight: 700;
         }
         @include media-breakpoint-down(sm) {
           bottom: 1rem;
@@ -396,8 +452,35 @@
         @include media-breakpoint-down(md) {
           @media(orientation: portrait) {
             mask-size: 75% auto;
+            mask-position: 150% 100%;
           }
         }
+
+        @media only screen
+        and (min-device-width : 768px)
+        and (max-device-width : 1024px)  {
+
+
+        }
+
+        @media only screen
+        and (min-device-width : 768px)
+        and (max-device-width : 1024px)
+        and (orientation : landscape) {
+
+
+        }
+
+        @media only screen
+        and (min-device-width : 768px)
+        and (max-device-width : 1024px)
+        and (orientation : portrait) {
+        mask-size: 50% auto;
+        mask-repeat: no-repeat;
+        mask-position: 100% 100%;
+
+        }
+
         @include media-breakpoint-down(sm) {
           mask-size: 72vw auto;
           mask-position: 50% 100%;
@@ -444,13 +527,63 @@
       @include media-breakpoint-down(md) {
         position: relative;
         //        pointer-events: none;
-        @media(orientation: landscape) {
+        @media screen and (orientation:landscape) and (min-aspect-ratio: 16/9) {
           height: calc(100vh - var(--headerHeight));
           position: absolute;
         }
         @media(orientation: portrait) {
-          height: 64vw;
+          height: 100vw;
+//          background: black;
+          position: absolute;
+//          .masked {
+//            opacity: 1;
+//          }
+//          .clone {
+//            opacity: .5;
+//          }
+//          .mask-fallback {
+//            opacity: .5;
+//            filter: invert(1);
+//          }
+        }
+      }
+
+
+      @media only screen
+      and (min-device-width : 768px)
+      and (max-device-width : 1024px)  {
+
+
+      }
+
+      @media only screen
+      and (min-device-width : 768px)
+      and (max-device-width : 1024px)
+      and (orientation : landscape) {
+
+
+      }
+
+      @media only screen
+      and (min-device-width : 768px)
+      and (max-device-width : 1024px)
+      and (orientation : portrait) {
+
+
+        height: 64vw;
+      }
+
+      @include media-breakpoint-down(sm) {
+//        position: relative;
+//        //        pointer-events: none;
+//        @media screen and (orientation:landscape) and (min-aspect-ratio: 16/9) {
+//          height: calc(100vh - var(--headerHeight));
+//          position: absolute;
+//        }
+        @media(orientation: portrait) {
+//          height: 100vw;
           background: black;
+//          position: absolute;
           .masked {
             opacity: 1;
           }
@@ -464,14 +597,13 @@
         }
       }
       @include media-breakpoint-down(xs) {
-
         @media(orientation: portrait) {
-        position: relative;
-        height: 100vw;
+          position: relative;
+          height: 100vw;
         }
-        @media(orientation: landscape) {
-        position: relative;
-        height: calc(100vh - var(--headerHeight));
+        @media screen and (orientation:landscape) and (min-aspect-ratio: 16/9) {
+          position: relative;
+          height: calc(100vh - var(--headerHeight));
         }
       }
     }

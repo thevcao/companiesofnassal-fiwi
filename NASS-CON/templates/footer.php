@@ -30,14 +30,14 @@
 
       </div>
         <div class="row office-info align-items-end">
-          <div class="col-md-8">
+          <div class="col-md">
             <div class="">
 
             <div class="row">
 
               <?php if( have_rows('offices', 'options') ):?>
               <?php while ( have_rows('offices', 'options') ) : the_row();?>
-              <div class="col-md-auto mr-md-4 office-address">
+              <div class="col-md-auto mr-lg-4 office-address">
 
                 <p><?php
                   echo explode(', ' , get_sub_field('address')['address'], 2)[0];
@@ -89,6 +89,7 @@
     </script>
 
   </body>
+
 
 
 

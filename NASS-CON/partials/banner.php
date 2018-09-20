@@ -5,7 +5,7 @@
   <div class="bg-img">
     <?php if (is_singular('post')): ?>
     <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); $url = $thumb['0']; ?>
-    <?php if( has_post_thumbnail()): echo '<img src="' . $url . '"/>'; endif;?>
+    <?php if( has_post_thumbnail()): echo '<img src="' . $url . '" alt="' . get_the_title() . '"/>'; endif;?>
     <?php elseif(get_field('bg_image')):?>
     <img src="<?php echo get_field('bg_image')['sizes']['banner'];?>">
     <?php endif;?>
