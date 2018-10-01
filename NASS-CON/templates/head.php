@@ -76,9 +76,6 @@
             <?php while ( have_rows('offices', 'options') ) : the_row();?>
                 <div class="col-sm-12 col-6 mb-2">
 
-
-              <p class="office-name"><?php the_sub_field('office_name');?></p>
-
               <p class="address"><?php
                 echo explode(', ' , get_sub_field('address')['address'], 2)[0];
                 echo '<br>' . explode(',' , get_sub_field('address')['address'], 2)[1];
@@ -162,7 +159,7 @@
                           </g>
                         </svg>
 
-                        <p class="office-name"><?php the_sub_field('office_name');?></p>
+              <p class="office-name"><?php the_sub_field('office_name');?></p>
 
               <p class="address">
                 <?php

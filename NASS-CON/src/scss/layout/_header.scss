@@ -84,8 +84,7 @@
   --logoGradient: url(#logo_gradient);
   &.case-study,
   &.error404,
-  &.hover,
-  &.page-template-archive-services {
+  &.hover {
 //      --logoGradient: white;
 //      --wordmarkColor: white;
 //      --brand: white;
@@ -175,8 +174,7 @@
 .scrolled,
 body.home.scrolled,
 body.case-study.scrolled,
-body.error404,
-body.page-template-archive-services {
+body.error404 {
   header.floater {
     transform: translate3d(0, 0, 0);
     opacity: 1;
@@ -205,8 +203,7 @@ header.floater {
   body:not(.home, .case-study, .error404) & {
     display: block;
   }
-  .case-study &,
-  .page-template-archive-services & {
+  .case-study & {
     //    background: var(--brand);
     background: var(--brand-gradient);
     background-position: 0%;
@@ -215,8 +212,7 @@ header.floater {
   // (768px)
   @include media-breakpoint-down(md) {
     .case-study &,
-    .error404 &,
-    .page-template-archive-services & {
+    .error404 & {
       background: var(--brand-gradient);
     }
   }
@@ -309,7 +305,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;
+  z-index: 12;
   padding: 2rem 3rem;
   .companies-of-nassal & {
     // @media (max-width: 1439px)
@@ -325,12 +321,12 @@ header {
   .error404 & {
     background: none;
   }
-  .page-template-archive-services & {
-    display: none;
-    //    background: var(--brand-gradient);
-    //    background-position: 0%;
-    //    background-attachment: fixed;
-  }
+//  .page-template-archive-services & {
+//    display: none;
+//    //    background: var(--brand-gradient);
+//    //    background-position: 0%;
+//    //    background-attachment: fixed;
+//  }
   @include media-breakpoint-down(md) {
     display: none;
     padding: 7px 0 0;
@@ -385,8 +381,7 @@ header {
     }
     .hover &,
     .case-study &,
-    .error404 &,
-    .page-template-archive-services & {
+    .error404 & {
       //      --wordmarkColor: #ffffff;
       svg polygon,
       svg g:not([fill="var(--logoGradient)"]) {
@@ -422,8 +417,7 @@ header {
     }
     .hover &,
     .case-study &,
-    .error404 &,
-    .page-template-archive-services & {
+    .error404 & {
       background: rgba(255, 255, 255, 0);
       color: white;
     }
@@ -453,8 +447,7 @@ header {
         transition: inherit;
         .hover &,
         .case-study &,
-        .error404 &,
-        .page-template-archive-services & {
+        .error404 & {
           fill: white;
         }
         .menu-open &,
@@ -490,8 +483,7 @@ header {
         transition: .3s ease;
         .hover &,
         .case-study &,
-        .error404 &,
-        .page-template-archive-services & {
+        .error404 & {
           background: white;
         }
         .menu-open &,
@@ -511,8 +503,7 @@ header {
           transition: .3s ease;
           .hover &,
           .case-study &,
-          .error404 &,
-          .page-template-archive-services & {
+          .error404 & {
             background: white;
           }
           .menu-open &,
@@ -533,8 +524,7 @@ header {
           transition: .3s ease;
           .hover &,
           .case-study &,
-          .error404 &,
-          .page-template-archive-services & {
+          .error404 & {
             background: white;
           }
           .menu-open &,
@@ -629,8 +619,7 @@ header {
 }
 .hover:not(.menu-open),
 .case-study:not(.menu-open),
-.error404:not(.menu-open),
-.page-template-archive-services:not(.menu-open) {
+.error404:not(.menu-open) {
   header .toggle.menu-toggle:hover .label {
     color: white
   }

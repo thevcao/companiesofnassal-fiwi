@@ -5,7 +5,7 @@
   <div class="container">
 
     <div class="row">
-        <div class="col-md-8 offset-md-1 pl-md-0 mb-2">
+        <div class="col-lg-8 offset-xl-1 pl-lg-0 mb-2">
           <div class="">
 
             <h3 class=""><?php the_sub_field('title');?></h3>
@@ -64,7 +64,7 @@
           </div>
         </div>
 
-      <?php  } endforeach;?>
+      <?php  } restore_current_blog(); endforeach;?>
     </div>
   </div>
 </section>

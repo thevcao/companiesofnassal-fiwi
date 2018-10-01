@@ -138,7 +138,7 @@
           </a>
         </div>
 
-        <div class="col ml-auto">
+        <div class="col-md-4 col ml-auto">
           <div class="row align-items-center">
             <?php if(get_current_blog_id() == 4):?>
               <div class="col-auto pr-0 pl-0 ml-auto">

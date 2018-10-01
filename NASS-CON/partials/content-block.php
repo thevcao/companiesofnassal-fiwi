@@ -6,7 +6,7 @@
         <div class="container">
 
           <div class="row mb-4">
-              <div class="col-md-5 offset-md-1 pl-md-0">
+              <div class="col-md-5 offset-xl-1 pl-md-0">
 
                 <?php
                 if(!get_sub_field('normal_weight')):

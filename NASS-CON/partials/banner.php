@@ -14,7 +14,7 @@
 
 
     <div class="row">
-      <div class="<?php if(get_field('offset')): echo get_field('offset'); else: echo 'col-lg-11 offset-lg-1 pl-lg-0' ; endif;?>">
+      <div class="<?php if(get_field('offset')): echo get_field('offset'); else: echo 'col-lg-11 offset-xl-1 pl-lg-0' ; endif;?>">
           <?php if(!is_search() && !get_field('disable_breadcrumb')){?>
 
 
@@ -68,7 +68,7 @@
 
                 <?php
 
-                            if(get_field('override_page_title')):
+                if(get_field('override_page_title')):
 
                 $type = get_field('header_type');
 
@@ -80,11 +80,15 @@
 
 
 
-            <h1><?php echo get_the_title();?></h1>
+
             <?php
-                if(get_field('title')):
-                echo '<h5>' . get_field('title') .'</h5>';
-                endif;?>
+                if(get_field('page_title')):
+                echo '<h1>' . get_field('page_title') .'</h1>';
+                else:?>
+                <h1><?php echo get_the_title();?></h1>
+
+
+                <?php endif;?>
 
             <?php } elseif ($type == 'intro') { ?>
 
@@ -95,10 +99,6 @@
 
             <?php } else { ?>
             <h1><?php echo get_the_title();?></h1>
-            <?php
-                if(get_field('title')):
-                echo '<h5>' . get_field('title') .'</h5>';
-                endif;?>
 
         <?php } }?>
 

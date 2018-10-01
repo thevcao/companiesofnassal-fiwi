@@ -68,18 +68,20 @@ $activeFilter = $post_slug=$post->post_name;
         </div>
       </div>
 
-        <?php get_template_part('partials/case-ajax');?>
+
+        <?php if(!get_field('exclude_cases')): get_template_part('partials/case-ajax'); endif;?>
 
 
 
 
+        <?php if(!get_field('exclude_projects')):?>
+        <div class="col-sm-11 col-12 mx-auto pl-0 pr-0">
+          <?php get_template_part('partials/project-ajax');?>
 
-      <div class="col-sm-11 col-12 mx-auto pl-0 pr-0">
-        <?php get_template_part('partials/project-ajax');?>
 
 
-
-      </div>
+        </div>
+        <?php endif;?>
 
       </div>
 

@@ -1,6 +1,6 @@
 .team-grid {
   margin: 3rem auto;
-  min-height: 100vh;
+  min-height: calc(100vh - (var(--headerHeight) + var(--banner-height));
   .max-20 {
 
 

@@ -160,3 +160,10 @@ function nass_tinymce_body_class( $mce ) {
     return $mce;
 }
 add_filter( 'tiny_mce_before_init', 'nass_tinymce_body_class' );
+
+
+function posts_orderby_lastname ($orderby_statement)
+{
+  $orderby_statement = "RIGHT(post_title, LOCATE(' ', REVERSE(post_title)) - 1) ASC";
+    return $orderby_statement;
+}

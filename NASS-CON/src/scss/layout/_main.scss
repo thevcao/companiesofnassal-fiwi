@@ -1,6 +1,6 @@
 html {
 
-  transition: opacity .5s ease .3s;
+  transition: opacity .5s ease 1s;
 
   &.no-js {
   opacity: 0;
@@ -124,7 +124,7 @@ ol.search-results {
   //  margin: 0 1rem 0;
   width: 100%;
   position: relative;
-  .nfusion.page-template-archive-team & {
+  .nfusion.page-template-archive-team &, .nfusion.page-template-archive-portfolio & {
     display: none;
   }
   //  max-width: 300px;

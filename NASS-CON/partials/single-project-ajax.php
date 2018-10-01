@@ -131,9 +131,7 @@
     </div>
     <div class="row mt-4">
     <div class="col-md-auto mx-auto">
-    <?php
-    $count = $allCount->post_count;
-    if(($count > $_COOKIE['no_posts'])):?>
+    <?php  $count = $allCount->post_count; if(($count > $_COOKIE['no_posts'])):?>
     <a href="#" class="btn-standard load-more">Load More</a>
     <?php else:?>
 

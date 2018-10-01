@@ -59,7 +59,7 @@
       <section class="project-details <?php if(!get_field('gallery_2')):?>mt-md-5 mt-3<?php endif;?>">
         <div class="container">
           <div class="row">
-            <div class="col-lg-7 offset-lg-1 order-lg-1 order-2 project-stats">
+            <div class="col-lg-7 offset-xl-1 order-lg-1 order-2 project-stats">
               <div class="row">
                 <div class="col-lg-3">
                   <p class="lead mb-1"><b>Client</b></p>
@@ -109,7 +109,7 @@
           </div>
           <div class="row">
 
-            <div class="col-lg-6 offset-lg-1 mb-3">
+            <div class="col-lg-6 offset-xl-1 mb-3">
               <div class="lead">
                 <?php the_field('excerpt');?>
               </div>
@@ -119,7 +119,7 @@
 
           <?php if(get_field('gallery_1')):?>
             <div class="row">
-              <div class="col-lg-9 offset-lg-1 pl-lg-0 pr-lg-0">
+              <div class="col-lg-9 offset-xl-1 pl-lg-0 pr-lg-0">
                 <div class="row gallery-1">
 
                   <?php $images = get_field('gallery_1');
@@ -137,7 +137,7 @@
             <?php endif;?>
           <div class="row">
 
-            <div class="col-lg-8 offset-lg-1 mb-3">
+            <div class="col-lg-8 offset-xl-1 mb-3">
               <div class="textarea">
                 <?php the_field('summary');?>
               </div>
@@ -165,14 +165,14 @@
       <section class="project-details">
         <div class="container">
           <div class="row">
-            <div class="col-xl-11 offset-xl-1">
+            <div class="col-lg-11 offset-xl-1">
               <h1><?php echo get_the_title();?></h1>
 
             </div>
 
           </div>
           <div class="row">
-            <div class="col-xl-6 offset-xl-1 col-lg-7 order-lg-1 order-2 mb-3">
+            <div class="col-lg-6 offset-xl-1 col-lg-7 order-lg-1 order-2 mb-3">
               <div class="lead">
                 <?php the_field('excerpt');?>
               </div>
@@ -194,7 +194,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-xl-8 offset-xl-1 col-lg-9 project-stats">
+            <div class="col-lg-8 offset-xl-1 col-lg-9 project-stats">
               <div class="row">
                 <div class="col-lg-3">
                   <h6 class="mb-1"><b>Client</b></h6>
@@ -234,22 +234,22 @@
       <section class="project-info">
         <div class="container">
           <div class="row case-content">
-          <div class="col-xl-8 offset-xl-1 col-lg-9">
+          <div class="col-lg-8 offset-xl-1 col-lg-9">
 
             <?php if(get_field('introduction')):?>
-              <h3>Introduction</h3>
+              <h3>Introduction.</h3>
               <?php the_field('introduction'); endif;?>
 
             <?php if(get_field('what_we_did')):?>
 
-              <h3><?php if(get_field('project_completion')): echo 'What we did.'; else: echo 'What were doing.'; endif;?></h3>
+              <h3><?php if(get_field('project_completion')): echo 'What we did.'; else: echo "What we're doing."; endif;?></h3>
               <?php the_field('what_we_did'); endif;?>
 
             </div>
           </div>
           <?php if(get_field('gallery_1')):?>
             <div class="row">
-              <div class="col-xl-10 offset-xl-1 col-lg-12 pl-lg-0 pr-lg-0">
+              <div class="col-lg-10 offset-xl-1 col-lg-12 pl-lg-0 pr-lg-0">
                 <div class="row gallery-1 <?php if(!get_field('how_we_did_it')): echo 'mt-0'; endif;?>">
 
                   <?php $images = get_field('gallery_1');
@@ -273,7 +273,7 @@
             <?php endif;?>
 
           <div class="row case-content <?php if(!get_field('gallery_2')): echo 'mb-3'; endif;?>">
-              <div class="col-xl-8 offset-xl-1 col-lg-9">
+              <div class="col-lg-8 offset-xl-1 col-lg-9">
               <?php if(get_field('how_we_did_it')):?>
 
               <h3><?php if(get_field('project_completion')): echo 'How we did it.'; else: echo "How we're doing it."; endif;?></h3>
@@ -342,65 +342,8 @@
 
 
     </section>
-          <?php endif;?>
+    <?php endif; get_template_part('partials/cta'); ?>
 
-    <section class="cta <?php if(!get_field('conclusion')): echo 'mt-lg-5 mt-3'; endif;?>">
-
-      <div class="row">
-        <div class="col-lg-3 offset-lg-1">
-          <a href="/contact-us">
-            <div class="cta-btn">
-            <h5>Lets's Work. <i class="fa fa-arrow-right"></i></h5>
-            <p>Contact us today!</p>
-          </div></a>
-        </div>
-      </div>
-      <div class="bg-image">
-        <div class="row fill-height">
-
-
-          <div class="col-lg-8 offset-lg-3 mr-auto pl-0 pr-0 fill-height">
-            <?php
-
-                $id = get_the_ID();
-
-                $args = array(
-
-                'posts_per_page' => 1,
-//                'order'   => 'RAND',
-//                'offset' => 1,
-                'post_type' => 'portfolio',
-                'post__not_in' => array($id),
-                'meta_query' => array(
-                      array(
-                          'key'     => 'case_study',
-                          'value'   => 'yes',
-                          'compare' => 'LIKE',
-                      )
-                  ),
-                'order'                  => 'DESC',
-                'orderby'                => 'rand',
-
-
-                );
-
-            $loop = new WP_Query( $args );
-            while ( $loop->have_posts() ) : $loop->the_post(); ?>
-
-              <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id(), 'banner' ); $url = $thumb['0']; ?>
-                <?php if( has_post_thumbnail()): echo '<img class="next-img" src="' . $url . '" alt="' . get_the_title() . '">'; endif;?>
-
-            <div class="over">
-              <a href="<?php the_permalink();?>"><span>Next Project</span> <?php echo get_the_title();?></a>
-            </div>
-            <?php endwhile; ?>
-
-
-
-          </div>
-        </div>
-      </div>
-    </section>
 
     <?php endif;?>
     <?php get_template_part('templates/footer'); ?>

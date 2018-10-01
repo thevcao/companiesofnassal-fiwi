@@ -27,7 +27,7 @@
 
             <?php if( have_rows('sectors') ):?>
               <?php while ( have_rows('sectors') ) : the_row();?>
-                <div class="col-lg-4 col-sm-12 mb-lg-0 mb-4">
+                <div class="col-lg-4 col-sm-12 mb-4">
                   <div class="card editor">
 
                     <img src="<?php echo get_sub_field('image')['sizes']['large'];?>">
@@ -38,9 +38,12 @@
                 </div>
 
                 <?php endwhile; ?>
-                  <?php endif; ?>
+                <?php endif; ?>
 
           </div>
+
+          <p class="lead mt-md-5 mt-sm-2">We scale to your needs whether large integrated destinations, one-off attractions or urban entertainment experiences.</p>
+
         </div>
       </div>
     </div>
@@ -48,7 +51,7 @@
 
   </section>
 
-    <div class="process-wrapper">
+    <!--<div class="process-wrapper">
 
       <section class="banner process">
 
@@ -62,37 +65,37 @@
         <div class="svg-paths" id="nfusion-chemistry-g3"></div>
         <div class="svg-paths" id="nfusion-chemistry-g4"></div>
         <div class="svg-paths hide" id="icon-fill">
-          <?php include get_template_directory() . '/src/img/icon-fill.svg';?>
+          <?php //include get_template_directory() . '/src/img/icon-fill.svg';?>
 
         </div>
         <div class="svg-paths hide" id="chisel-fill">
-          <?php include get_template_directory() . '/src/img/chisel-fill.svg';?>
+          <?php //include get_template_directory() . '/src/img/chisel-fill.svg';?>
 
         </div>
         <div class="svg-paths hide" id="g1-fill">
-          <?php include get_template_directory() . '/dist/img/nfusion-chemistry-g1-fill.svg';?>
+          <?php //include get_template_directory() . '/dist/img/nfusion-chemistry-g1-fill.svg';?>
 
         </div>
         <div class="svg-paths hide" id="g2-fill">
-          <?php include get_template_directory() . '/dist/img/nfusion-chemistry-g2-fill.svg';?>
+          <?php //include get_template_directory() . '/dist/img/nfusion-chemistry-g2-fill.svg';?>
 
         </div>
         <div class="svg-paths hide" id="g3-fill">
-          <?php include get_template_directory() . '/dist/img/nfusion-chemistry-g3-fill.svg';?>
+          <?php //include get_template_directory() . '/dist/img/nfusion-chemistry-g3-fill.svg';?>
 
         </div>
         <div class="svg-paths hide" id="g4-fill">
-          <?php include get_template_directory() . '/dist/img/nfusion-chemistry-g4-fill.svg';?>
+          <?php //include get_template_directory() . '/dist/img/nfusion-chemistry-g4-fill.svg';?>
 
         </div>
         <div class="svg-paths hide" id="shapes">
-          <?php include get_template_directory() . '/src/img/arrows.svg';?>
+          <?php //include get_template_directory() . '/src/img/arrows.svg';?>
 
         </div>
 
       </section>
 
-    </div>
+    </div>-->
 
 
     <?php $args = array(
@@ -114,7 +117,7 @@
       </div>
       <div class="container">
         <div class="row">
-              <div class="col-sm-10 offset-sm-1 pl-sm-0">
+              <div class="col-sm-10 offset-sm-0">
                 <h3 class=""><?php echo get_the_title();?></h3>
               </div>
         </div>
@@ -127,14 +130,14 @@
 
         <div class="row mb-4">
 
-            <div class="col-sm-10 offset-sm-1 pl-sm-0">
+            <div class="col-sm-10 offset-sm-0">
                 <div class="lead">
                   <p><?php the_field('service_intro');?></p>
                 </div>
             </div>
           </div>
         <div class="row">
-            <div class="col-sm-10 offset-sm-1 pl-sm-0">
+            <div class="col-sm-10 offset-sm-0">
 
               <div class="editor lead">
                 <?php echo get_the_content();?>

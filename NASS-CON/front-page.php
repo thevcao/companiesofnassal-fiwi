@@ -217,23 +217,50 @@ get_template_part('templates/header'); ?>
             <?php $args = array(
 
                 'posts_per_page' => -1,
-                'orderby' => 'title' ,
+                'orderby' => 'menu_order' ,
                 'order'   => 'ASC',
                 'post_type' => 'services');
 
-            $loop = new WP_Query( $args );
-            while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
-            <li><a href="<?php
+
+
+            $loop = new WP_Query( $args );
+            while ( $loop->have_posts() ) : $loop->the_post();
+
+            $id = get_the_ID();
+//            echo $id;
+            $projects = array(
+            'posts_per_page' => -1,
+            'post_type' => 'portfolio',
+            'meta_query' => array(
+                    array(
+                        'key'     => 'project_type',
+                        'value'   => $id,
+                        'compare' => 'LIKE',
+                    )
+                  )
+            );
+
+            $projectsCount = new WP_Query( $projects );
+              ?>
+
+
+            <li>
+              <?php if($projectsCount->have_posts()) :?>
+              <a href="<?php
               echo get_site_url();
               if($site['blog_id'] == 4):
               echo '/services/';
               else:
               echo '/capabilities/';
               endif;
-              $var = sanitize_title_for_query( get_the_title() );
+//              $var = sanitize_title_for_query( get_the_title() );
               echo esc_attr( $var);
-              ?>"><?php echo get_the_title();?></a></li>
+              ?>"><?php echo get_the_title();?></a>
+              <?php else: ?>
+              <?php echo get_the_title();?>
+              <?php endif;?>
+              </li>
 
 
             <?php endwhile; wp_reset_postdata();?>

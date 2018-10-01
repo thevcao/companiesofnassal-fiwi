@@ -4,30 +4,38 @@
     background-attachment: fixed;
     p.lead {
       margin-bottom: 0;
-      font-size: 3.25rem;
-      margin-top: .25em;
+//      font-size: 3.25rem;
+//      margin-top: .25em;
       // (768px)
-      @include media-breakpoint-down(sm) {
-        font-size: 2.25rem;
-      }
-      @include media-breakpoint-down(xs) {
-        font-size: 1.5rem;
-      }
+//      @include media-breakpoint-down(sm) {
+//        font-size: 2.25rem;
+//      }
+//      @include media-breakpoint-down(xs) {
+//        font-size: 1.5rem;
+//      }
     }
   }
   .nfusion-sectors {
-    background: var(--brand-gradient);
-    padding: 0 0 3rem;
-    // @media (max-width: 1439px)
-    @include media-breakpoint-up(lg) {
-      min-height: calc(100vh - var(--banner-height) - var(--headerHeight));
+//    background: var(--brand-gradient);
+    padding: 4rem 0 4rem;
+
+
+    // (768px)
+    @include media-breakpoint-down(md) {
+
+      padding: 2rem 0;
     }
-    background-position: 0%;
-    background-attachment: fixed;
+
+    // @media (max-width: 1439px)
+//    @include media-breakpoint-up(lg) {
+//      min-height: calc(100vh - var(--banner-height) - var(--headerHeight));
+//    }
+//    background-position: 0%;
+//    background-attachment: fixed;
     .fill-height {
       // @media (max-width: 1439px)
       @include media-breakpoint-up(lg) {
-        min-height: calc(100vh - var(--banner-height) - var(--headerHeight));
+//        min-height: calc(100vh - var(--banner-height) - var(--headerHeight));
       }
     }
     .card {
@@ -38,6 +46,7 @@
       @include media-breakpoint-up(lg) {
         background: $lt-grey;
         height: 100%;
+//        margin-bottom: 2rem;
       }
       border-radius: 20px;
       cursor: pointer;

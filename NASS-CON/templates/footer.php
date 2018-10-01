@@ -22,7 +22,7 @@
           </div>
           <div class="col-md-4 col-12 ml-md-auto mx-md-0 mx-auto order-1 order-md-2">
             <ul class="footer-links">
-              <li><a href="/careers">Careers</a></li>
+              <li><a href="https://www.ziprecruiter.com/candidate/search?search=hiring_company_id%3A%22fb2989f5%22" target="_blank">Careers</a></li>
               <li><a href="#returnTop"><i class="fa fa-angle-up"></i> Back to Top</a></li>
             </ul>
 

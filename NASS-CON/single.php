@@ -26,7 +26,7 @@
             <div class="row">
               <div class="col-sm-11 ml-auto">
                 <div class="row align-items-start">
-              <div class="col-md-auto offset-md-1">
+              <div class="col-md-auto offset-xl-1">
               <ul class="socials shares">
                 <li>Share:</li>
                 <li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink();?>" class="pop-link" target="_blank"><i class="fa fa-facebook"></i></a></li>
