@@ -27,9 +27,9 @@
     }
 
     // @media (max-width: 1439px)
-//    @include media-breakpoint-up(lg) {
-//      min-height: calc(100vh - var(--banner-height) - var(--headerHeight));
-//    }
+    @include media-breakpoint-up(lg) {
+      min-height: calc(100vh - var(--banner-height) - var(--headerHeight));
+    }
 //    background-position: 0%;
 //    background-attachment: fixed;
     .fill-height {
@@ -244,7 +244,11 @@
       z-index: 1;
       background-position: 0%;
       background-attachment: fixed;
-      z-index: 10;
+        z-index: 12;
+
+      &.sticky {
+
+      }
       // (768px)
       @include media-breakpoint-down(sm) {
         //        padding: 1rem 0;

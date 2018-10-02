@@ -213,7 +213,7 @@
             "key": "field_5b86f46d4f858",
             "label": "How we did it.",
             "name": "how_we_did_it",
-            "type": "textarea",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -223,10 +223,10 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "wpautop"
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         },
         {
             "key": "field_5b86f4c94f85b",
@@ -296,15 +296,7 @@
             "type": "gallery",
             "instructions": "",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5b8594815cae7",
-                        "operator": "==",
-                        "value": "yes"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -354,5 +346,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1536600897
+    "modified": 1537278833
 }

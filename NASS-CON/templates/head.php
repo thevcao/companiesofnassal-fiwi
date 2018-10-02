@@ -46,6 +46,113 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-M26XP7F');</script>
 <!-- End Google Tag Manager -->
 
+
+<?php $maintemplate = get_template_directory_uri();
+  if(get_field('coming_soon', 'options')):?>
+      <style type="text/css">
+        .recentcomments a,
+        aside#secondary,
+        footer,
+        header.page-header,
+        #main,
+        #primary {
+          display: none;
+        }
+
+        h3,
+        h6 {
+          color: white;
+        }
+
+        h6 a:hover {
+          color: black;
+        }
+
+        .container-fluid {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          z-index: 100;
+        }
+
+        .error404 .banner {
+          height: 100vh;
+        }
+
+        .error404 .banner .svg-paths svg {
+          transform-origin: 50% 50% 0;
+        }
+
+
+        #chisel-path {
+
+          opacity: 1 !important;
+        }
+
+        header {
+
+          display: none !important;
+        }
+
+        html {
+
+          overflow: hidden;
+        }
+
+      </style>
+    </head>
+
+    <body class="error404 logged-in companies-of-nassal ">
+
+    <main class="pt0">
+      <section class="banner">
+
+        <div class="svg-paths" id="grid-path"></div>
+        <div class="svg-paths" id="chisel-path"></div>
+        <div class="svg-paths" id="circles-path"></div>
+        <div class="svg-paths" id="icon-path"></div>
+        <div class="svg-paths" id="text-path" style="display: none;"></div>
+        <div class="svg-paths hide" id="icon-fill">
+        <?php include get_template_directory() . '/src/img/icon-fill.svg';?>
+
+        </div>
+        <div class="svg-paths hide" id="chisel-fill">
+        <?php include get_template_directory() . '/src/img/chisel-fill.svg';?>
+
+        </div>
+        <div class="svg-paths hide" id="text-fill" style="display: none;">
+        <?php include get_template_directory() . '/src/img/text-fill.svg';?>
+
+        </div>
+        <div class="svg-paths hide" id="shapes">
+        <?php include get_template_directory() . '/src/img/arrows.svg';?>
+
+        </div>
+
+        <div class="container-fluid fill-height">
+          <div class="fill-height">
+            <div class="row fill-height align-items-center">
+
+              <div class="col-sm-5 offset-sm-6 mr-auto">
+
+                <h3>Transforming Your Experience.</h3>
+                <h6>Come back October 3rd for an exciting new look. If you are not redirected <a href="https://nassal.com">click here.</a></h6>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+      <hidden>
+
+<?php else:?>
+
 </head>
 
 <body <?php body_class($site_name . ' ' . $case) ?>>
@@ -206,3 +313,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 </div>
+
+<?php endif;?>

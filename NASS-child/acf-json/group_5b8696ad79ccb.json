@@ -237,17 +237,7 @@
             {
                 "param": "page_template",
                 "operator": "!=",
-                "value": "archive-services.php"
-            },
-            {
-                "param": "page_template",
-                "operator": "!=",
                 "value": "front-page.php"
-            },
-            {
-                "param": "page_template",
-                "operator": "!=",
-                "value": "default"
             }
         ]
     ],
@@ -259,5 +249,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1537195267
+    "modified": 1538413170
 }

@@ -10,7 +10,7 @@
 //$site_name = esc_attr( $name );
 ?>
 
-
+    <?php if(!get_field('coming_soon', 'options')):?>
     <footer>
       <div class="container">
 
@@ -81,7 +81,9 @@
       </div>
 
     </footer>
-
+    <?php else:?>
+    </hidden>
+    <?php endif;?>
     <?php wp_footer(); ?>
 
     <script>

@@ -45,7 +45,7 @@
       <div class="row">
         <div class="col-md-4 mx-md-0 col-10 mx-auto">
 
-          <div class="dropdown mb-sm-5">
+          <div class="dropdown mb-5">
             <a href="#" data-toggle="all">View by Department</a>
 
               <?php $taxonomy     = 'departments';
