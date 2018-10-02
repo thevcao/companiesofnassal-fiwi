@@ -54,7 +54,7 @@ get_template_part('templates/header'); ?>
 
               <?php if(get_field('video_loop')):?>
 
-              <video src="<?php the_field('video_loop');?>" preload="none" playsinline autoplay loop muted="true"></video>
+              <video muted src="<?php the_field('video_loop');?>" preload="none" playsinline autoplay loop></video>
 
               <?php else: $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); $url = $thumb['0']; ?>
               <?php if( has_post_thumbnail()): echo '<img src="' . $url . '"/>'; endif; endif;?>
