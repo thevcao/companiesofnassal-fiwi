@@ -87,12 +87,12 @@
               <?php if($projectsCount->have_posts()) :?>
               <a href="<?php
               echo get_site_url();
-              if($site['blog_id'] == 4):
+              if(get_current_blog_id() == 4):
               echo '/services/';
               else:
               echo '/capabilities/';
               endif;
-//              $var = sanitize_title_for_query( get_the_title() );
+              $var = sanitize_title_for_query( get_the_title() );
               echo esc_attr( $var);
               ?>"><?php echo get_the_title();?></a>
               <?php else: ?>

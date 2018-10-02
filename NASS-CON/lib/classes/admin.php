@@ -105,29 +105,23 @@ if($user != 1){
 
 function remove_superadmin_level(){
 
-  remove_menu_page( 'themes.php' );                 //Appearance
-  remove_menu_page( 'plugins.php' );                //Plugins
+//  remove_menu_page( 'themes.php' );                 //Appearance
+//  remove_menu_page( 'plugins.php' );                //Plugins
 //  remove_menu_page( 'users.php' );                  //Users
-  remove_menu_page( 'tools.php' );                  //Tools
-  remove_menu_page( 'options-general.php' );        //Settings
-  remove_menu_page( 'admin.php?page=aiowpsec' );        //Settings
-  remove_menu_page( 'admin.php?page=pagespeed' );        //Settings
-  remove_menu_page( 'admin.php?page=pmxe-admin-export' );        //Settings
-  remove_menu_page( 'admin.php?page=pmxi-admin-import' );        //Settings
-  remove_menu_page( 'admin.php?page=gadash_settings' );        //Settings
-  remove_menu_page( 'admin.php?page=server-settings' );        //Settings
-  remove_menu_page( 'edit.php?post_type=acf-field-group' );        //Settings
-  remove_menu_page( 'admin.php?page=all-in-one-seo-pack%2Faioseop_class.php' );        //Settings
+//  remove_menu_page( 'tools.php' );                  //Tools
+//  remove_menu_page( 'options-general.php' );        //Settings
+//  remove_menu_page( 'admin.php?page=aiowpsec' );        //Settings
+//  remove_menu_page( 'admin.php?page=pagespeed' );        //Settings
+//  remove_menu_page( 'admin.php?page=pmxe-admin-export' );        //Settings
+//  remove_menu_page( 'admin.php?page=pmxi-admin-import' );        //Settings
+//  remove_menu_page( 'admin.php?page=gadash_settings' );        //Settings
+//  remove_menu_page( 'admin.php?page=server-settings' );        //Settings
+//  remove_menu_page( 'edit.php?post_type=acf-field-group' );        //Settings
+//  remove_menu_page( 'admin.php?page=all-in-one-seo-pack%2Faioseop_class.php' );        //Settings
 }
 
 function remove_pu_menus() {?>
 
-<style>
-    li#toplevel_page_aiowpsec, li#toplevel_page_pagespeed, li#toplevel_page_pmxe-admin-home, li#toplevel_page_pmxi-admin-home, li#toplevel_page_gadash_settings, li#toplevel_page_admin-settings, li#toplevel_page_server-settings {
-
-        display: none;
-    }
-</style>
 <?php }
 
 // Now, just make sure that function runs when you're on the login page and admin pages

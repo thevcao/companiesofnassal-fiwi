@@ -15,8 +15,11 @@ $type = get_sub_field('post_type'); ?>
                         </div>
                         <div class="col-auto">
                           <?php if($type == 'portfolio'):
-
+                          if(!get_current_blog_id() == 4):
                           echo '<a href="/projects">View All</a>';
+                          else:
+                          echo '<a href="/case-studies">View All</a>';
+                          endif;
 
                           else:
                           echo '<a href="/category/insights">View All</a>';

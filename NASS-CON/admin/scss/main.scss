@@ -119,11 +119,49 @@
     }
     div.mce-edit-area {
       padding: 1rem 1rem;
-//      padding-top: 90px !important;
+      //      padding-top: 90px !important;
     }
     .gform_media_icon {
-
       height: .5em !important;
+    }
+    div.aioseop_feature {
+      height: 350px;
+    }
+    .aioseop_settings_left .postbox {
+      width: 95%;
+    }
+    [class^="wrap All_in_One"] {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    div#aioseop_settings_header {
+      flex: 0 0 100%;
+    }
+    .aioseop_top {
+      flex: 0 0 100%;
+    }
+    .aioseop_right_sidebar {
+      flex: 0 0 25%;
+      float: none;
+      order: 2;
+    }
+    form#aiosp_settings_form {
+      flex: 1;
+      padding: 1rem 0;
+      order: 1;
+    }
+    .aioseop_settings_left {
+      float: none;
+    }
+    #aiosp_settings_form .postbox {
+      margin: 1rem 0;
+    }
+    #aioseop-about {
+      width: auto;
+    }
+    .aioseop_tabs_div {
+      padding: 0;
+      width: 100%;
     }
   }
   html[style="overflow-y: hidden;"] {
@@ -177,15 +215,12 @@
     Cantarell,
     "Helvetica Neue",
     sans-serif;
-
     padding-top: 1rem !important;
-  //    top: 1rem;
-//    position: relative;
+    //    top: 1rem;
+    //    position: relative;
     background: white;
     font-size: 1rem;
     height: auto;
-
-
     p,
     li {
       font-size: 1rem;
@@ -256,6 +291,14 @@
     }
     &.companies-of-nassal .btn:after {
       background-image: url(../../dist/img/button-tcon.png);
+    }
+    * {
+
+      &.nassal, &.nfusion, &.lexington {
+
+        color: var(--brand);
+      }
+
     }
   }
   //.wp-login, .wp-admin {

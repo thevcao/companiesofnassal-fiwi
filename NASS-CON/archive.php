@@ -24,7 +24,7 @@
 
     <div class="container news-posts">
 
-      <div class="filter mb-sm-3">
+      <div class="filter mb-sm-5">
       <div class="row">
         <div class="col-md-4 offset-md-1 pl-md-0 col-10 mx-sm-down-auto">
 
@@ -51,7 +51,7 @@
       foreach ($sites as $site):
 
       //      echo '<p>' . $site['blog_id'] . '</p>';
-      if($site['blog_id'] != 1){
+//      if($site['blog_id'] != 1){
       switch_to_blog($site['blog_id']);
       $name = sanitize_title_for_query(get_bloginfo( 'name'));
       $site_name = esc_attr( $name );?>
@@ -73,7 +73,7 @@
 
 
 
-        <div class="row featured-post mt-md-3 filterable" data-src="<?php echo $site_name;?>">
+        <div class="row featured-post mt-md-2 filterable" data-src="<?php echo $site_name;?>">
           <div class="col-lg-11 mx-auto">
             <div class="row align-items-center">
             <div class="col-md-8 pr-md-0">
@@ -111,7 +111,7 @@
 
         <?php endwhile; wp_reset_postdata();?>
       </div>
-      <?php endif; echo '</div>'; } restore_current_blog();  endforeach; ?>
+      <?php endif; echo '</div>'; restore_current_blog();  endforeach; ?>
 
 
     </div>

@@ -597,6 +597,16 @@ h6 {
 }
 .editor {
   @include list;
+
+
+  * {
+
+    &.nassal, &.nfusion, &.lexington {
+
+      color: var(--brand);
+    }
+
+  }
 }
 .editor-lightbox {
   display: block;

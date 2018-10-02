@@ -8,10 +8,10 @@ foreach (glob(TEMPLATEPATH . "/lib/classes/*.php") as $filename)
     include $filename;
 }
 
+if(get_current_blog_id() == 4):
 
 add_filter( 'single_template', 'get_custom_cat_template' ) ;
 function get_custom_cat_template( $single_template ) {
-
 
     // You want to filter only template for single posts of default post type
     if( is_singular( 'post' ) ) {
@@ -30,3 +30,4 @@ function get_custom_cat_template( $single_template ) {
 
     return $single_template;
 }
+    endif;

@@ -50,6 +50,21 @@ function my_mce_before_init_insert_formats( $init_array ) {
             'classes' => 'gradient'
         ),
         array(
+            'title' => 'Nassal Color',
+            'selector' => '*',
+            'classes' => 'nassal'
+        ),
+        array(
+            'title' => 'Lexington Color',
+            'selector' => '*',
+            'classes' => 'lexington'
+        ),
+        array(
+            'title' => 'nFusion Color',
+            'selector' => '*',
+            'classes' => 'nfusion'
+        ),
+        array(
             'title' => 'Lightbox Image',
             'selector' => 'a',
             'classes' => 'editor-lightbox'

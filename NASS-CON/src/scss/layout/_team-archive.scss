@@ -32,6 +32,13 @@
       object-fit: cover;
       position: absolute;
       transition: .3s ease;
+
+      &.default {
+
+
+          object-fit: contain;
+          object-position: 50% rem(5);
+      }
     }
     a {
       text-decoration: none;
@@ -58,8 +65,9 @@
         @include media-breakpoint-down(xs) {
           padding: 23rem 15px 1rem;
         }
+
         @include media-breakpoint-up(xl) {
-          padding: 12rem 15px 1rem;
+          padding: 70% 15px 1rem;
 
         }
 

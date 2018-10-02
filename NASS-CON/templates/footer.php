@@ -10,7 +10,12 @@
 //$site_name = esc_attr( $name );
 ?>
 
-    <?php if(!get_field('coming_soon', 'options')):?>
+    <?php
+      switch_to_blog(1);
+      if(!get_field('coming_soon', 'options') || is_user_logged_in()):
+
+
+      ?>
     <footer>
       <div class="container">
 
@@ -83,7 +88,7 @@
     </footer>
     <?php else:?>
     </hidden>
-    <?php endif;?>
+    <?php restore_current_blog(); endif; ?>
     <?php wp_footer(); ?>
 
     <script>

@@ -50,11 +50,11 @@ $activeFilter = $post_slug=$post->post_name;
                 ),
                 array(
                     'key'     => 'project_type',
-                    'value'   => $id->ID,
-                    'compare' => 'LIKE',
+                    'value'   => '' . $id->ID . '',
+                    'compare' => '=',
                 )
               )
-          ),
+        ),
         'meta_key'       => 'project_completion',
         'orderby'        => 'meta_value_num',
         'order'   => 'DESC',
@@ -75,8 +75,8 @@ $activeFilter = $post_slug=$post->post_name;
                   ),
                   array(
                       'key'     => 'project_type',
-                      'value'   => $id->ID,
-                      'compare' => 'LIKE',
+                      'value'   => '' . $id->ID . '',
+                      'compare' => '=',
                   )
                 )
             ),
@@ -165,8 +165,7 @@ $activeFilter = $post_slug=$post->post_name;
                   else:
                   echo '/capabilities/';
                   endif;
-                  $var = sanitize_title_for_query( get_the_title(get_field('project_type')->ID)); echo esc_attr( $var);?>
-                  "><?php echo get_the_title(get_field('project_type')->ID);?>
+                  $var = sanitize_title_for_query( get_the_title(get_field('project_type')->ID)); echo esc_attr( $var);?>"><?php echo get_the_title(get_field('project_type')->ID);?>
                   </a></h6>
 
               <?php if($type == 'portfolio'):

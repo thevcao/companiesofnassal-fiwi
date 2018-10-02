@@ -47,8 +47,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 
 
-<?php $maintemplate = get_template_directory_uri();
-  if(get_field('coming_soon', 'options')):?>
+<?php
+  $maintemplate = get_template_directory_uri();
+  switch_to_blog(1);
+  if(get_field('coming_soon', 'options') && !is_user_logged_in()):?>
       <style type="text/css">
         .recentcomments a,
         aside#secondary,
@@ -151,7 +153,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
       <hidden>
 
-<?php else:?>
+<?php else: restore_current_blog(); ?>
 
 </head>
 

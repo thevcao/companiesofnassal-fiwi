@@ -51,8 +51,8 @@
                 ),
                 array(
                     'key'     => 'project_type',
-                    'value'   => $id,
-                    'compare' => 'LIKE',
+                    'value'   => '' . $id . '',
+                    'compare' => '=',
                 )
               )
           ),
@@ -77,8 +77,8 @@
                   ),
                   array(
                       'key'     => 'project_type',
-                      'value'   => $id,
-                      'compare' => 'LIKE',
+                      'value'   => '' . $id . '',
+                      'compare' => '=',
                   )
                 )
             ),
@@ -113,8 +113,7 @@
                   else:
                   echo '/capabilities/';
                   endif;
-                  $var = sanitize_title_for_query( get_the_title(get_field('project_type')->ID)); echo esc_attr( $var);?>
-                  "><?php echo get_the_title(get_field('project_type')->ID);?>
+                  $var = sanitize_title_for_query( get_the_title(get_field('project_type')->ID)); echo esc_attr( $var);?>"><?php echo get_the_title(get_field('project_type')->ID);?>
                   </a></h6>
               <?php if($type == 'portfolio'):
               $excerpt = mb_strimwidth(get_field('excerpt'), 0, 70, '...');
@@ -145,3 +144,4 @@
     </div>
 
     <?php endif;?>
+

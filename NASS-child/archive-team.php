@@ -15,6 +15,8 @@
  * @package Smores
  * @since Smores 2.0
  */
+$blogID = get_current_blog_id();
+//echo $blogID;
 ?>
 
 <?php get_template_part('templates/header'); ?>
@@ -41,8 +43,7 @@
           <?php endif;?>
 
 
-
-      <div class="row">
+        <div class="row">
         <div class="col-md-4 mx-md-0 col-10 mx-auto">
 
           <div class="dropdown mb-5">
@@ -75,10 +76,11 @@
           </div>
 
         </div>
+
       </div>
 
 
-
+        <div class="row team-row">
 
         <?php
 
@@ -93,18 +95,29 @@
             'order'                  => 'ASC',
             'orderby'                => $order,
             'meta_query' => array(
+                    'relation' => 'OR',
+                    array(
+                        'key'     => 'title',
+                        'value'   => 'Managing Director',
+                        'compare' => '=',
+                    ),
                     array(
                         'key'     => 'title',
                         'value'   => 'Partner',
                         'compare' => '=',
-                    )
+                    ),
+                    array(
+                        'key'     => 'title',
+                        'value'   => 'CFO',
+                        'compare' => '=',
+                    ),
+
               ),
         );
 
         $loop = new WP_Query( $args );
         if($loop->have_posts()):?>
 
-        <div class="row team-row">
         <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
 
@@ -126,7 +139,7 @@
             <!--<div class="col-lg-3 col-md-4 col-sm-6 col-12 mx-md-0 mx-auto single-team-box <?php //echo $department_slug;?>">-->
               <div class="card">
 
-                 <?php if( get_field('headshot')): echo '<img src="' . get_field('headshot')['sizes']['large'] . '" alt="' . get_the_title() . '">'; else: echo '<img src="' . get_template_directory_uri() . '/dist/img/team-default.png">'; endif;?>
+                 <?php if( get_field('headshot')): echo '<img src="' . get_field('headshot')['sizes']['large'] . '" alt="' . get_the_title() . '">'; else: echo '<img class="default" src="' . get_template_directory_uri() . '/dist/img/team-default.png">'; endif;?>
 
                   <a href="<?php the_permalink();?>" class="">
                   <div class="over">
@@ -141,93 +154,13 @@
 
         <?php endwhile; ?>
 
+        <?php if($blogID == 4):?>
 
-      </div>
-
+        </div>
+        <div class="row team-row">
+        <?php endif;?>
 
         <?php endif; wp_reset_postdata();
-
-        $order = 'menu_order';
-
-        $args = array(
-
-            'posts_per_page' => -1,
-
-          //            'order'   => $order,
-            'post_type' => 'team',
-            'order'                  => 'ASC',
-            'orderby'                => 'title',
-            'meta_query' => array(
-                'relation' => 'AND',
-                  array(
-                        'key'     => 'title',
-                        'value'   => 'Partner',
-                        'compare' => '!=',
-                    ),
-                    array(
-                        'relation' => 'OR',
-                            array(
-                                'key'     => 'title',
-                                'value'   => 'CFO',
-                                'compare' => '=',
-                            ),
-                            array(
-                                'key'     => 'title',
-                                'value'   => 'Managing Director',
-                                'compare' => '=',
-                            ),
-                            array(
-                                'key'     => 'title',
-                                'value'   => 'Vice President',
-                                'compare' => 'LIKE',
-                            ),
-
-                    ),
-                )
-            );
-
-//        add_filter( 'posts_orderby' , 'posts_orderby_lastname' );
-
-        $loop = new WP_Query( $args );
-        if($loop->have_posts()):?>
-
-        <div class="row team-row">
-        <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-
-            <?php
-
-            if(get_the_terms( $post->ID, 'departments' )):
-            $departments = get_the_terms( $post->ID, 'departments' );
-//            $department = $departments[0];
-
-            // print object from first director
-//            print_r($department);
-            $department_slugs = '';
-            foreach( $departments as $department):
-            $department_slugs .= ' ' . $department->slug;
-            endforeach;
-            endif;
-            ?>
-
-
-            <div class="col-lg max-20 col-md-4 col-sm-6 mx-md-0 mx-auto single-team-box<?php echo $department_slugs;?>">
-            <!--<div class="col-lg-3 col-md-4 col-sm-6 col-12 mx-md-0 mx-auto single-team-box <?php //echo $department_slug;?>">-->
-              <div class="card">
-
-                 <?php if( get_field('headshot')): echo '<img src="' . get_field('headshot')['sizes']['large'] . '" alt="' . get_the_title() . '">'; else: echo '<img src="' . get_template_directory_uri() . '/dist/img/team-default.png">'; endif;?>
-
-                  <a href="<?php the_permalink();?>" class="">
-                  <div class="over">
-                  <h4><?php echo get_the_title();?></h4>
-                  <h6><?php echo get_field('title');?></h6>
-                  </div>
-                </a>
-              </div>
-
-
-            </div>
-
-        <?php endwhile; echo '</div>'; endif; wp_reset_postdata();
 
 
         if(get_current_blog_id() == 4):
@@ -253,11 +186,6 @@
                     ),
                     array(
                         'key'     => 'title',
-                        'value'   => 'Vice President',
-                        'compare' => 'NOT LIKE',
-                    ),
-                    array(
-                        'key'     => 'title',
                         'value'   => 'Managing Director',
                         'compare' => 'NOT LIKE',
                     ),
@@ -277,7 +205,6 @@
         $loop = new WP_Query( $args );
         if($loop->have_posts()):?>
 
-        <div class="row team-row">
         <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
             <?php
@@ -300,7 +227,7 @@
             <!--<div class="col-lg-3 col-md-4 col-sm-6 col-12 mx-md-0 mx-auto single-team-box <?php //echo $department_slug;?>">-->
               <div class="card">
 
-                 <?php if( get_field('headshot')): echo '<img src="' . get_field('headshot')['sizes']['large'] . '" alt="' . get_the_title() . '">'; else: echo '<img src="' . get_template_directory_uri() . '/dist/img/team-default.png">'; endif;?>
+                 <?php if( get_field('headshot')): echo '<img src="' . get_field('headshot')['sizes']['large'] . '" alt="' . get_the_title() . '">'; else: echo '<img class="default" src="' . get_template_directory_uri() . '/dist/img/team-default.png">'; endif;?>
 
                   <a href="<?php the_permalink();?>" class="">
                   <div class="over">
@@ -313,8 +240,9 @@
 
             </div>
 
-        <?php endwhile; echo '</div>'; endif; wp_reset_postdata();?>
+        <?php endwhile; endif; wp_reset_postdata();?>
 
+    </div>
 
     </div>
 

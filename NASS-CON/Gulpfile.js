@@ -119,7 +119,7 @@ gulp.task('styles-prod', () => {
 
     ]))
     .pipe(plugins.rename('styles.min.css'))
-    .pipe(plugins.sourcemaps.write('.'))
+//    .pipe(plugins.sourcemaps.write('.'))
     .pipe(plugins.plumber.stop())
     .pipe(hash())
     .pipe(gulp.dest('dist/css'))

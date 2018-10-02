@@ -54,7 +54,7 @@ get_template_part('templates/header'); ?>
 
               <?php if(get_field('video_loop')):?>
 
-              <video src="<?php the_field('video_loop');?>" preload="none" playsinline autoplay loop muted></video>
+              <video src="<?php the_field('video_loop');?>" preload="none" playsinline autoplay loop muted="true"></video>
 
               <?php else: $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' ); $url = $thumb['0']; ?>
               <?php if( has_post_thumbnail()): echo '<img src="' . $url . '"/>'; endif; endif;?>
@@ -249,12 +249,12 @@ get_template_part('templates/header'); ?>
               <?php if($projectsCount->have_posts()) :?>
               <a href="<?php
               echo get_site_url();
-              if($site['blog_id'] == 4):
+              if(get_current_blog_id() == 4):
               echo '/services/';
               else:
               echo '/capabilities/';
               endif;
-//              $var = sanitize_title_for_query( get_the_title() );
+              $var = sanitize_title_for_query( get_the_title() );
               echo esc_attr( $var);
               ?>"><?php echo get_the_title();?></a>
               <?php else: ?>

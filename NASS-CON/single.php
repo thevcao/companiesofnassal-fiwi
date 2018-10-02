@@ -44,7 +44,7 @@
 
 
               </div>
-              <div class="col-md-8 ml-md-3 mr-auto">
+              <div class="col-md-8 ml-md-3 mr-auto editor">
 
                 <?php if ( have_posts() ) : while (have_posts()) : the_post(); the_content(); ?>
                 <?php if(get_field('pr_snippet')): echo'<h6>About the Nassal Company</h6>'; the_field('pr_snippet'); endif;?>
