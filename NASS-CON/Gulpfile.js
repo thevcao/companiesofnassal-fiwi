@@ -196,6 +196,7 @@ gulp.task('fonts', () => {
 // Scripts task
 gulp.task('scripts', () => {
   return gulp.src([
+      nodemodules + '/fg-loadcss/dist/loadCSS.js',
       nodemodules + '/jquery/dist/jquery.js',
       nodemodules + '/dragscroll/dragscroll.js',
       nodemodules + '/outdated-browser/outdatedbrowser/outdatedbrowser.js',

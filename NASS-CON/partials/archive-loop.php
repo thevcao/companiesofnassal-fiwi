@@ -1,6 +1,9 @@
 <?php $maintemplate = get_template_directory_uri();
 
-$type = get_sub_field('post_type'); ?>
+$type = get_sub_field('post_type');
+$blogID = get_current_blog_id();
+
+?>
 
 
 
@@ -14,13 +17,11 @@ $type = get_sub_field('post_type'); ?>
                           <h3 class="mb-0"><?php the_sub_field('title');?></h3>
                         </div>
                         <div class="col-auto">
-                          <?php if($type == 'portfolio'):
-                          if(!get_current_blog_id() == 4):
-                          echo '<a href="/projects">View All</a>';
-                          else:
+                          <?php
+                          if(($type == 'portfolio') && ($blogID  == 4)):
                           echo '<a href="/case-studies">View All</a>';
-                          endif;
-
+                          elseif(($type == 'portfolio')):
+                          echo '<a href="/projects">View All</a>';
                           else:
                           echo '<a href="/category/insights">View All</a>';
                           endif;
@@ -101,7 +102,7 @@ $type = get_sub_field('post_type'); ?>
 
                                   </div>
                                 </div>
-                                <div class="col-md-4 pl-md-5 mx-md-0 mt-md-0 col-11 mx-auto mt-5">
+                                <div class="col-md-4 pl-md-5 mx-md-0 mt-md-0 col-sm-11 col-12 mx-auto mt-5">
 
                                           <h4><?php echo get_the_title();?></h4>
 

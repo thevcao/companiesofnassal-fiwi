@@ -409,6 +409,14 @@
   margin-bottom: 3rem;
   position: relative;
   overflow: hidden;
+
+  // (768px)
+  @include media-breakpoint-down(sm) {
+
+
+    margin-bottom: 0;
+  }
+
   .row {
     pointer-events: none;
     height: 100%;

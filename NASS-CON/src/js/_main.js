@@ -152,6 +152,7 @@
           },
           watchSlidesProgress: true,
           watchSlidesVisibility: true,
+          autoHeight: true,
           //          autoHeight: true,
           on: {
             init: function () {
@@ -258,12 +259,12 @@
 
           if($(this).hasClass('search-open')) {
 
-            $(this).find('span.label').text('Menu');
-            $('body').removeClass('search-open');
-            $(this).removeClass('menu-open search-open');
+            $('.menu-toggle').find('span.label').text('Menu');
+            $('body').removeClass('search-open menu-open');
+            $('.menu-toggle').removeClass('menu-open search-open');
 
           } else if ($(this).hasClass('playing')) {
-            $(this).find('span.label').text('Menu');
+            $('.menu-toggle').find('span.label').text('Menu');
             $('.modal.video').removeClass('playing');
             $('.menu-toggle').removeClass('playing');
             $('body').removeClass('playing');
@@ -273,13 +274,13 @@
             tconupdateTimer();
           } else {
             if ($('body').hasClass('menu-open')) {
-              $(this).removeClass('menu-open');
-              $(this).find('span.label').text('Menu');
+              $('.menu-toggle').removeClass('menu-open');
+              $('.menu-toggle').find('span.label').text('Menu');
               $('body').removeClass('menu-open');
             } else {
               $('body').removeClass('modal-open');
-              $(this).addClass('menu-open');
-              $(this).find('span.label').text('Close');
+              $('.menu-toggle').addClass('menu-open');
+              $('.menu-toggle').find('span.label').text('Close');
               $('body').addClass('menu-open');
             }
           }

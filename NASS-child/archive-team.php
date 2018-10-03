@@ -29,8 +29,8 @@ $blogID = get_current_blog_id();
 
 
           <?php if ( have_posts() ) : ?>
-          <div class="row mb-sm-3 mb-2">
-            <div class="col-md-8 mx-md-2 col-10 mx-auto">
+          <div class="row mb-sm-3 mb-5">
+            <div class="col-md-8 mx-md-2 col-sm-10 col-11 mx-auto">
 
           <?php while (have_posts()) : the_post(); the_content(); ?>
 

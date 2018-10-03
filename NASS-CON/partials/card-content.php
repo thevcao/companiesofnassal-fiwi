@@ -85,7 +85,7 @@ if(get_sub_field('gallery')):
 $images = get_sub_field('gallery');
 echo '<section class="card-gallery"><div class="container mt-1 mb-1 mobile-edge"><div class="row offset-xl-1 col-md-11 col-12 mobile-edge"><div class="row card-gallery">';
 foreach( $images as $image):
-echo '<div class="col-lg-2 col-sm-3 col-12 mobile-edge"><a class="section-gallery" href="' . $image['sizes']['banner'] . '" title="' . $image['caption'] . '"><img src="' . $image['sizes']['medium'] . '" alt="' . $image['title'] . '"></a></div>';
+echo '<div class="col-lg-2 col-sm-3 col-12 mobile-edge"><a class="section-gallery" href="' . $image['sizes']['banner'] . '" title="' . $image['caption'] . '"><img src="' . $image['sizes']['large'] . '" alt="' . $image['title'] . '"></a></div>';
 endforeach;
 echo "</div></div></div></div></section>";
 ?>

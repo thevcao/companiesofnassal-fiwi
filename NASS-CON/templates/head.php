@@ -18,6 +18,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-touch-fullscreen" content="yes" />
+
+  <style type="text/css">
+
+    html {
+      transition: opacity .5s ease .5s;
+
+    }
+    html.no-js {
+      opacity: 0;
+
+    }
+  </style>
   <?php get_template_part('partials/meta', 'favicons'); ?>
 
     <?php

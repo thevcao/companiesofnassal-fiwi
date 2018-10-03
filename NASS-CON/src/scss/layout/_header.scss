@@ -410,7 +410,7 @@ header {
     &:focus {
 
       outline: auto;
-      color: var(--brand);
+//      color: var(--brand);
     }
     .playing & {
       opacity: 0;
@@ -536,7 +536,7 @@ header {
       }
       // (768px)
       @include media-breakpoint-up(lg) {
-        &:hover:not(:focus) {
+        &:hover:not(:focus, :active) {
           span:not(.label) {
             background: rgba(0, 0, 0, 0);
             &:before,
@@ -575,7 +575,7 @@ header {
 //            color: var(--brand);
 //          }
 //        }
-        &:visited {
+        &:visited:not(:focus, :active) {
           span:not(.label) {
             background: var(--wordmarkColor);
             &:before {
