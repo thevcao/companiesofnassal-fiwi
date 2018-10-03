@@ -101,7 +101,7 @@
     <?php $args = array(
 
         'posts_per_page' => -1,
-        'orderby' => 'title' ,
+        'orderby' => 'menu_order',
         'order'   => 'ASC',
         'post_type' => 'services');
 
