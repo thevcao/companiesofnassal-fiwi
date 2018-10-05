@@ -4,11 +4,7 @@ $baseFontSize: 16;
 }
 html {
   @include poly-fluid-sizing('font-size', (300px: 13px, 325px: 13px, 375px: 14px, 576px: 16px, 622px: 12px, 992px: 14px, 1440px: 16px, 1600px: 18px, 1920px: 20px, 2560px: 26px, 3360px: 28px, 3840px: 32px));
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {}
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {}
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-    font-size: 10px;
-  }
+
   @media(min-aspect-ratio: 4/3) {
     @include poly-fluid-sizing('font-size', (300px: 13px, 325px: 13px, 375px: 14px, 576px: 12px, 622px: 13px, 992px: 14px, 1440px: 16px, 1600px: 17px, 1920px: 18px, 2560px: 24px, 3360px: 28px, 3840px: 30px));
   }
@@ -20,6 +16,16 @@ html {
         //        max-width: 25vw;
       }
     }
+  }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {}
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+
+
+    font-size: 11px;
+  }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    font-size: 10px;
   }
 }
 body,

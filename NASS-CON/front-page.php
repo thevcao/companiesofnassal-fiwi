@@ -116,7 +116,7 @@ get_template_part('templates/header'); ?>
 
                     <?php else:?>
 
-                    <img src="<?php echo get_sub_field('image')['sizes']['banner'];?>" alt="<?php echo get_sub_field('image')['title'];?>">
+                    <img src="<?php echo get_sub_field('image')['sizes']['large'];?>" alt="<?php echo get_sub_field('image')['title'];?>">
                     <div class="img-attr"><p><?php echo mb_strimwidth(get_sub_field('image')['caption'], 0, 250, '...');?></p></div>
 
                     <?php endif;?>

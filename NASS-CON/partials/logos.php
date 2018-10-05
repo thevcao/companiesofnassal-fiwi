@@ -29,7 +29,7 @@ endif;
           <?php if(get_field('clients')): $logos = get_field('clients');
 
                 foreach($logos as $logo):
-                echo '<div class="col-lg-3 col-md-2 col-4 logo-wrapper"><img class="logo" src="' . $logo['sizes']['medium'] . '"></div>';
+                echo '<div class="col-lg-3 col-md-2 col-4 logo-wrapper"><img class="logo" src="' . $logo['sizes']['logo'] . '"></div>';
                 endforeach; endif;
         ?>
 
