@@ -99,13 +99,13 @@ $user = get_current_user_id();
 
 if($user != 1){
 
-//add_action( 'admin_init', 'remove_superadmin_level' );
+add_action( 'admin_init', 'remove_superadmin_level' );
 
 
 
 function remove_superadmin_level(){
 
-//  remove_menu_page( 'themes.php' );                 //Appearance
+  remove_menu_page( 'themes.php' );                 //Appearance
 //  remove_menu_page( 'plugins.php' );                //Plugins
 //  remove_menu_page( 'users.php' );                  //Users
 //  remove_menu_page( 'tools.php' );                  //Tools
@@ -118,9 +118,18 @@ function remove_superadmin_level(){
 //  remove_menu_page( 'admin.php?page=server-settings' );        //Settings
 //  remove_menu_page( 'edit.php?post_type=acf-field-group' );        //Settings
 //  remove_menu_page( 'admin.php?page=all-in-one-seo-pack%2Faioseop_class.php' );        //Settings
+  remove_menu_page( 'admin.php?page=gf_edit_forms' );        //Settings
 }
 
 function remove_pu_menus() {?>
+
+<style>
+  li#toplevel_page_gf_edit_forms {
+
+    display: none;
+  }
+
+</style>
 
 <?php }
 

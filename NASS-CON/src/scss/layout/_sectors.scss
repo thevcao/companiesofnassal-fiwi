@@ -28,7 +28,7 @@
 
     // @media (max-width: 1439px)
     @include media-breakpoint-up(lg) {
-      min-height: calc(100vh - var(--banner-height) - var(--headerHeight));
+//      min-height: calc(100vh - var(--banner-height) - var(--headerHeight));
     }
 //    background-position: 0%;
 //    background-attachment: fixed;

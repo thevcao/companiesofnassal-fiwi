@@ -207,3 +207,16 @@ function disable_embeds_rewrites($rules) {
     }
     return $rules;
 }
+
+function wpdocs_register_my_custom_menu_page() {
+    add_menu_page(
+        __( 'Menus', 'textdomain' ),
+        'Menus',
+        'manage_options',
+        'nav-menus.php',
+        '',
+        'dashicons-welcome-widgets-menus',
+        60
+    );
+}
+add_action( 'admin_menu', 'wpdocs_register_my_custom_menu_page' );

@@ -97,6 +97,11 @@
   @import 'fiwi-ui';
   @import 'base';
   html > body {
+
+    #cpt_info_box {
+    display: none;
+    }
+
     div[style^="position: fixed; overflow: hidden; z-index: 11002;"] {
       background: url(/wp-content/themes/NASS-CON/admin/img/nass-headshot.png);
       background-position: 50% 100%;
@@ -162,6 +167,12 @@
     .aioseop_tabs_div {
       padding: 0;
       width: 100%;
+    }
+
+    div#aioseop_snippet > h3 {
+
+      @include headlineGradient;
+
     }
   }
   html[style="overflow-y: hidden;"] {
