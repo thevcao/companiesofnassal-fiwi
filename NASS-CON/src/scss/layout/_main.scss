@@ -283,3 +283,8 @@ html > body {
     //          max-height: 100vh !important;
   }
 }
+
+.social-bar ul li a[href^="https://mailto:"],
+.social-bar ul li a[href^="http://mailto:"] {
+  display: none;
+}

@@ -37,6 +37,49 @@ function get_custom_cat_template( $single_template ) {
 if( function_exists('acf_add_local_field_group') && (get_current_blog_id() == 4)):
 
 acf_add_local_field_group(array(
+  'key' => 'group_5bb248ea940c2',
+  'title' => 'nFusion Services Description',
+  'fields' => array(
+    array(
+      'key' => 'field_5bb248f6f9b9e',
+      'label' => 'Homepage Services Description',
+      'name' => 'nfusion_special_overview',
+      'type' => 'text',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array(
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => '',
+      'placeholder' => '',
+      'prepend' => '',
+      'append' => '',
+      'maxlength' => '',
+    ),
+  ),
+  'location' => array(
+    array(
+      array(
+        'param' => 'options_page',
+        'operator' => '==',
+        'value' => 'acf-options-site-options',
+      ),
+    ),
+  ),
+  'menu_order' => 0,
+  'position' => 'normal',
+  'style' => 'default',
+  'label_placement' => 'top',
+  'instruction_placement' => 'label',
+  'hide_on_screen' => '',
+  'active' => 1,
+  'description' => '',
+));
+
+acf_add_local_field_group(array(
   'key' => 'group_5b89a238464a9',
   'title' => 'Insights Post Builder',
   'fields' => array(

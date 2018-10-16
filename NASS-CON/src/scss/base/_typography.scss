@@ -98,6 +98,12 @@ a {
   }
 }
 p {}
+
+img.alignnone {
+    max-width: 100%;
+    height: auto;
+}
+
 img {
   &.aligncenter {
     width: 100%;
