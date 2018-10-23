@@ -288,3 +288,8 @@ html > body {
 .social-bar ul li a[href^="http://mailto:"] {
   display: none;
 }
+
+
+span.swiper-pagination-bullet.swiper-pagination-bullet:first-child:last-child {
+    display: none;
+}

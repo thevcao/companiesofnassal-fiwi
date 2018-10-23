@@ -84,20 +84,25 @@
 
 
             <li>
-              <?php if($projectsCount->have_posts()) :?>
+              <?php
+              if(get_current_blog_id() == 4):
+              echo '<a href="';
+              echo get_site_url();
+              echo '/services/';
+              $var = sanitize_title_for_query( get_the_title() );
+              echo esc_attr( $var);
+              ?>"><?php echo get_the_title();?></a>
+              <?php else:
+              if($projectsCount->have_posts()) :?>
               <a href="<?php
               echo get_site_url();
-              if(get_current_blog_id() == 4):
-              echo '/services/';
-              else:
               echo '/capabilities/';
-              endif;
               $var = sanitize_title_for_query( get_the_title() );
               echo esc_attr( $var);
               ?>"><?php echo get_the_title();?></a>
               <?php else: ?>
               <?php echo get_the_title();?>
-              <?php endif;?>
+              <?php endif; endif;?>
               </li>
 
 
