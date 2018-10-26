@@ -46,3 +46,21 @@ a#add_gform {
     display: none !important;
   }
 }
+.toplevel_page_gf_edit_forms .wrap h2 {
+  -webkit-text-fill-color: initial !important;
+}
+body:not(.companies-of-nassal) form#createuser {
+  display: none;
+}
+body:not(.companies-of-nassal) #create-new-user+p {
+  color: transparent;
+  cursor: pointer
+}
+body:not(.companies-of-nassal) #create-new-user+p:before {
+  content: 'To add a new user, click here to access the Network Admin';
+  color: #fff;
+  pointer-events: none;
+  display: inline-block;
+  padding: .5rem 1rem;
+  background: var(--brand);
+}

@@ -25,12 +25,23 @@
 
 
 
+
   $(document).ready(function(){
 
     var company = document.location.host;
     var company = company.split('.');
 
     $('body').addClass('' + company[0] + '');
+
+
+  $('body:not(.network-admin) #create-new-user+p').click(function () {
+
+    window.location = 'https://companiesofnassal.com/wp-admin/network/user-new.php'
+
+    return false;
+
+  })
+
   });
 
 })(jQuery);

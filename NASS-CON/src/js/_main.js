@@ -1004,7 +1004,7 @@
           $(".gfield_label").not('.gfield_label_before_complex').each(function () {
             var label = $(this).html();
             var inputfor = $(this).attr('for');
-            $('#' + inputfor + '').after('<label class="gfield_label below">' + label + '</label>');
+            $('#' + inputfor + '').after('<label class="gfield_label below dynamic">' + label + '</label>');
           });
         })
       }
