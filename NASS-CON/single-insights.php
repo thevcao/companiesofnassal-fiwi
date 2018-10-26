@@ -32,9 +32,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#">
-                    <?php echo get_the_title();?>
-                  </a>
+                  <a href="/insights">Insights</a>
                 </li>
               </ul>
               <h1><?php echo get_the_title();?></h1>
