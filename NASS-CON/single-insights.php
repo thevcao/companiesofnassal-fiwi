@@ -13,52 +13,55 @@
  */
 ?>
 
-  <?php get_template_part('templates/header');
+<?php get_template_part('templates/header');
 
 
 
 ?>
 
-    <main>
+<main>
 
-      <section class="post-header">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-11 offset-xl-1 pl-md-0">
-              <ul class="breadcrumbs">
-                <li>
-                  <a href="<?php echo get_site_url();?>">
-                    <?php echo get_bloginfo( 'name' );?>
-                  </a>
-                </li>
-                <li>
-                  <a href="/insights">Insights</a>
-                </li>
-              </ul>
-              <h1><?php echo get_the_title();?></h1>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-5 offset-xl-1 pl-md-0">
-              <p class="lead">
-                <?php echo get_the_excerpt();?>
-              </p>
-            </div>
-            <div class="col-md-5 ml-auto">
-              <ul class="socials shares">
-                <li>Share:</li>
-                <li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink();?>" class="pop-link" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="https://twitter.com/home?status=<?php the_permalink();?>" class="pop-link" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink();?>" class="pop-link" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                <li><a href="https://plus.google.com/share?url=<?php the_permalink();?>" class="pop-link" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+ <section class="post-header">
+  <div class="container">
+   <div class="row">
+    <div class="col-md-11 offset-xl-1 pl-md-0">
+     <ul class="breadcrumbs">
+      <li>
+       <a href="<?php echo get_site_url();?>">
+        <?php echo get_bloginfo( 'name' );?>
+       </a>
+      </li>
+      <li>
+       <a href="/insights">Insights</a>
+      </li>
+     </ul>
+     <h1>
+      <?php echo get_the_title();?>
+     </h1>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-5 offset-xl-1 pl-md-0">
+     <p class="lead">
+      <?php echo get_the_excerpt();?>
+     </p>
+    </div>
+    <div class="col-md-5 ml-auto">
+     <ul class="socials shares">
+      <li>Share:</li>
+      <li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink();?>" class="pop-link" target="_blank"><i class="fa fa-facebook"></i></a></li>
+      <li><a href="https://twitter.com/home?status=<?php the_permalink();?>" class="pop-link" target="_blank"><i class="fa fa-twitter"></i></a></li>
+      <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink();?>" class="pop-link" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+      <li><a href="https://plus.google.com/share?url=<?php the_permalink();?>" class="pop-link" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+     </ul>
+    </div>
+   </div>
+  </div>
+ </section>
 
 
-      <?php // check if the flexible content field has rows of data
+
+ <?php // check if the flexible content field has rows of data
       if( have_rows('section') ):
 
            // loop through the rows of data
@@ -99,7 +102,23 @@
       endif;
 
       ?>
+ <?php if(get_field('pr_snippet') || get_field('media_contact')):?>
 
-    </main>
+ <section class="snippet">
+  <div class="container">
+   <div class="row">
+    <div class="col-md-6 col-12 mx-auto editor">
 
-    <?php get_template_part('partials/cta'); get_template_part('templates/footer'); ?>
+     <?php if(get_field('pr_snippet')): the_field('pr_snippet'); endif;?>
+     <?php if(get_field('media_contact')): echo '<div class="media">'; the_field('media_contact'); echo '</div>'; endif;?>
+
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <?php endif;?>
+
+</main>
+
+<?php get_template_part('partials/cta'); get_template_part('templates/footer'); ?>

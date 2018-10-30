@@ -106,6 +106,8 @@
       max-width: 100%;
       width: 100%;
       height: auto;
+      max-height: 40rem;
+      object-fit: cover;
       @supports not (mix-blend-mode: multiply) {
         filter: grayscale(1);
       }
