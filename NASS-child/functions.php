@@ -153,7 +153,7 @@ acf_add_local_field_group(array(
               'default_value' => '',
               'tabs' => 'all',
               'toolbar' => 'full',
-              'media_upload' => 1,
+              'media_upload' => 0,
               'delay' => 0,
             ),
           ),
