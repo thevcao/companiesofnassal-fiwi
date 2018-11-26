@@ -47,8 +47,8 @@
       <div class="col-md-8 ml-md-3 mr-auto editor">
 
        <?php if ( have_posts() ) : while (have_posts()) : the_post(); the_content(); ?>
-       <?php if(get_field('pr_snippet')): the_field('pr_snippet'); endif;?>
-       <?php if(get_field('media_contact')):  echo '<div class="media">'; the_field('media_contact'); echo '</div>'; endif; endwhile; endif;?>
+       <?php if(get_field('include_pr')): the_field('pr_snippet'); endif;?>
+       <?php if(get_field('include_media')):  echo '<div class="media">'; the_field('media_contact'); echo '</div>'; endif; endwhile; endif;?>
 
       </div>
 

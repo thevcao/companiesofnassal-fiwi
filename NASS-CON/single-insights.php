@@ -109,8 +109,8 @@
    <div class="row">
     <div class="col-md-6 col-12 mx-auto editor">
 
-     <?php if(get_field('pr_snippet')): the_field('pr_snippet'); endif;?>
-     <?php if(get_field('media_contact')): echo '<div class="media">'; the_field('media_contact'); echo '</div>'; endif;?>
+     <?php if(get_field('include_pr')): the_field('pr_snippet'); endif;?>
+     <?php if(get_field('include_media')): echo '<div class="media">'; the_field('media_contact'); echo '</div>'; endif;?>
 
     </div>
    </div>
