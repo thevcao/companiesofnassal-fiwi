@@ -64,7 +64,42 @@
   </div>
  </section>
 
+ <?php if(get_field('author')): $author = get_field('author');?>
+ <section class="author">
+  <div class="container">
+   <div class="row">
+    <div class="col-lg-6 col-sm-10 col-12 mx-auto author-meta">
 
+     <div class="row align-items-center">
+      <div class="col-auto pr-sm-0">
+       <img class="author-avatar" src="<?php echo get_field('headshot', $author->ID)['sizes']['medium'];?>">
+      </div>
+      <div class="col">
+      <h6 class="mb-2">About the Author</h6>
+
+      <h5><?php echo get_the_title($author->ID);?></h5>
+      <h6><?php echo get_field('title', $author->ID);?></h6>
+
+      </div>
+
+     </div>
+     <div class="row">
+
+      <div class="col-sm-12">
+
+
+      <p><?php echo get_field('simple_bio', $author->ID);?></p>
+      </div>
+
+     </div>
+
+
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <?php endif;?>
 
 </main>
 

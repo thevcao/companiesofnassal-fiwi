@@ -10,7 +10,7 @@ $type = get_sub_field('media_type');
   <section class="nsights-featured-media">
 
           <div class="row">
-            <div class="col-md-8 mx-auto editor">
+            <div class="col-lg-8 mx-auto editor">
 
 
               <?php

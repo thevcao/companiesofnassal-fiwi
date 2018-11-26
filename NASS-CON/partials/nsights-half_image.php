@@ -6,12 +6,12 @@
     <div class="container">
 
           <div class="row">
-            <div class="col-md-4 ml-auto">
+            <div class="col-lg-4 ml-auto">
 
               <img src="<?php echo get_sub_field('image_1')['sizes']['large'];?>" alt="<?php echo get_sub_field('image_1')['title'];?>">
 
             </div>
-            <div class="col-md-4 mr-auto">
+            <div class="col-lg-4 mr-auto">
 
               <img src="<?php echo get_sub_field('image_2')['sizes']['large'];?>" alt="<?php echo get_sub_field('image_2')['title'];?>">
 

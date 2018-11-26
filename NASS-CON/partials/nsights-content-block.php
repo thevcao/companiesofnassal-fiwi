@@ -11,7 +11,7 @@ $image = get_sub_field('image');
 
     <div class="container">
           <div class="row">
-            <div class="col-md-6 col-12 mx-auto editor">
+            <div class="col-lg-6 col-12 mx-auto editor">
 
               <?php the_sub_field('content');?>
 

@@ -6,7 +6,7 @@
     <div class="container">
 
           <div class="row">
-            <div class="col-md-7 mx-auto editor">
+            <div class="col-lg-7 mx-auto editor">
 
               <blockquote>
               <?php the_sub_field('quote');?>
