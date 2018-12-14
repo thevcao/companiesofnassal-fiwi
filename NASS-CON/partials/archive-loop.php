@@ -170,13 +170,14 @@ $blogID = get_current_blog_id();
                                   'order'   => 'DESC',
                                   'post_type' => 'post',
                                   'cat' => $id,
-                                  'meta_query' => array(
-                                      array(
-                                          'key'     => 'featured_post',
-                                          'value'     => 'yes',
-                                          'compare' => 'NOT LIKE',
-                                      ),
-                                  ),
+                                  'offset' => 1
+//                                  'meta_query' => array(
+//                                      array(
+//                                          'key'     => 'featured_post',
+//                                          'value'     => 'yes',
+//                                          'compare' => 'NOT LIKE',
+//                                      ),
+//                                  ),
 
 
                                 );

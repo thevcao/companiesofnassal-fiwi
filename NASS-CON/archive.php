@@ -31,7 +31,7 @@
           <div class="dropdown">
             <a class="current" href="#" data-toggle="all">All</a>
             <ul class="menu">
-            <li></li>
+            <li><a href="#" data-toggle="all">All</a></li>
             <li><a href="#" data-toggle="nassal">Nassal</a></li>
             <li><a href="#" data-toggle="lexington">Lexington</a></li>
             <li><a href="#" data-toggle="nfusion">nFusion</a></li>
