@@ -37,36 +37,36 @@ use OldFashioned\TopBarWalker;
 $dev_flag_dir = get_stylesheet_directory().'/dist/development.txt';
 
 
-function get_hash_css( $css ) {
-    $map = get_template_directory() . '/dist/assets.json';
-    static $hash = null;
-    if ( null === $hash ) {
-        $hash = file_exists( $map ) ? json_decode( file_get_contents( $map ), true ) : [];
-    }
-    if ( array_key_exists( $css, $hash ) ) {
-        return '/dist/css/' . $hash[ $css ];
-    }
-
-    return $css;
-
-}
-
-function get_hash_js( $js ) {
-    $map = get_template_directory() . '/dist/assets.json';
-
-    static $hash = null;
-    if ( null === $hash ) {
-        $hash = file_exists( $map ) ? json_decode( file_get_contents( $map ), true ) : [];
-    }
-    if ( array_key_exists( $js, $hash ) ) {
-        return '/dist/js/' . $hash[ $js ];
-    }
-    return $js;
-
-    return $js;
-
-
-}
+//function get_hash_css( $css ) {
+//    $map = get_template_directory() . '/dist/assets.json';
+//    static $hash = null;
+//    if ( null === $hash ) {
+//        $hash = file_exists( $map ) ? json_decode( file_get_contents( $map ), true ) : [];
+//    }
+//    if ( array_key_exists( $css, $hash ) ) {
+//        return '/dist/css/' . $hash[ $css ];
+//    }
+//
+//    return $css;
+//
+//}
+//
+//function get_hash_js( $js ) {
+//    $map = get_template_directory() . '/dist/assets.json';
+//
+//    static $hash = null;
+//    if ( null === $hash ) {
+//        $hash = file_exists( $map ) ? json_decode( file_get_contents( $map ), true ) : [];
+//    }
+//    if ( array_key_exists( $js, $hash ) ) {
+//        return '/dist/js/' . $hash[ $js ];
+//    }
+//    return $js;
+//
+//    return $js;
+//
+//
+//}
 
 $OldFashioned = new OldFashioned(
     array( // Includes
@@ -81,8 +81,8 @@ $OldFashioned = new OldFashioned(
         'lib/widgets',       // Add widget scripts
     ),
     array( // Assets
-        'css'             =>  file_exists($dev_flag_dir) ? '/dist/css/styles.min.css' : get_hash_css( 'styles.min.css' ),
-        'js'             =>  file_exists($dev_flag_dir) ? '/dist/js/scripts.min.js' : get_hash_js( 'scripts.min.js' ),
+        'css'             => '/dist/css/styles.min.css',
+        'js'             =>  '/dist/js/scripts.min.js',
         'modernizr'       => '/dist/js/vendor/modernizr.min.js',
         'jquery'          => '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js',
         'jquery_fallback' => '/dist/js/vendor/jquery.min.js',

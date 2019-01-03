@@ -1,73 +1,79 @@
-html > body {
+html>body {
   &.page-template-locations {
-
     .editor {
-
-      > p {
-
+      >p {
         max-width: 80%;
       }
-    #logo {
-      //      width: 100%;
-      max-width: 80%;
-      //      height: 43%;
-      //      max-height: rem(56);
-      display: block;
-      object-fit: contain;
-      object-position: 100% 50%;
-      margin: 1rem 0 0;
-      // (768px)
-      @include media-breakpoint-down(sm) {
-        max-width: 200px;
-//        margin: 1rem 0 .5rem;
+
+      #logo {
+        //      width: 100%;
+        max-width: 80%;
+        //      height: 43%;
+        //      max-height: rem(56);
+        display: block;
+        object-fit: contain;
+        object-position: 100% 50%;
+        margin: 1rem 0 0;
+
+        // (768px)
+        @include media-breakpoint-down(sm) {
+          max-width: 200px;
+          //        margin: 1rem 0 .5rem;
+        }
+
+        @include media-breakpoint-down(xs) {
+          //        max-width: 50%;
+          //        margin: 1rem 0 .5rem;
+        }
       }
-      @include media-breakpoint-down(xs) {
-//        max-width: 50%;
-        //        margin: 1rem 0 .5rem;
+
+      .office-name {
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        color: black;
       }
-    }
-    .office-name {
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      color: black;
-    }
-    .contact-link {
-      color: var(--brand);
-      //      text-align: center;
-      display: block;
-      font-weight: 700;
-      //      font-size: 1.15rem;
-      transition: .3s ease;
-      line-height: 1;
-      padding: .5rem 0;
-      display: block;
-      // (768px)
-      @include media-breakpoint-down(sm) {
-        margin-bottom: 1rem;
-        padding: 0 5px;
-      }
-      svg {
-        height: 1rem;
-        width: 1rem;
-        vertical-align: text-top;
-      }
-      svg path {
-        fill: var(--brand);
+
+      .contact-link {
+        color: var(--brand);
+        //      text-align: center;
+        display: block;
+        font-weight: 700;
+        //      font-size: 1.15rem;
         transition: .3s ease;
-      }
-      &:hover {
-        color: var(--brand-dark);
-        text-decoration: none;
+        line-height: 1;
+        padding: .5rem 0;
+        display: block;
+
+        // (768px)
+        @include media-breakpoint-down(sm) {
+          margin-bottom: 1rem;
+          padding: 0 5px;
+        }
+
+        svg {
+          height: 1rem;
+          width: 1rem;
+          vertical-align: text-top;
+        }
+
         svg path {
-          fill: var(--brand-dark);
+          fill: var(--brand);
+          transition: .3s ease;
+        }
+
+        &:hover {
+          color: var(--brand-dark);
+          text-decoration: none;
+
+          svg path {
+            fill: var(--brand-dark);
+          }
         }
       }
     }
 
-
-    }
-
     .gform_wrapper {
+
       .gform_footer input.button,
       .gform_footer input[type=submit] {
         font-size: 1rem;
@@ -84,10 +90,42 @@ html > body {
         outline: none;
         transition: .3s ease;
         cursor: pointer;
+
         &:hover {
           background-size: 1000%;
         }
       }
+
+      ul.gfield_checkbox li.gchoice_1_6_1 {
+        display: flex;
+        align-content: center;
+        align-items: center;
+      }
+
+      input#choice_1_6_1 {
+        display: inline !important;
+        appearance: none;
+        border: .1rem solid white;
+        border-radius: 100%;
+        height: 1.5rem;
+        width: 1.5rem !important;
+        background: #eee;
+        transform: none;
+        margin: .5rem 0;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+        outline: none;
+        margin-left: 5px;
+
+        &:checked {
+          background: var(--brand);
+
+          +label {
+            color: var(--brand);
+          }
+        }
+      }
+
       label {
         //      display: none !important;
         color: $grey;
@@ -105,25 +143,40 @@ html > body {
         font-weight: bold;
         transform-origin: 0% 0% 0;
         letter-spacing: 0 !important;
+
+        &#label_1_6_1 {
+          display: inline !important;
+          position: relative;
+          bottom: 0;
+          padding: 0 .5rem;
+          top: auto;
+          transition: color .3s ease;
+        }
       }
+
       .gfield_label.below,
       [for="input_1_1_6"],
       [for="input_1_1_3"],
       .clear-multi label {
         display: block !important;
       }
+
       .gfield_label_before_complex {
         display: none !important;
       }
+
       div.ginput_container_name span {
         padding: 0;
       }
+
       .validation_message,
       div.validation_error {
         display: none !important;
       }
+
       li.gfield {
         position: relative;
+
         //        overflow: hidden;
         &.gfield.gfield_error {
           background-color: rgba(255, 255, 255, 0);
@@ -132,11 +185,13 @@ html > body {
           border-bottom: none;
           padding-bottom: 0;
           padding-top: 0;
+
           input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
           textarea {
             border-color: red;
           }
         }
+
         span {
           position: relative;
           //          overflow: hidden;
@@ -144,6 +199,7 @@ html > body {
           display: inline-block !important;
           margin-bottom: 0 !important;
         }
+
         .ginput_container {
           position: relative;
           //        height: 3rem;
@@ -155,6 +211,7 @@ html > body {
           margin: 0;
           margin-top: .5rem;
         }
+
         input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
         textarea {
           border: none;
@@ -170,31 +227,38 @@ html > body {
           margin: 0;
           color: black;
           -webkit-border-radius: 0;
+
           &:focus {
             border-color: var(--brand);
           }
-          &:focus + label {
+
+          &:focus+label {
             transform: translateY(-110%) scale(0.75, 0.75);
             color: var(--brand);
           }
-          &.not-empty + label {
+
+          &.not-empty+label {
             //            z-index: 2;
             opacity: 0;
           }
         }
+
         &.gfield.gfield_error label {
           transform: translateY(-110%) scale(0.75, 0.75);
           color: red;
         }
-        textarea + label {
+
+        textarea+label {
           //
           top: 8px;
           bottom: auto;
         }
+
         .gfield_error {
           border: none !important;
           margin-bottom: 0 !important;
           background: none !important;
+
           &.gfield_contains_required.gfield_creditcard_warning {
             border: none !important;
             margin-bottom: 0 !important;

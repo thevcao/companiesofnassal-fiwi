@@ -87,7 +87,7 @@ class OldFashioned
 
 //        \wp_enqueue_script('modernizr', \get_template_directory_uri() . self::get_asset('modernizr'), array(), null, false);
 //        \wp_enqueue_script('jquery');
-        \wp_enqueue_script('old_fashioned_js', \get_template_directory_uri() . self::get_asset('js'), array(), null, true);
+        \wp_enqueue_script('old_fashioned_js', \get_template_directory_uri() . self::get_asset('js'), array(), null, false);
     }
 
     /**

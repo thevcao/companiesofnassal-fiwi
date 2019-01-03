@@ -305,7 +305,7 @@ gulp.task('watch', () => {
 
 // Default task
 // Default task
-gulp.task('dev', ['build-dev', 'watch', 'browser-sync'], function(){
+gulp.task('dev', ['build-dev', 'watch'], function(){
   gulp.start('dev-build-message');
 });
 gulp.task('default', ['build']);
