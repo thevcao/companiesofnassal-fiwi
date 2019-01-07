@@ -155,7 +155,33 @@
  </section>
 
  <?php endif;?>
+  <?php if(get_current_blog_id() == 4):?>
 
+  <section class="newsletter">
+
+    <div class="container">
+
+      <div class="row align-items-center">
+        <div class="col-md-6 offset-xl-1">
+          <h6>Be the first to receive our industry insights!</h6>
+          <h3>Subscribe Today</h3>
+
+
+        </div>
+        <div class="col-md">
+
+          <?php echo do_shortcode('[gravityform id="2" title="false" description="false" ajax="true"]');?>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <?php endif;?>
 </main>
 
 <?php get_template_part('partials/cta'); get_template_part('templates/footer'); ?>

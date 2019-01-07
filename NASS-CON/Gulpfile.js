@@ -70,18 +70,7 @@ gulp.task('styles', () => {
     .pipe(plugins.sourcemaps.write('.'))
     .pipe(plugins.plumber.stop())
     .pipe(gulp.dest('dist/css'))
-    .pipe(browserSync.stream())
-    .pipe(hash())
-    .pipe(gulp.dest('dist/css'))
-    .pipe(hash.manifest('dist/assets.json', { // Generate the manifest file
-      deleteOld: true,
-      sourceDir: __dirname + '/dist/css'
-    }))
-    .pipe(gulp.dest('.'))
     .pipe(plugins.size({ title: 'styles' }))
-    .on('end', function(){
-      gulp.start('dev-build-message');
-    });
 });
 
 
@@ -99,37 +88,15 @@ gulp.task('styles-prod', () => {
       require('autoprefixer')({ browsers: ['last 2 versions', 'last 2 iOS versions', 'ie >= 9'] }),
       require('postcss-focus'),
       require('postcss-flexbugs-fixes'),
-      require('postcss-sorting')({
-        'order': [
-        'custom-properties',
-        'dollar-variables',
-        'declarations',
-        'at-rules',
-        'rules'
-      ],
-        'properties-order': 'alphabetical' }),
       require('postcss-object-fit-images'),
       require('postcss-initial')({
         reset: 'inherited' // reset only inherited rules
-      }),
-      require('postcss-uncss')({
-      html: [], //Include JSON of site map to crawl css against html
-      ignore: []
       })
-
     ]))
     .pipe(plugins.rename('styles.min.css'))
-//    .pipe(plugins.sourcemaps.write('.'))
     .pipe(plugins.plumber.stop())
-    .pipe(hash())
     .pipe(gulp.dest('dist/css'))
-    .pipe(browserSync.stream())
-    .pipe(hash.manifest('dist/assets.json', { // Generate the manifest file
-      deleteOld: true,
-      sourceDir: __dirname + '/dist/css'
-    }))
-    .pipe(gulp.dest('.'))
-    .pipe(plugins.size({ title: 'styles' }));
+    .pipe(plugins.size({ title: 'styles' }))
 });
 
 
@@ -219,15 +186,6 @@ gulp.task('scripts', () => {
     .pipe(plugins.sourcemaps.write('.'))
     .pipe(plugins.plumber.stop())
     .pipe(gulp.dest('dist/js'))
-    .pipe(browserSync.stream())
-    .pipe(hash())
-    .pipe(gulp.dest('dist/js'))
-    .pipe(browserSync.stream())
-    .pipe(hash.manifest('dist/assets.json', { // Generate the manifest file
-      deleteOld: true,
-      sourceDir: __dirname + '/dist/js'
-    }))
-    .pipe(gulp.dest('.'))
     .pipe(plugins.size({ title: 'scripts' }));
 })
 
@@ -270,7 +228,7 @@ gulp.task('images', () => {
 //});
 
 // Build task
-gulp.task('build-dev', ['dev-env', 'admin-styles', 'styles', 'admin-styles', 'scripts', 'modernizr', 'images', 'fonts', 'favicons']);
+gulp.task('build-dev', ['styles', 'admin-styles', 'scripts', 'modernizr', 'images', 'fonts', 'favicons']);
 gulp.task('build', ['styles', 'admin-styles', 'scripts', 'modernizr', 'images', 'fonts', 'favicons']);
 gulp.task('build-prod', ['styles-prod', 'admin-styles', 'scripts', 'modernizr', 'images', 'fonts', 'favicons']);
 
@@ -305,8 +263,6 @@ gulp.task('watch', () => {
 
 // Default task
 // Default task
-gulp.task('dev', ['build-dev', 'watch', 'browser-sync'], function(){
-  gulp.start('dev-build-message');
-});
-gulp.task('default', ['build']);
+gulp.task('dev', ['build-dev', 'watch']);
+gulp.task('default', ['build-prod']);
 gulp.task('prod', ['build-prod']);

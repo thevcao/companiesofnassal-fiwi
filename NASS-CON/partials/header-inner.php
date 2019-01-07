@@ -138,10 +138,15 @@
           </a>
         </div>
 
-        <div class="col-md-4 col ml-auto">
+        <div class="col-md-6 col ml-auto">
           <div class="row align-items-center">
             <?php if(get_current_blog_id() == 4):?>
               <div class="col-auto pr-0 pl-0 ml-auto">
+                <a href="/insights#subscribe" class="toggle subscribe d-none d-md-block">
+                    Subscribe to nFusion Insights
+                </a>
+              </div>
+              <div class="col-auto pr-0 pl-0">
                 <button class="toggle share-toggle tooltipped tooltipped-no-delay tooltipped-w" aria-label="Click to Copy URL" data-clipboard-text="<?php the_permalink();?>">
                   <?php include get_template_directory() . '/dist/img/share.svg';?>
                 </button>

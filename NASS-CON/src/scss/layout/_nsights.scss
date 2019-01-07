@@ -1,10 +1,8 @@
 .single-format-standard.nfusion {
   .post-header {
 
-
     // (768px)
     @include media-breakpoint-down(md) {
-
       padding: 3rem 0 0;
       margin-bottom: 1rem;
     }
@@ -14,12 +12,15 @@
       margin-bottom: 1rem;
       font-size: 3.25rem;
     }
+
     .breadcrumbs {
       list-style: none;
       padding: 0;
       margin: 0 0 .5rem;
+
       li {
         display: inline-block;
+
         //      margin-right: 1rem;
         &:not(:last-child) {
           &:after {
@@ -30,25 +31,30 @@
             font-weight: 700;
           }
         }
+
         a {
           //        color: white;
           font-weight: 700;
         }
       }
     }
+
     .socials {
       list-style: none;
       padding: 0;
       margin: 0 0;
       text-align: left;
+
       // (768px)
       @include media-breakpoint-down(md) {
         //          text-align: left;
         margin-bottom: 1rem;
       }
+
       li {
         display: inline-block;
         margin-right: .5rem;
+
         a {
           --font-size: 1.5rem;
           font-size: calc(var(--font-size) * 1);
@@ -60,10 +66,12 @@
           align-items: center;
           border: 1px solid black;
           border-radius: 100%;
+
           i {
             width: 100%;
             text-align: center;
           }
+
           &:hover {
             text-decoration: none;
             color: var(--brand);
@@ -72,11 +80,14 @@
         }
       }
     }
+
     margin-bottom: 3rem;
   }
+
   .nsights-banner-image {
     position: relative;
     overflow: hidden;
+
     @supports (mix-blend-mode: multiply) {
       background: var(--brand-gradient);
       mix-blend-mode: multiply;
@@ -87,6 +98,7 @@
       //        display: none;
       //      }
     }
+
     @supports not (mix-blend-mode: multiply) {
       &:after {
         background: var(--brand-gradient);
@@ -102,31 +114,39 @@
         opacity: .75;
       }
     }
+
     img {
       max-width: 100%;
       width: 100%;
       height: auto;
       max-height: 40rem;
       object-fit: cover;
+
       @supports not (mix-blend-mode: multiply) {
         filter: grayscale(1);
       }
+
       @supports (mix-blend-mode: multiply) {
         mix-blend-mode: multiply;
       }
     }
   }
+
   .nsights-content-block {
     padding: 3rem 0;
+
     @include media-breakpoint-down(md) {
       padding: 2rem 0 1rem;
     }
   }
+
   .nsights-featured-media {
     padding: 3rem 0;
+
     @include media-breakpoint-down(md) {
       padding: 1rem 0 0;
     }
+
     img {
       max-width: 100%;
       width: 100%;
@@ -134,12 +154,14 @@
       display: block;
       margin: 0 auto;
     }
+
     .videojs-wrapper {
       position: relative;
       padding-bottom: 56.25%;
       //          padding-top: 35px;
       height: 0;
       overflow: hidden;
+
       .vjs-youtube,
       .vjs-using-native-controls {
         position: absolute;
@@ -148,10 +170,12 @@
         width: 100%;
         height: 100%;
       }
+
       .vjs-using-native-controls {
         .vjs-poster {
           display: block;
         }
+
         &.vjs-has-started {
           .vjs-poster {
             display: none;
@@ -160,12 +184,14 @@
       }
     }
   }
+
   .nsights-quote {
     blockquote {
       margin: 0;
       font-size: 2rem;
       font-weight: bold;
       color: #231F20;
+
       p {
         font-size: 1.5rem;
         color: $grey;
@@ -175,19 +201,172 @@
       }
     }
   }
+
   .nsights-50-image {
     margin: 3rem 0;
+
     // (768px)
     @include media-breakpoint-down(md) {
       margin: 1rem 0 0;
     }
+
     img {
       width: 100%;
       height: 20rem;
       object-fit: cover;
+
       // (768px)
       @include media-breakpoint-down(md) {
         margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+.newsletter {
+  margin: 5rem 0;
+  padding: 6rem 0;
+  background: var(--brand-gradient);
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-image: url(https://nfusion.companiesofnassal.com/wp-content/uploads/sites/4/drawing_howard-lawrence-b-668855-unsplash.jpg);
+    background-size: cover;
+    background-position: 50%;
+    opacity: .5;
+  }
+
+  h3, h6, h5, div#gform_confirmation_message_2 {
+    color: white;
+  }
+
+  div#gform_confirmation_message_2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    letter-spacing: -.025em;
+  }
+
+  .gform_wrapper {
+    label.gfield_label {
+      display: none;
+    }
+
+    &.gform_validation_error {
+      .validation_message {
+        text-align: center;
+        color: white;
+      }
+
+      form ul li.gfield {
+        margin: 0;
+        padding: 0;
+        padding-right: 0 !important;
+        height: 100%;
+
+        &.gfield_error:not(.gf_left_half):not(.gf_right_half) {
+          .ginput_container {
+            margin: 0;
+            padding: 0;
+          }
+
+          max-width: 100% !important;
+          width: 100% !important;
+          margin: 0;
+          padding: 0;
+          background: none;
+          border: none;
+
+          input {
+            width: 100%;
+            background: white;
+            border: 2px solid white !important;
+            color: var(--brand);
+          }
+        }
+      }
+    }
+
+    form {
+      display: flex;
+      height: 3.5rem;
+
+      div.validation_error {
+        display: none;
+      }
+
+      li.gfield, .top_label div.ginput_container, ul.gform_fields {
+        margin: 0;
+        padding: 0;
+        padding-right: 0 !important;
+        height: 100%;
+      }
+
+      .gform_body {
+        flex: 0 0 50%;
+        width: 50%;
+        height: 100%;
+
+        input {
+          height: 100%;
+          width: 100%;
+          border: 2px solid white;
+          background: none;
+          color: white;
+          border-right: none;
+          border-top-left-radius: 100px;
+          border-bottom-left-radius: 100px;
+          font-weight: bold;
+          padding: 0 1rem !important;
+          text-align: center;
+          outline: none;
+
+          &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            color: white;
+          }
+          &::-moz-placeholder { /* Firefox 19+ */
+            color: white;
+          }
+          &:-ms-input-placeholder { /* IE 10+ */
+            color: white;
+          }
+          &:-moz-placeholder { /* Firefox 18- */
+            color: white;
+          }
+
+        }
+      }
+
+      .gform_footer {
+        flex: 0 0 50%;
+        width: 50%;
+        margin: 0;
+        padding: 0;
+
+        input[type=submit] {
+          height: 100%;
+          width: 100%;
+          background: var(--brand-gradient);
+          border: 2px solid white;
+          color: white;
+          font-weight: bold;
+          border-top-right-radius: 100px;
+          border-bottom-right-radius: 100px;
+          outline: none;
+          transition: .3s ease;
+          background-size: 200%;
+          background-position: 25%;
+
+          &:hover {
+            background-position: 0%;
+          }
+        }
       }
     }
   }
