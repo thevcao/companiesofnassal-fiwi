@@ -63,7 +63,7 @@
             <ul class="socials">
 
 
-              <?php if( have_rows('socials', 'options') ):?>
+              <?php restore_current_blog(); if( have_rows('socials', 'options') ):?>
               <?php while ( have_rows('socials', 'options') ) : the_row();?>
               <li><a href="<?php the_sub_field('link');?>"><?php the_sub_field('type');?></a></li>
 
@@ -88,7 +88,7 @@
     </footer>
     <?php else:?>
     </hidden>
-    <?php restore_current_blog(); endif; ?>
+    <?php endif; ?>
     <?php wp_footer(); ?>
 
 
