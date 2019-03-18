@@ -2221,7 +2221,7 @@
 
             var label = $(this).find('figcaption').text();
 
-            $(this).before('<div class="video-js ' + classes + '" id="' + id + '"></div><label>' + label + '</label>');
+            $(this).before('<video class="video-js ' + classes + '" id="' + id + '"></video><label>' + label + '</label>');
 
           } else {
 
@@ -2236,8 +2236,7 @@
             poster: poster,
             sources: [{
               "type": "video/mp4",
-              "src": src,
-              "poster": poster
+              "src": src
             }],
           });
 
