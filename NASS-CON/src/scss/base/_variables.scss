@@ -125,7 +125,7 @@ $lt-grey: #FAFAFA;
   }
  }
 
- ul {
+ ul:not(.wp-block-gallery) {
   list-style: none;
   counter-reset: foo;
   padding: 1rem;

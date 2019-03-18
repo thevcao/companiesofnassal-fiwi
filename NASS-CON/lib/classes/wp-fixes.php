@@ -53,7 +53,7 @@ function change_howdy($translated, $text, $domain) {
 add_filter('gettext', 'change_howdy', 10, 3);
 }
 
-add_filter( 'wp_insert_post_data' , 'filter_post_data' , '99', 2 );
+//add_filter( 'wp_insert_post_data' , 'filter_post_data' , '99', 2 );
 
 function disable_emojis() {
   remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
