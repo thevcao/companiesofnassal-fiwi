@@ -51,13 +51,12 @@
             <?php echo get_the_excerpt();?>
           </p>
         </div>
-        <div class="col-md-5 ml-auto">
+        <div class="col-md-auto ml-auto">
           <ul class="socials shares">
             <li>Share:</li>
             <li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink();?>" class="pop-link" target="_blank"><i class="fa fa-facebook"></i></a></li>
             <li><a href="https://twitter.com/home?status=<?php the_permalink();?>" class="pop-link" target="_blank"><i class="fa fa-twitter"></i></a></li>
             <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink();?>" class="pop-link" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="https://plus.google.com/share?url=<?php the_permalink();?>" class="pop-link" target="_blank"><i class="fa fa-google-plus"></i></a></li>
           </ul>
         </div>
       </div>
