@@ -143,23 +143,23 @@ add_image_size( 'banner', 1800, 999999 );
 add_image_size( 'logo', 180, 999999 );
 
 
-function nass_tinymce_body_class( $mce ) {
-//    // you could do things here to detect whatever you need
-//    // and use those for the additional classes.
-//    // be safe and use sanitize_html_class or similar if generated.
+//function nass_tinymce_body_class( $mce ) {
+////    // you could do things here to detect whatever you need
+////    // and use those for the additional classes.
+////    // be safe and use sanitize_html_class or similar if generated.
+////
+////    // example: use the post ID when editing a post
+////    if ( $post = get_post() ) {
+////        $mce['body_class'] .= ' ' . sanitize_html_class( $post->ID );
+////    }
+//    $name = sanitize_title_for_query(get_bloginfo( 'name'));
+//    $site_name = esc_attr( $name );
 //
-//    // example: use the post ID when editing a post
-//    if ( $post = get_post() ) {
-//        $mce['body_class'] .= ' ' . sanitize_html_class( $post->ID );
-//    }
-    $name = sanitize_title_for_query(get_bloginfo( 'name'));
-    $site_name = esc_attr( $name );
-
-    $mce['body_class'] .= ' ' . $site_name;
-
-    return $mce;
-}
-add_filter( 'tiny_mce_before_init', 'nass_tinymce_body_class' );
+//    $mce['body_class'] .= ' ' . $site_name;
+//
+//    return $mce;
+//}
+//add_filter( 'tiny_mce_before_init', 'nass_tinymce_body_class' );
 
 
 function posts_orderby_lastname ($orderby_statement)
@@ -168,45 +168,45 @@ function posts_orderby_lastname ($orderby_statement)
     return $orderby_statement;
 }
 
-function disable_embeds_code_init() {
+//function disable_embeds_code_init() {
+//
+// // Remove the REST API endpoint.
+// remove_action( 'rest_api_init', 'wp_oembed_register_route' );
+//
+// // Turn off oEmbed auto discovery.
+// add_filter( 'embed_oembed_discover', '__return_false' );
+//
+// // Don't filter oEmbed results.
+// remove_filter( 'oembed_dataparse', 'wp_filter_oembed_result', 10 );
+//
+// // Remove oEmbed discovery links.
+// remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
+//
+// // Remove oEmbed-specific JavaScript from the front-end and back-end.
+// remove_action( 'wp_head', 'wp_oembed_add_host_js' );
+// add_filter( 'tiny_mce_plugins', 'disable_embeds_tiny_mce_plugin' );
+//
+// // Remove all embeds rewrite rules.
+// add_filter( 'rewrite_rules_array', 'disable_embeds_rewrites' );
+//
+// // Remove filter of the oEmbed result before any HTTP requests are made.
+// remove_filter( 'pre_oembed_result', 'wp_filter_pre_oembed_result', 10 );
+//}
 
- // Remove the REST API endpoint.
- remove_action( 'rest_api_init', 'wp_oembed_register_route' );
+//add_action( 'init', 'disable_embeds_code_init', 9999 );
 
- // Turn off oEmbed auto discovery.
- add_filter( 'embed_oembed_discover', '__return_false' );
+//function disable_embeds_tiny_mce_plugin($plugins) {
+//    return array_diff($plugins, array('wpembed'));
+//}
 
- // Don't filter oEmbed results.
- remove_filter( 'oembed_dataparse', 'wp_filter_oembed_result', 10 );
-
- // Remove oEmbed discovery links.
- remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
-
- // Remove oEmbed-specific JavaScript from the front-end and back-end.
- remove_action( 'wp_head', 'wp_oembed_add_host_js' );
- add_filter( 'tiny_mce_plugins', 'disable_embeds_tiny_mce_plugin' );
-
- // Remove all embeds rewrite rules.
- add_filter( 'rewrite_rules_array', 'disable_embeds_rewrites' );
-
- // Remove filter of the oEmbed result before any HTTP requests are made.
- remove_filter( 'pre_oembed_result', 'wp_filter_pre_oembed_result', 10 );
-}
-
-add_action( 'init', 'disable_embeds_code_init', 9999 );
-
-function disable_embeds_tiny_mce_plugin($plugins) {
-    return array_diff($plugins, array('wpembed'));
-}
-
-function disable_embeds_rewrites($rules) {
-    foreach($rules as $rule => $rewrite) {
-        if(false !== strpos($rewrite, 'embed=true')) {
-            unset($rules[$rule]);
-        }
-    }
-    return $rules;
-}
+//function disable_embeds_rewrites($rules) {
+//    foreach($rules as $rule => $rewrite) {
+//        if(false !== strpos($rewrite, 'embed=true')) {
+//            unset($rules[$rule]);
+//        }
+//    }
+//    return $rules;
+//}
 
 function wpdocs_register_my_custom_menu_page() {
     add_menu_page(
@@ -220,3 +220,11 @@ function wpdocs_register_my_custom_menu_page() {
     );
 }
 add_action( 'admin_menu', 'wpdocs_register_my_custom_menu_page' );
+
+
+
+function nass_setup() {
+  add_theme_support( 'align-wide' );
+  add_theme_support( 'align-full' );
+}
+add_action( 'after_setup_theme', 'nass_setup' );

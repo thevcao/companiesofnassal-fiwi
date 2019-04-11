@@ -109,7 +109,7 @@
             <?php endwhile; wp_reset_postdata();?>
             </ul>
             <?php if(get_current_blog_id() == 4):
-            echo'<a href="/services" class="btn right">Explore Our Services</a>';
+            echo'<a href="' . get_permalink(78) . '" class="btn right">Explore Our Services</a>';
             else:
             echo'<a href="/capabilities" class="btn right">Explore Our Capabilities</a>';
             endif;

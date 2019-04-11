@@ -59,7 +59,7 @@ gulp.task('styles', () => {
     .on('error', plugins.sass.logError)
     .pipe(plugins.postcss([
       require('autoprefixer')({ browsers: ['last 2 versions', 'last 2 iOS versions', 'ie >= 9'] }),
-      require('postcss-focus'),
+//      require('postcss-focus'),
       require('postcss-flexbugs-fixes'),
       require('postcss-object-fit-images'),
       require('postcss-initial')({
@@ -86,7 +86,7 @@ gulp.task('styles-prod', () => {
     .on('error', plugins.sass.logError)
     .pipe(plugins.postcss([
       require('autoprefixer')({ browsers: ['last 2 versions', 'last 2 iOS versions', 'ie >= 9'] }),
-      require('postcss-focus'),
+//      require('postcss-focus'),
       require('postcss-flexbugs-fixes'),
       require('postcss-object-fit-images'),
       require('postcss-initial')({

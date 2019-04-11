@@ -2,22 +2,6 @@
 
 /** Editor Functions */
 
-
-function filter_post_data( $data , $postarr ) {
-
-    $content = $data['post_content'];
-
-    $content = preg_replace('#<p.*?>(.*?)</p>#i', '<p>\1</p>', $content);
-    $content = preg_replace('#<span.*?>(.*?)</span>#i', '<span>\1</span>', $content);
-    $content = preg_replace('#<ol.*?>(.*?)</ol>#i', '<ol>\1</ol>', $content);
-    $content = preg_replace('#<ul.*?>(.*?)</ul>#i', '<ul>\1</ul>', $content);
-    $content = preg_replace('#<li.*?>(.*?)</li>#i', '<li>\1</li>', $content);
-
-    $data['post_content'] = $content;
-
-    return $data;
-}
-
 //Add TinyMCE Formats
 
 // Callback function to insert 'styleselect' into the $buttons array
