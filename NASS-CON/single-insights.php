@@ -39,8 +39,6 @@
           <h1>
             <?php echo get_the_title();?>
           </h1>
-          <h6 class="comma">Posted in:
-            <?php $categorys = get_the_category(); foreach ($categorys as $category): echo '<a href="' . get_site_url() . '/category/' . $category->slug .'"><span> ' . $category->cat_name . '</span></a>'; endforeach;?></a></h6>
 
 
         </div>

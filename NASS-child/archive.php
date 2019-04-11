@@ -109,8 +109,6 @@
               <h4 title="<?php echo get_the_title();?>" class="gradient"><a href="<?php the_permalink();?>">
                   <?php echo $excerptTitle;?></a></h4>
 
-              <h6>Posted in: <?php $categorys = get_the_category(); foreach ($categorys as $category): echo '<a href="' . get_site_url() . '/category/' . $category->slug .'"><span> ' . $category->cat_name . '</span></a>'; endforeach;?></a></h6>
-
               <?php
 
                   $excerpt = mb_strimwidth(get_the_excerpt(), 0, 70, '...');
