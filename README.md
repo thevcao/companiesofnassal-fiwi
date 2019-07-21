@@ -2,6 +2,9 @@
 
 Master Parent Theme and Sub Site Child Custom WordPress Theme using minimal Bootstrap 4, grid and containers.
 
+# Features
+* Dynamic brand color switching based on CSS variables assigned through brand subdomain values
+
 # Credits
 
 Oldfashioned is maintained and funded by Findsome & Winmore. This open source project is brought to you by dozens of other open source projects. We like to give credit to those that we have borrowed from. If you find a code snippet we forgot to credit, please submit a pull request for a README.md update.
