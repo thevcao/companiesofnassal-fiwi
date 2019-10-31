@@ -52,7 +52,7 @@
     "hc-sticky": "^2.2.1",
     "html5shiv": "^3.7.3",
     "imagemin-pngquant": "^4.2.0",
-    "jquery": "^2.1.1",
+    "jquery": "^3.4.1",
     "js-cookie": "^2.2.0",
     "magnific-popup": "^1.1.0",
     "merge-stream": "^0.1.7",
